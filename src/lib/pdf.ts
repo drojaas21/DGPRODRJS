@@ -26,6 +26,7 @@ export type ExamCartPDFItem = {
   discountAmt: number;
   discountedUnit: number;
   lineTotal: number;
+  withContrast?: boolean;
 };
 
 export type GenerateCombinedPDFArgs = {
@@ -132,7 +133,7 @@ function buildImagingPrepRows(items: ExamCartPDFItem[]): [string, string][] {
     const note = getImagingPrepNote(
       item.exam.name,
       item.category,
-      itemHasContrast(item.exam.name, item.category, item.exam.autoContrast)
+      itemHasContrast(item.exam.name, item.category, item.exam.autoContrast || item.withContrast)
     );
     if (note) rows.push([item.exam.name, note]);
   }

@@ -87,6 +87,11 @@ function Index() {
       prev.map((c) => c.key === key ? { ...c, qty: c.qty + delta } : c).filter((c) => c.qty > 0)
     );
   };
+  const toggleImagingContrast = (key: string) => {
+    setImagingCart((prev) =>
+      prev.map((c) => c.key === key ? { ...c, withContrast: !c.withContrast } : c)
+    );
+  };
   const removeImaging = (key: string) => setImagingCart((prev) => prev.filter((c) => c.key !== key));
   const removeLab = (code: string) => setLabCart((prev) => prev.filter((i) => i.exam.code !== code));
   const changeLabQty = (code: string, delta: number) =>
@@ -111,6 +116,7 @@ function Index() {
         discountAmt: discountAmt * item.qty,
         discountedUnit,
         lineTotal: discountedUnit * item.qty,
+        withContrast: item.withContrast,
       };
     });
     void generateCombinedPDF({
@@ -316,6 +322,24 @@ function Index() {
                                   <Trash2 className="h-3.5 w-3.5" />
                                 </button>
                               </div>
+                              {item.category === "resonancia" && (
+                                <button
+                                  onClick={() => toggleImagingContrast(item.key)}
+                                  className={`mt-2 flex w-full items-center gap-1.5 rounded-lg border px-2 py-1.5 text-[11px] font-semibold transition-all ${
+                                    item.withContrast || item.exam.autoContrast
+                                      ? "border-orange-300 bg-orange-50 text-orange-700 dark:border-orange-700 dark:bg-orange-950/40 dark:text-orange-400"
+                                      : "border-border bg-muted/30 text-muted-foreground hover:border-orange-300 hover:text-orange-600"
+                                  }`}
+                                  disabled={!!item.exam.autoContrast}
+                                >
+                                  <FlaskConical className="h-3 w-3 shrink-0" />
+                                  {item.exam.autoContrast
+                                    ? "Requiere contraste (fijo)"
+                                    : item.withContrast
+                                    ? "Con contraste ✓"
+                                    : "Sin contraste — click para activar"}
+                                </button>
+                              )}
                               <div className="mt-2 flex items-center justify-between">
                                 <div className="flex items-center gap-1.5 rounded-lg border border-border bg-muted/40 px-1.5 py-1">
                                   <button onClick={() => changeImagingQty(item.key, -1)} className="flex h-5 w-5 items-center justify-center rounded text-foreground hover:bg-muted">

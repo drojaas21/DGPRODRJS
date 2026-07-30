@@ -21,6 +21,7 @@ export type CartItem = {
   index: number;
   exam: Exam;
   qty: number;
+  withContrast?: boolean;
 };
 
 export function ExamQuoter({
