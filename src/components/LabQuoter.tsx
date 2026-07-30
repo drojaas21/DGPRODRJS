@@ -281,7 +281,7 @@ export function LabQuoter({
               return (
                 <button
                   key={g.id}
-                  onClick={() => { setActiveGroup(g.id); setQuery(""); }}
+                  onClick={() => { setActiveGroup(active ? null : g.id); setQuery(""); }}
                   className={`flex shrink-0 items-center gap-1.5 rounded-full border px-3.5 py-2 text-[12px] font-semibold transition-all ${
                     active
                       ? "border-transparent bg-gradient-brand text-primary-foreground shadow-[var(--shadow-lift)]"
