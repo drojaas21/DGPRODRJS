@@ -347,7 +347,7 @@ export async function generateCombinedPDF(args: GenerateCombinedPDFArgs) {
   const imagingPrepRows = buildImagingPrepRows(args.imagingItems);
   const labPrepRows     = buildLabPrepRows(args.labItems);
   const hasContrast     = args.imagingItems.some((it) =>
-    itemHasContrast(it.exam.name, it.category, it.exam.autoContrast)
+    itemHasContrast(it.exam.name, it.category, it.exam.autoContrast || it.withContrast)
   );
 
   const imagingGroups = groupPreps(imagingPrepRows, "Imagenología");
