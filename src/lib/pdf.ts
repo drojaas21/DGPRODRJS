@@ -141,20 +141,83 @@ function buildImagingPrepRows(items: ExamCartPDFItem[]): [string, string][] {
 }
 
 function buildLabPrepRows(items: Array<{ exam: LabExam; qty: number }>): [string, string][] {
-  const prepLabels: Record<string, string> = {
-    orina_manana: "Primera orina de la mañana (segundo chorro). Entregar al laboratorio en máximo 2 horas.",
-    orina_24h:    "Recolección de orina de 24 horas. Desechar la primera micción; guardar el resto en el envase provisto hasta la misma hora del día siguiente.",
-    psa:          "Abstinencia sexual de 48 horas previas al examen.",
-  };
+  const FASTING_NOTE =
+    "Asistir con ayuno mínimo de 8 horas y máximo de 12 horas (no consumir alimentos sólidos ni líquidos, excepto agua). " +
+    "Para evitar sobreayuno, se recomienda consumir una colación liviana (galletas, yogur o fruta) a las 23:00 horas del día anterior.";
+
+  const ORINA_MANANA_GENERAL =
+    "Utilizar la primera orina de la mañana (segundo chorro). Realizar higiene genital con agua antes de recolectar. " +
+    "Recolectar en el envase estéril provisto por el laboratorio. Entregar dentro de las 2 horas siguientes a la recolección.";
+
+  const UROCULTIVO_NOTE =
+    "Utilizar la primera orina de la mañana. Realizar higiene genital con toalla húmeda antes de recolectar (sin jabón). " +
+    "No tocar el interior del envase ni la tapa. Desechar el primer chorro de orina; recolectar el chorro medio en el envase estéril (10–20 mL). " +
+    "Llevar inmediatamente al laboratorio o conservar refrigerado máximo 2 horas. No orinar previamente durante la noche.";
+
+  const ORINA_24H_NOTE =
+    "Recolectar toda la orina durante 24 horas en el envase provisto por el laboratorio. " +
+    "Primer día: desechar la primera micción de la mañana (anotar la hora) y comenzar a recolectar desde la segunda micción en adelante. " +
+    "Segundo día: recolectar la primera micción de la mañana a la misma hora que comenzó el día anterior. " +
+    "Conservar el envase refrigerado durante toda la recolección. Entregar al laboratorio a más tardar 2 horas después de completada.";
+
+  const PSA_NOTE =
+    "Abstinencia sexual de 48 horas previas al examen. " +
+    "Evitar eyaculación, tacto rectal, masaje prostático o biopsia en los 7 días anteriores al examen.";
+
+  // Codes and name fragments that indicate PTGO / glucose curve
+  const isPTGO = (e: LabExam) =>
+    e.code === "0302048" ||
+    /tolerancia|ptgo|carga.*glucosa|glucosa.*carga/i.test(e.name);
+
+  const isGlucosaCurve = (e: LabExam) =>
+    /post.?carga|post.?pandrial|curva.*glucosa/i.test(e.name);
+
+  const isInsulinaCurve = (e: LabExam) =>
+    e.code === "0303031" || /curva.*insulina|insulina.*carga|insulina.*pandrial/i.test(e.name);
+
+  const isUrocultivo = (e: LabExam) =>
+    /urocultivo/i.test(e.name);
+
   const rows: [string, string][] = [];
+
   for (const { exam } of items) {
     const notes: string[] = [];
-    if (exam.fasting) notes.push("Ayuno mínimo 8 horas, máximo 12 horas (sólidos y líquidos).");
-    if (exam.prep && prepLabels[exam.prep]) notes.push(prepLabels[exam.prep]);
-    if (notes.length > 0) {
-      const name = exam.name.replace(/\*PARTICULAR\*/gi, "").replace(/\s{2,}/g, " ").trim();
-      rows.push([name, notes.join(" ")]);
+    const name = exam.name.replace(/\*PARTICULAR\*/gi, "").replace(/\s{2,}/g, " ").trim();
+
+    // ── Casos especiales (tienen su propia instrucción completa) ──────────────
+    if (isPTGO(exam)) {
+      notes.push(
+        "Ayuno de 10 a 12 horas previo al examen. Acudir al laboratorio preferentemente antes de las 08:00 horas. " +
+        "Se tomará una muestra de sangre en ayunas; luego se administrará una solución de glucosa (75 g) que debe beber en 5 minutos. " +
+        "Se tomarán muestras adicionales a los 60 y 120 minutos. " +
+        "Durante el tiempo de espera: permanecer en reposo en el laboratorio, no comer, no beber (excepto agua), no fumar ni realizar ejercicio. " +
+        "Duración total aproximada: 2 horas."
+      );
+    } else if (isInsulinaCurve(exam)) {
+      notes.push(
+        "Ayuno mínimo de 8 horas. Se realizarán múltiples extracciones de sangre en intervalos definidos por el médico. " +
+        "Permanecer en reposo en el laboratorio durante todo el procedimiento. " +
+        "No comer, no beber (excepto agua), no fumar ni realizar ejercicio entre las extracciones."
+      );
+    } else if (isGlucosaCurve(exam)) {
+      notes.push(
+        "Ayuno mínimo de 8 horas. Acudir al laboratorio en la mañana. Se realizarán dos extracciones de sangre separadas por el intervalo indicado. " +
+        "Permanecer en reposo, no comer, no fumar ni realizar ejercicio entre las extracciones."
+      );
+    } else {
+      // ── Preparaciones estándar ────────────────────────────────────────────
+      if (exam.fasting) notes.push(FASTING_NOTE);
+
+      if (exam.prep === "orina_manana") {
+        notes.push(isUrocultivo(exam) ? UROCULTIVO_NOTE : ORINA_MANANA_GENERAL);
+      } else if (exam.prep === "orina_24h") {
+        notes.push(ORINA_24H_NOTE);
+      } else if (exam.prep === "psa") {
+        notes.push(PSA_NOTE);
+      }
     }
+
+    if (notes.length > 0) rows.push([name, notes.join(" ")]);
   }
   return rows;
 }
