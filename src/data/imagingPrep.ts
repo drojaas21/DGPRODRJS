@@ -106,7 +106,7 @@ export function needsRMSafetyAlert(category: ExamCategory): boolean {
 }
 
 export function itemHasContrast(examName: string, category: ExamCategory, autoContrast?: boolean): boolean {
-  if (category === "tac" || category === "contraste") return true;
+  if (category === "contraste") return true;
   const n = norm(examName);
   return !!autoContrast || n.includes("contraste") || n.includes("gadolinio");
 }
@@ -134,9 +134,13 @@ export function getImagingPrepNote(examName: string, category: ExamCategory, wit
   }
 
   if (category === "tac") {
+    if (!withContrast) return null;
     const parts: string[] = [CONTRAST_NOTE];
-    if (n.includes("abdom") || n.includes("pelv")) {
-      parts.push("Beber 1.5 L de agua paulatinamente desde 1 hora antes; retener orina hasta el examen.");
+    const needsWater =
+      n.includes("abdom") || n.includes("pelv") ||
+      n.includes("pielog") || n.includes("urograf") || n.includes("urotac");
+    if (needsWater) {
+      parts.push("Beber 1.5 litros de agua paulatinamente desde 1 hora antes; retener la orina hasta completar el examen.");
     }
     return parts.join(" ");
   }

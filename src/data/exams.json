@@ -453,7 +453,8 @@
       "desc": "Incluye sacro, coxis, caderas, huesos pélvicos, articulaciones sacroilíacas. Bilateral",
       "part": 95484,
       "fa": 83030,
-      "fbcd": 51090
+      "fbcd": 51090,
+      "autoContrast": true
     },
     {
       "name": "TAC de Abdomen y Pelvis",
@@ -476,7 +477,8 @@
       "desc": "Estudio de vías urinarias con contraste endovenoso",
       "part": 40020,
       "fa": 34800,
-      "fbcd": 21410
+      "fbcd": 21410,
+      "autoContrast": true
     },
     {
       "name": "Urografía por TAC (UroTAC)",
