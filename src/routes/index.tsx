@@ -3,9 +3,10 @@ import { useMemo, useState } from "react";
 import {
   Scan, FlaskConical, Wallet, FileDown,
   ShoppingCart, Trash2, Plus, Minus, FlaskConical as LabIcon,
-  Landmark, Building2, ShieldCheck, Users, AlertTriangle,
+  Landmark, Building2, ShieldCheck, Users, AlertTriangle, Droplets,
   type LucideIcon,
 } from "lucide-react";
+import { POST_CONTRAST } from "@/data/imagingPrep";
 import logo from "@/assets/logo-diagnopro.svg";
 import { ExamQuoter, type CartItem } from "@/components/ExamQuoter";
 import { LabQuoter, type LabCartItem } from "@/components/LabQuoter";
@@ -323,22 +324,35 @@ function Index() {
                                 </button>
                               </div>
                               {item.category === "resonancia" && (
-                                <button
-                                  onClick={() => toggleImagingContrast(item.key)}
-                                  className={`mt-2 flex w-full items-center gap-1.5 rounded-lg border px-2 py-1.5 text-[11px] font-semibold transition-all ${
-                                    item.withContrast || item.exam.autoContrast
-                                      ? "border-orange-300 bg-orange-50 text-orange-700 dark:border-orange-700 dark:bg-orange-950/40 dark:text-orange-400"
-                                      : "border-border bg-muted/30 text-muted-foreground hover:border-orange-300 hover:text-orange-600"
-                                  }`}
-                                  disabled={!!item.exam.autoContrast}
-                                >
-                                  <FlaskConical className="h-3 w-3 shrink-0" />
-                                  {item.exam.autoContrast
-                                    ? "Requiere contraste (fijo)"
-                                    : item.withContrast
-                                    ? "Con contraste ✓"
-                                    : "Sin contraste — click para activar"}
-                                </button>
+                                <div className="mt-2 space-y-1.5">
+                                  <button
+                                    onClick={() => toggleImagingContrast(item.key)}
+                                    className={`flex w-full items-center gap-1.5 rounded-lg border px-2 py-1.5 text-[11px] font-semibold transition-all ${
+                                      item.withContrast || item.exam.autoContrast
+                                        ? "border-orange-300 bg-orange-50 text-orange-700 dark:border-orange-700 dark:bg-orange-950/40 dark:text-orange-400"
+                                        : "border-border bg-muted/30 text-muted-foreground hover:border-orange-300 hover:text-orange-600"
+                                    }`}
+                                    disabled={!!item.exam.autoContrast}
+                                  >
+                                    <FlaskConical className="h-3 w-3 shrink-0" />
+                                    {item.exam.autoContrast
+                                      ? "Requiere contraste (fijo)"
+                                      : item.withContrast
+                                      ? "Con contraste ✓"
+                                      : "Sin contraste — click para activar"}
+                                  </button>
+                                  {(item.withContrast || item.exam.autoContrast) && (
+                                    <div className="rounded-lg border border-orange-200 bg-orange-50/70 px-2 py-1.5 dark:border-orange-800/40 dark:bg-orange-950/20">
+                                      <p className="mb-0.5 flex items-center gap-1 text-[10px] font-bold text-orange-700 dark:text-orange-400">
+                                        <Droplets className="h-2.5 w-2.5 shrink-0" />
+                                        Indicaciones post-contraste
+                                      </p>
+                                      <p className="text-[10px] leading-relaxed text-orange-800 dark:text-orange-300">
+                                        {POST_CONTRAST}
+                                      </p>
+                                    </div>
+                                  )}
+                                </div>
                               )}
                               <div className="mt-2 flex items-center justify-between">
                                 <div className="flex items-center gap-1.5 rounded-lg border border-border bg-muted/40 px-1.5 py-1">

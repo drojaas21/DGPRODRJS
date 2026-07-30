@@ -12,6 +12,7 @@ import { formatCLP, normalize } from "@/lib/format";
 import { getExamCovers, examMatchesZone } from "@/data/examCovers";
 import { getPatientInfo } from "@/data/patientInfo";
 import { getImagingFonasaCode } from "@/data/imagingFonasaCodes";
+import { itemHasContrast, POST_CONTRAST } from "@/data/imagingPrep";
 
 const icons: Record<string, LucideIcon> = { Brain, ScanLine, Waves, Bone, HeartPulse, Droplets, Activity };
 
@@ -184,6 +185,7 @@ export function ExamQuoter({
           const patientInfo = getPatientInfo(exam.name);
           const fonasaCode = getImagingFonasaCode(exam.name);
           const isInfoOpen = activeInfoKey === key;
+          const examHasContrast = itemHasContrast(exam.name, category, exam.autoContrast);
 
           return (
             <div key={key} className="rounded-xl border border-border bg-background">
@@ -277,13 +279,25 @@ export function ExamQuoter({
                 <div className="border-t border-blue-100 bg-blue-50/60 px-3 py-2.5 dark:border-blue-900/30 dark:bg-blue-950/20">
                   <div className="flex items-start gap-2">
                     <Info className="mt-0.5 h-3.5 w-3.5 shrink-0 text-blue-500" />
-                    <div>
-                      <p className="mb-1 text-[11px] font-bold text-blue-700 dark:text-blue-400">
-                        Información para el paciente
-                      </p>
-                      <p className="text-[11px] leading-relaxed text-blue-800 dark:text-blue-300">
-                        {patientInfo}
-                      </p>
+                    <div className="space-y-2">
+                      <div>
+                        <p className="mb-1 text-[11px] font-bold text-blue-700 dark:text-blue-400">
+                          Información para el paciente
+                        </p>
+                        <p className="text-[11px] leading-relaxed text-blue-800 dark:text-blue-300">
+                          {patientInfo}
+                        </p>
+                      </div>
+                      {examHasContrast && (
+                        <div className="rounded-lg border border-orange-200 bg-orange-50 px-2.5 py-2 dark:border-orange-800/50 dark:bg-orange-950/30">
+                          <p className="mb-0.5 text-[11px] font-bold text-orange-700 dark:text-orange-400">
+                            Indicaciones post-contraste
+                          </p>
+                          <p className="text-[11px] leading-relaxed text-orange-800 dark:text-orange-300">
+                            {POST_CONTRAST}
+                          </p>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
