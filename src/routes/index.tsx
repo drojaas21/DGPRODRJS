@@ -136,7 +136,7 @@ function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-soft">
+    <div className="flex min-h-screen flex-col bg-gradient-soft">
       {/* ── Header ── */}
       <header className="border-b border-border/70 bg-card/80 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3.5 sm:px-6">
