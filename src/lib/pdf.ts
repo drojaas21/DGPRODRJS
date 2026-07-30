@@ -150,9 +150,11 @@ function buildLabPrepRows(items: Array<{ exam: LabExam; qty: number }>): [string
     "Recolectar en el envase estéril provisto por el laboratorio. Entregar dentro de las 2 horas siguientes a la recolección.";
 
   const UROCULTIVO_NOTE =
-    "Utilizar la primera orina de la mañana. Realizar higiene genital con toalla húmeda antes de recolectar (sin jabón). " +
+    "Para mayor exactitud del examen, es imprescindible utilizar la primera orina de la mañana: al haber permanecido más tiempo en la vejiga, " +
+    "la concentración bacteriana es significativamente mayor, lo que mejora la sensibilidad del cultivo. " +
+    "Realizar higiene genital con toalla húmeda antes de recolectar (sin jabón). " +
     "No tocar el interior del envase ni la tapa. Desechar el primer chorro de orina; recolectar el chorro medio en el envase estéril (10–20 mL). " +
-    "Llevar inmediatamente al laboratorio o conservar refrigerado máximo 2 horas. No orinar previamente durante la noche.";
+    "Llevar inmediatamente al laboratorio o conservar refrigerado máximo 2 horas. Evitar orinar durante la noche previo a la toma.";
 
   const ORINA_24H_NOTE =
     "Recolectar toda la orina durante 24 horas en el envase provisto por el laboratorio. " +
