@@ -12,7 +12,7 @@ import { formatCLP, normalize } from "@/lib/format";
 import { getExamCovers, examMatchesZone } from "@/data/examCovers";
 import { getPatientInfo } from "@/data/patientInfo";
 import { getImagingFonasaCode } from "@/data/imagingFonasaCodes";
-import { itemHasContrast, POST_CONTRAST } from "@/data/imagingPrep";
+import { itemHasContrast } from "@/data/imagingPrep";
 
 const icons: Record<string, LucideIcon> = { Brain, ScanLine, Waves, Bone, HeartPulse, Droplets, Activity };
 
@@ -288,16 +288,6 @@ export function ExamQuoter({
                           {patientInfo}
                         </p>
                       </div>
-                      {examHasContrast && (
-                        <div className="rounded-lg border border-orange-200 bg-orange-50 px-2.5 py-2 dark:border-orange-800/50 dark:bg-orange-950/30">
-                          <p className="mb-0.5 text-[11px] font-bold text-orange-700 dark:text-orange-400">
-                            Indicaciones post-contraste
-                          </p>
-                          <p className="text-[11px] leading-relaxed text-orange-800 dark:text-orange-300">
-                            {POST_CONTRAST}
-                          </p>
-                        </div>
-                      )}
                     </div>
                   </div>
                 </div>
