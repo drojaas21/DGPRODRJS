@@ -189,17 +189,17 @@ function buildLabPrepRows(items: Array<{ exam: LabExam; qty: number }>): [string
     // ── Casos especiales (tienen su propia instrucción completa) ──────────────
     if (isPTGO(exam)) {
       notes.push(
-        "Ayuno de 10 a 12 horas previo al examen. Acudir al laboratorio preferentemente antes de las 08:00 horas. " +
-        "Se tomará una muestra de sangre en ayunas; luego se administrará una solución de glucosa (75 g) que debe beber en 5 minutos. " +
-        "Se tomarán muestras adicionales a los 60 y 120 minutos. " +
-        "Durante el tiempo de espera: permanecer en reposo en el laboratorio, no comer, no beber (excepto agua), no fumar ni realizar ejercicio. " +
-        "Duración total aproximada: 2 horas."
+        "Ayuno de 10 a 12 horas. Llegar antes de las 09:00. " +
+        "Se tomará sangre en ayunas y luego deberá beber el Glucofresh en 5 minutos. " +
+        "Se tomarán 2 muestras más a los 60 y 120 minutos. " +
+        "Permanecer en reposo las 2 horas del procedimiento: no comer, no beber (solo agua), no fumar ni hacer ejercicio."
       );
     } else if (isInsulinaCurve(exam)) {
       notes.push(
-        "Ayuno mínimo de 8 horas. Se realizarán múltiples extracciones de sangre en intervalos definidos por el médico. " +
-        "Permanecer en reposo en el laboratorio durante todo el procedimiento. " +
-        "No comer, no beber (excepto agua), no fumar ni realizar ejercicio entre las extracciones."
+        "Ayuno de 10 a 12 horas. Llegar antes de las 09:00. " +
+        "Se tomará sangre en ayunas y luego deberá beber el Glucofresh. " +
+        "Se realizarán extracciones en los intervalos indicados por el médico. " +
+        "Permanecer en reposo durante el procedimiento: no comer, no beber (solo agua), no fumar ni hacer ejercicio."
       );
     } else if (isGlucosaCurve(exam)) {
       notes.push(

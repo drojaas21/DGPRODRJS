@@ -226,11 +226,26 @@ export function LabQuoter({
     return { mainResults: [], soloResults: [], groupResults: [] };
   }, [query, isSearching, activeGroup]);
 
+  const glucofresh = useMemo(
+    () => labDatabase.find((e) => e.code === "GLUCOSA LIQ"),
+    []
+  );
+
+  const needsGlucofresh = (e: LabExam) =>
+    e.code === "0302048" || e.code === "0303031" ||
+    /tolerancia|ptgo|carga.*glucosa|glucosa.*carga|curva.*insulina/i.test(e.name);
+
   const add = (e: LabExam) => {
     setCart((p) => {
       const existing = p.find((i) => i.exam.code === e.code);
-      if (existing) return p.map((i) => i.exam.code === e.code ? { ...i, qty: i.qty + 1 } : i);
-      return [...p, { exam: e, qty: 1 }];
+      let next = existing
+        ? p.map((i) => i.exam.code === e.code ? { ...i, qty: i.qty + 1 } : i)
+        : [...p, { exam: e, qty: 1 }];
+      // Auto-add Glucofresh for PTGO and Curva de Insulina (only once)
+      if (needsGlucofresh(e) && glucofresh && !next.find((i) => i.exam.code === glucofresh.code)) {
+        next = [...next, { exam: glucofresh, qty: 1 }];
+      }
+      return next;
     });
   };
 
