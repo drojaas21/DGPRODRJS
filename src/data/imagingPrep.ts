@@ -16,8 +16,6 @@ const POST_CONTRAST =
   "Post-contraste: Beber ≈2 litros de agua diarios durante 2–3 días. Si usa Metformina, suspénderla 48 horas post-examen. Consulte de inmediato ante dificultad respiratoria, hinchazón facial o urticaria.";
 const CONTRAST_NOTE =
   "Requiere medio de contraste endovenoso. Ayuno mínimo 6 horas (sólidos y líquidos).";
-const RM_SURVEY =
-  "Completar encuesta de seguridad de RM al llegar: informar sobre marcapasos, prótesis metálicas, clips vasculares, stents, DIU, piercings u otros implantes metálicos.";
 
 function norm(s: string): string {
   return s
@@ -35,7 +33,6 @@ export function getImagingPrep(examName: string, category: ExamCategory): PrepEn
       steps: [
         ARRIVAL,
         ID_ORDER,
-        RM_SURVEY,
         ...(withContrast
           ? ["Con contraste (gadolinio): ayuno de 4 a 6 horas previo al examen."]
           : []),
@@ -133,7 +130,6 @@ export function getImagingPrepNote(examName: string, category: ExamCategory, wit
     if (n.includes("corazon") || n.includes("cardiaca") || n.includes("cardiac")) {
       parts.push("Evitar cafeína (café, té, bebidas cola) las 24 horas previas.");
     }
-    parts.push("Completar encuesta de seguridad RM al llegar (informar marcapasos, prótesis metálicas, stents, DIU u otros implantes).");
     return parts.join(" ");
   }
 
