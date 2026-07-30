@@ -1,0 +1,68 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "GmoMHFJivxRhGNl--_Hfz"
+uri = "file://diagno-pro-cotizador.zip"
+type = "unspecified"
+title = "DiagnoPRO Cotizador — archivos compilados"
+
+[[outputs]]
+id = "LhzrsaDK01PR1rHfVPrAA"
+uri = "file://diagno-pro-cotizador-completo.zip"
+type = "unspecified"
+title = "DiagnoPRO Cotizador — proyecto completo"
+
+[[outputs]]
+id = "97X5zKxm0BnuciAV7-25q"
+uri = "file://diagno-pro-local.zip"
+type = "unspecified"
+title = "DiagnoPRO — abre index.html directamente"
+
+[[outputs]]
+id = "vw8BfzISNvvO1Iv0Yc4Uy"
+uri = "file://diagno-pro-deploy.zip"
+type = "unspecified"
+title = "DiagnoPRO — listo para GitHub Pages / Netlify"
+
+[[outputs]]
+id = "LWK7pAZSVhnfl-LfIy8-I"
+uri = "file://DiagnoPRO_Temuco_static.zip"
+type = "unspecified"
+title = "DiagnoPRO Temuco — App estática (ZIP)"
+
+[[outputs]]
+id = "3a_VkGjV1EFkdAw462R5B"
+uri = "file://DiagnoPRO_Temuco_offline.zip"
+type = "unspecified"
+title = "DiagnoPRO Temuco — Offline completo"
+
+[[outputs]]
+id = "Di6Mx69ptNThNF846NKXD"
+uri = "file://diagno-pro-offline.zip"
+type = "unspecified"
+title = "DiagnoPRO Temuco — Index Offline (3.6 MB)"
+
+[[outputs]]
+id = "ToA62x5l1UEl5OK6DtAME"
+uri = "file://diagnopro-dist.zip"
+type = "unspecified"
+title = "diagnopro-dist.zip (laboratorio renovado)"
+
+[[outputs]]
+id = "_2YJkqj_HXUzAiEyrqCyz"
+uri = "file://dist.zip"
+type = "unspecified"
+title = "dist.zip — Build estático para Cloudflare Pages"
+
+[[outputs]]
+id = "80rriybxjB0TWISFQD8Ij"
+uri = "file://DiagnoPRO_Documentacion_Tecnica.pdf"
+type = "pdf"
+title = "DiagnoPRO Temuco — Documentación Técnica"
+
+[[outputs]]
+id = "PST_UTM2p3kYA5lEspd5P"
+uri = "file://exports/resonancias-y-scanner-diagnopro.pdf"
+type = "pdf"
+title = "Resonancias y Scanner — DiagnoPRO Temuco"

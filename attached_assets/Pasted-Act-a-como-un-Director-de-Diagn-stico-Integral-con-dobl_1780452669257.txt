@@ -1,0 +1,26 @@
+Actúa como un Director de Diagnóstico Integral, con doble especialidad en Patología Clínica (Laboratorio) y Radiología/Imagenología Médica. Necesito que crees una "Sección de Estudio y Capacitación Interna" para el personal técnico y administrativo.
+
+A continuación, te proporcionaré una lista de exámenes. Para cada uno de ellos, debes desarrollar una ficha técnica educativa utilizando fuentes médicas de alta confiabilidad (como la Clínica Mayo, RSNA - RadiologyInfo, manuales MSD o guías oficiales de salud). 
+
+Dependiendo del tipo de examen (Laboratorio o Imagenología), debes aplicar la estructura correspondiente:
+
+ESTRUCTURA PARA EXÁMENES DE LABORATORIO:
+### [Nombre del Examen / Código]
+---
+*   **¿Para qué sirve? (Utilidad Clínica):** Qué mide, qué condiciones ayuda a diagnosticar o monitorear, y cuál es su relevancia médica.
+*   **Fase Pre-analítica (Preparación del Paciente):** Requisitos específicos (horas de ayuno, suspensión/registro de fármacos, restricciones de ejercicio o dieta).
+*   **Fase Analítica (Procesamiento Técnico):** Tipo de muestra (suero, plasma, orina, etc.), contenedor correcto (color de tapa del tubo o frasco) y el principio del método o equipo automatizado que se utiliza (ej. Quimioluminiscencia, PCR, Hematología automatizada).
+*   **Valores de Referencia y Alertas:** Rangos normales estándar y significado general de valores críticamente altos o bajos.
+
+ESTRUCTURA PARA EXÁMENES DE IMAGENOLOGÍA (Rayos X, TC, Resonancia, Ecografía, etc.):
+### [Nombre del Examen / Región Anatómica]
+---
+*   **¿Para qué sirve? (Indicación Médica):** Qué estructuras anatómicas evalúa, qué patologías busca detectar (fracturas, tumores, colecciones, etc.) y por qué se prefiere esta modalidad sobre otra.
+*   **Preparación y Seguridad del Paciente:** Requisitos previos (ayuno para contraste, llenado de vejiga para ecos pélvicas, retiro de objetos metálicos, consentimiento informado). Especificar si requiere tamizaje de función renal (creatinina) para el uso de medio de contraste.
+*   **Fase de Adquisición (¿Cómo se realiza y procesa?):** Explica brevemente el principio físico básico del examen (ej. radiación ionizante, ultrasonido, campos magnéticos) y la dinámica del procedimiento (posicionamiento del paciente, uso de medio de contraste iodado o gadolinio si aplica, y postprocesado de imágenes/reconstrucción 3D).
+*   **Contraindicaciones Absolutas y Relativas:** Limitaciones para realizar el examen (embarazo, marcapasos no compatibles, insuficiencia renal severa, claustrofobia, etc.).
+
+Por favor, utiliza negritas para resaltar palabras clave, viñetas para que la lectura sea fluida y mantén un tono riguroso, educativo y formal.
+
+Aquí está la lista de exámenes a procesar:
+[PEGA AQUÍ TU LISTA MEZCLADA DE EXÁMENES DE LABORATORIO E IMAGEN]

@@ -1,0 +1,57 @@
+Analiza todo el proyecto y realiza los siguientes cambios automáticamente:
+
+1. Elimina cualquier dependencia, configuración o referencia específica de Replit:
+
+   * Archivos .replit
+   * Carpeta .config relacionada con Replit
+   * Variables de entorno exclusivas de Replit
+   * Scripts de despliegue de Replit
+   * Referencias visuales, marcas de agua o enlaces a Replit en la interfaz
+   * Comentarios generados por Replit que no sean necesarios
+
+2. Convierte el proyecto para despliegue limpio en Cloudflare Pages:
+
+   * Framework: Vite
+   * Build command: npm run build
+   * Output directory: dist
+   * Compatibilidad con Node.js 22
+   * Sin dependencia de Bun
+   * Eliminar archivos bun.lock y configuraciones asociadas
+   * Mantener package-lock.json como gestor principal
+
+3. Revisa package.json:
+
+   * Elimina dependencias sin uso
+   * Corrige conflictos de versiones
+   * Verifica que npm run build funcione sin errores
+
+4. Configura correctamente el enrutamiento SPA:
+
+   * Crear o actualizar _redirects con:
+     /* /index.html 200
+   * Verificar que quede incluido dentro de la carpeta dist al compilar
+
+5. Optimiza para producción:
+
+   * Eliminar archivos temporales
+   * Eliminar archivos ZIP de respaldo
+   * Eliminar logs innecesarios
+   * Eliminar archivos de prueba no utilizados
+   * Reducir tamaño del build cuando sea posible
+
+6. Verifica el resultado:
+
+   * Ejecutar instalación limpia de dependencias
+   * Ejecutar npm run build
+   * Confirmar que la carpeta dist se genera correctamente
+   * Confirmar que el proyecto puede desplegarse directamente en Cloudflare Pages mediante Direct Upload
+
+7. Entrega un informe final indicando:
+
+   * Archivos eliminados
+   * Dependencias eliminadas
+   * Configuraciones modificadas
+   * Posibles problemas pendientes
+   * Estructura final de la carpeta dist lista para producción
+
+No cambies el diseño visual, funcionalidades ni contenido de la aplicación. Solo adapta el proyecto para producción y despliegue estable en Cloudflare Pages.

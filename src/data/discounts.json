@@ -1,0 +1,50 @@
+{
+  "resonancia": {
+    "banco": 15,
+    "caja": 10,
+    "araucana": 10,
+    "particular": 0
+  },
+  "tac": {
+    "banco": 20,
+    "caja": 15,
+    "araucana": 15,
+    "particular": 0
+  },
+  "ecografia": {
+    "banco": 0,
+    "caja": 0,
+    "araucana": 0,
+    "particular": 0
+  },
+  "radiografia": {
+    "banco": 0,
+    "caja": 0,
+    "araucana": 0,
+    "particular": 0
+  },
+  "mamografia": {
+    "banco": 0,
+    "caja": 15,
+    "araucana": 0,
+    "particular": 0
+  },
+  "contraste": {
+    "banco": 0,
+    "caja": 0,
+    "araucana": 0,
+    "particular": 0
+  },
+  "cardiologia": {
+    "banco": 0,
+    "caja": 0,
+    "araucana": 0,
+    "particular": 0
+  },
+  "canastas": {
+    "banco": 0,
+    "caja": 0,
+    "araucana": 0,
+    "particular": 0
+  }
+}

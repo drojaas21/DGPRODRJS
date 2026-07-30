@@ -1,0 +1,38 @@
+Actúa como un Diseñador UX/UI y Desarrollador de Software experto en sistemas de salud. Necesito diseñar el flujo y la lógica para un cotizador en línea de exámenes médicos (laboratorio e imagenología) para nuestra plataforma web. 
+
+A continuación, te detallo los requerimientos clave, las reglas de negocio y los datos de preparación que debes integrar:
+
+### 1. Concepto y Experiencia de Usuario (UI/UX)
+* **Alternativa al "Carrito de Compras":** No quiero usar un carrito de compras tradicional tipo e-commerce porque se ve informal para el área de salud. En su lugar, implementa un "Panel de Selección de Exámenes" o "Lista de Cotización Temporal" (estilo barra lateral o pestaña desplegable). El usuario debe poder ir "acumulando" múltiples exámenes (tanto de laboratorio como de imagenología) de forma limpia y profesional antes de generar el documento final.
+* **Resultado Final:** El sistema debe permitir descargar una "Cotización en PDF" formal.
+
+### 2. Lógica de Precios y Convenios
+* Cada examen de la lista debe calcularse de forma individual respetando el descuento del convenio seleccionado por el usuario (FONASA, ISAPRE, Convenios institucionales, etc.).
+* El desglose del PDF debe mostrar claramente el valor base, el descuento por convenio y el total a pagar por cada examen, además del total general.
+
+### 3. Protocolos y Preparaciones Dinámicas (Datos Clave)
+Cada vez que el usuario agregue un examen a su lista, el sistema debe adjuntar automáticamente su preparación y protocolo correspondiente en la cotización. 
+
+Utiliza estrictamente la siguiente base de datos para configurar las preparaciones:
+
+#### A. Exámenes de Imagenología (Según nuestros protocolos actuales):
+* **TAC Abdomen y Pelvis:** Llegar 20 min antes. Carné y orden médica. 6 horas de ayuno total (sólidos y líquidos). Tomar 1.5 litros de agua paulatinamente desde 1 hora antes y retener orina. No fumar ni mascar chicle. 
+  *(Protocolo Post-Contraste si aplica: Beber ~2 L de agua diarios por 2-3 días. Si usa Metformina, suspender por 48 horas post-examen. Alertas: dificultad para respirar, hinchazón, urticaria).*
+* **Ecografía Mamaria:** Llegar 20 min antes. Carné y orden médica. Mayores de 40 años deben traer mamografía de max. 6 meses de antigüedad. Buena higiene local, sin desodorante en barra, cremas ni talco.
+* **Ecografía Renal:** Llegar 20 min antes. Carné y orden médica. 4 horas de ayuno total. No fumar ni mascar chicle.
+* **Ecografía Abdominal y Pelviana:** Llegar 20 min antes. Carné y orden médica. 6 horas de ayuno total. Tomar 1.5 litros de agua paulatinamente desde 1 hora antes y retener orina. No fumar ni mascar chicle.
+* **Ecografía Abdominal:** Llegar 20 min antes. Carné y orden médica. 6 horas de ayuno total. No fumar ni mascar chicle.
+* **Ecografía Renal y Vesical:** Llegar 20 min antes. Carné y orden médica. 4 horas de ayuno total. Tomar 1.5 litros de agua paulatinamente desde 1 hora antes y retener orina. No fumar ni mascar chicle.
+
+#### B. Exámenes de Laboratorio (Regla General):
+* **Preparación estándar:** Siempre requiere ayuno (mínimo 8 horas de sólidos).
+* **Horario de toma de muestras:** Lunes a viernes de 8:00 AM a 12:00 PM. Sábados de 9:00 AM a 12:00 PM.
+
+#### C. Reglas Especiales de Interconexión (Lógica del Sistema):
+* **Condición de Creatinina para Contrastes:** Si el usuario selecciona cualquier examen que requiera contraste iodado (como el TAC de Abdomen y Pelvis con contraste), el sistema debe mostrar una alerta automática sugiriendo o exigiendo agregar el examen de "Creatinina en sangre" a la cotización (con un máximo de antigüedad específico si ya se lo hizo) para verificar la función renal.
+* **Resonancias Magnéticas (RM):** Investiga e integra el protocolo estándar de ayuno para resonancias que requieran contraste (habitualmente entre 4 y 6 horas de ayuno) y la necesidad de encuesta de seguridad (marcapasos, implantes metálicos).
+
+### ¿Qué necesito que hagas?
+1. Propón una estructura visual o mockup en texto de cómo se vería este "Panel de Selección" elegante y profesional sin parecer una tienda de ropa online.
+2. Diseña la estructura y el orden en que se debería organizar la información dentro de la "Cotización en PDF" (incluyendo dónde y cómo mostrar las preparaciones de forma ordenada para que no quede un texto gigante e ilegible).
+3. Describe el flujo lógico o algoritmo para las alertas cruzadas (como la de la Creatinina).

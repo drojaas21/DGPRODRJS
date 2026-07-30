@@ -1,0 +1,1064 @@
+{
+  "resonancia": [
+    {
+      "name": "Resonancia Magnética Cráneo Encefálica",
+      "desc": "Estudio del cerebro y estructuras intracraneales",
+      "part": 247652,
+      "fa": 215350,
+      "fbcd": 107670
+    },
+    {
+      "name": "Resonancia Magnética de Oídos (bilateral)",
+      "desc": "Evaluación del oído interno y conductos auditivos",
+      "part": 247652,
+      "fa": 215350,
+      "fbcd": 107670
+    },
+    {
+      "name": "Resonancia Magnética Cerebro Fosa Posterior",
+      "desc": "Estudio del cerebelo, tronco encefálico y fosa posterior",
+      "part": 247652,
+      "fa": 215350,
+      "fbcd": 107670,
+      "autoContrast": true
+    },
+    {
+      "name": "Resonancia Magnética Hipotálamo-Hipófisis-Silla Turca",
+      "desc": "Evaluación de la glándula pituitaria y región selar",
+      "part": 257864,
+      "fa": 224230,
+      "fbcd": 112110,
+      "autoContrast": true
+    },
+    {
+      "name": "Resonancia Magnética de Órbitas",
+      "desc": "Estudio de los globos oculares y estructuras orbitarias",
+      "part": 231150,
+      "fa": 201000,
+      "fbcd": 100500
+    },
+    {
+      "name": "Resonancia Magnética Articulaciones Temporomandibulares (ATM)",
+      "desc": "Evaluación de la articulación de la mandíbula",
+      "part": 248549,
+      "fa": 216130,
+      "fbcd": 108060
+    },
+    {
+      "name": "Resonancia Magnética Columna Cervical",
+      "desc": "Estudio de las vértebras cervicales y médula espinal del cuello",
+      "part": 247652,
+      "fa": 215350,
+      "fbcd": 107670
+    },
+    {
+      "name": "Resonancia Magnética Columna Dorsal",
+      "desc": "Evaluación de la columna torácica y médula espinal dorsal",
+      "part": 257554,
+      "fa": 223960,
+      "fbcd": 111980
+    },
+    {
+      "name": "Resonancia Magnética Columna Lumbar",
+      "desc": "Estudio de la columna lumbar, discos y raíces nerviosas",
+      "part": 247652,
+      "fa": 215350,
+      "fbcd": 107670
+    },
+    {
+      "name": "Resonancia Magnética Columna Total (Cervical, Dorsal, Lumbar)",
+      "desc": "Evaluación completa de toda la columna vertebral",
+      "part": 438207,
+      "fa": 381050,
+      "fbcd": 190520
+    },
+    {
+      "name": "Resonancia Magnética de Tórax",
+      "desc": "Estudio de estructuras torácicas, mediastino y pulmones",
+      "part": 265374,
+      "fa": 230760,
+      "fbcd": 115380
+    },
+    {
+      "name": "Resonancia Magnética Articulación Acromioclavicular",
+      "desc": "Evaluación de la articulación entre clavícula y acromion",
+      "part": 265374,
+      "fa": 230760,
+      "fbcd": 115380
+    },
+    {
+      "name": "Resonancia Magnética Articulación Esternoclavicular",
+      "desc": "Estudio de la articulación entre esternón y clavícula",
+      "part": 265374,
+      "fa": 230760,
+      "fbcd": 115380
+    },
+    {
+      "name": "Resonancia Magnética de Clavículas",
+      "desc": "Evaluación de las clavículas y tejidos adyacentes",
+      "part": 265374,
+      "fa": 230760,
+      "fbcd": 115380
+    },
+    {
+      "name": "Resonancia Magnética de Costillas",
+      "desc": "Estudio de las costillas y pared torácica",
+      "part": 265374,
+      "fa": 230760,
+      "fbcd": 115380
+    },
+    {
+      "name": "Resonancia Magnética de Corazón",
+      "desc": "Evaluación cardíaca, cámaras y función ventricular",
+      "part": 265374,
+      "fa": 230760,
+      "fbcd": 115380,
+      "autoContrast": true,
+      "note": "Ayuno mín. 6h · sin cafeína 24h · se inyecta contraste dos veces"
+    },
+    {
+      "name": "Resonancia Magnética de Esternón",
+      "desc": "Estudio del hueso esternón y articulaciones",
+      "part": 265374,
+      "fa": 230760,
+      "fbcd": 115380
+    },
+    {
+      "name": "Resonancia Magnética de Escápula",
+      "desc": "Evaluación del omóplato y estructuras periescapulares",
+      "part": 265374,
+      "fa": 230760,
+      "fbcd": 115380
+    },
+    {
+      "name": "Resonancia Magnética Pared Torácica",
+      "desc": "Estudio de la pared torácica o cada segmento/articulación",
+      "part": 265374,
+      "fa": 230760,
+      "fbcd": 115380
+    },
+    {
+      "name": "Resonancia Magnética Cardíaca",
+      "desc": "Estudio funcional y morfológico del corazón",
+      "part": 265374,
+      "fa": 230760,
+      "fbcd": 115380,
+      "autoContrast": true,
+      "note": "Ayuno mín. 6h · sin cafeína 24h · se inyecta contraste dos veces"
+    },
+    {
+      "name": "Resonancia Magnética de Abdomen",
+      "desc": "Evaluación de órganos abdominales (hígado, páncreas, riñones)",
+      "part": 247652,
+      "fa": 215350,
+      "fbcd": 107670,
+      "autoContrast": true,
+      "note": "Ayuno mín. 6h · máx. 6h"
+    },
+    {
+      "name": "Resonancia Magnética Renal",
+      "desc": "Estudio específico de los riñones y vías urinarias",
+      "part": 247652,
+      "fa": 215350,
+      "fbcd": 107670,
+      "autoContrast": true,
+      "note": "Ayuno mín. 6h · máx. 6h"
+    },
+    {
+      "name": "Resonancia Magnética de Pelvis / Defecografía",
+      "desc": "Evaluación de estructuras pélvicas y función del piso pélvico",
+      "part": 247652,
+      "fa": 215350,
+      "fbcd": 107670,
+      "note": "Ayuno mín. 6h · máx. 6h · vejiga semillena (orinar 1h antes)"
+    },
+    {
+      "name": "Resonancia Magnética Osteoarticular de Huesos Pélvicos",
+      "desc": "Estudio óseo de la pelvis y articulaciones",
+      "part": 247652,
+      "fa": 215350,
+      "fbcd": 107670
+    },
+    {
+      "name": "Resonancia Magnética de Órganos Pelvianos",
+      "desc": "Evaluación de órganos dentro de la pelvis",
+      "part": 247652,
+      "fa": 215350,
+      "fbcd": 107670,
+      "note": "Ayuno mín. 6h · máx. 6h · vejiga semillena (orinar 1h antes)"
+    },
+    {
+      "name": "Resonancia Magnética Osteoarticular de Sacroilíacas",
+      "desc": "Estudio de las articulaciones sacroilíacas",
+      "part": 247652,
+      "fa": 215350,
+      "fbcd": 107670,
+      "autoContrast": true
+    },
+    {
+      "name": "Resonancia Magnética Osteoarticular de Sacrocoxis",
+      "desc": "Evaluación del sacro y coxis",
+      "part": 247652,
+      "fa": 215350,
+      "fbcd": 107670
+    },
+    {
+      "name": "Resonancia Magnética Genitales Internos y Gastrointestinal",
+      "desc": "Estudio de órganos genitales internos y tracto GI",
+      "part": 247652,
+      "fa": 215350,
+      "fbcd": 107670,
+      "note": "Ayuno mín. 6h · máx. 6h"
+    },
+    {
+      "name": "Resonancia Magnética de Próstata",
+      "desc": "Evaluación de la glándula prostática (multiparamétrica)",
+      "part": 247652,
+      "fa": 215350,
+      "fbcd": 107670,
+      "autoContrast": true,
+      "note": "Ayuno mín. 6h · máx. 6h"
+    },
+    {
+      "name": "Resonancia Magnética de Glúteo",
+      "desc": "Estudio de la región glútea y musculatura",
+      "part": 247652,
+      "fa": 215350,
+      "fbcd": 107670
+    },
+    {
+      "name": "Resonancia Magnética de Abdomen y Pelvis",
+      "desc": "Evaluación combinada de abdomen y pelvis completa",
+      "part": 371439,
+      "fa": 322990,
+      "fbcd": 161490,
+      "autoContrast": true,
+      "note": "Ayuno mín. 6h · máx. 6h"
+    },
+    {
+      "name": "Angiografía por Resonancia Magnética de Encéfalo",
+      "desc": "Estudio vascular del encéfalo sin contraste",
+      "part": 265374,
+      "fa": 230760,
+      "fbcd": 115380
+    },
+    {
+      "name": "Angiografía por Resonancia Magnética de Cerebro",
+      "desc": "Evaluación de vasos sanguíneos cerebrales",
+      "part": 265374,
+      "fa": 230760,
+      "fbcd": 115380
+    },
+    {
+      "name": "Angiografía por Resonancia Magnética de Cuello",
+      "desc": "Estudio de arterias carótidas y vertebrales",
+      "part": 272895,
+      "fa": 237300,
+      "fbcd": 118650
+    },
+    {
+      "name": "Angiografía por Resonancia Magnética de Tórax",
+      "desc": "Evaluación vascular torácica (aorta, arterias pulmonares)",
+      "part": 268537,
+      "fa": 233510,
+      "fbcd": 116750
+    },
+    {
+      "name": "Angiografía por Resonancia Magnética de Abdomen",
+      "desc": "Estudio de vasos abdominales (aorta, renales, mesentéricas)",
+      "part": 250780,
+      "fa": 218070,
+      "fbcd": 109030,
+      "note": "Ayuno mín. 6h · máx. 6h"
+    },
+    {
+      "name": "Angiografía por Resonancia Magnética de Pelvis",
+      "desc": "Evaluación vascular pélvica e ilíaca",
+      "part": 257864,
+      "fa": 224230,
+      "fbcd": 112110,
+      "note": "Ayuno mín. 6h · máx. 6h"
+    },
+    {
+      "name": "Resonancia Magnética de Rodilla",
+      "desc": "Estudio de meniscos, ligamentos y cartílago de la rodilla",
+      "part": 203044,
+      "fa": 176560,
+      "fbcd": 88280
+    },
+    {
+      "name": "Resonancia Magnética de Mano o Muñeca",
+      "desc": "Evaluación de huesos, tendones y ligamentos de mano/muñeca",
+      "part": 217591,
+      "fa": 189210,
+      "fbcd": 94600
+    },
+    {
+      "name": "Resonancia Magnética de Antebrazo o Brazo",
+      "desc": "Estudio de tejidos blandos y óseos del miembro superior",
+      "part": 208069,
+      "fa": 180930,
+      "fbcd": 90460
+    },
+    {
+      "name": "Resonancia Magnética de Codo",
+      "desc": "Evaluación de la articulación del codo y estructuras",
+      "part": 211427,
+      "fa": 183850,
+      "fbcd": 91920
+    },
+    {
+      "name": "Resonancia Magnética de Hombro",
+      "desc": "Estudio del manguito rotador, labrum y articulación",
+      "part": 203044,
+      "fa": 176560,
+      "fbcd": 88280
+    },
+    {
+      "name": "Resonancia Magnética de Pie, Antepié o Tobillo",
+      "desc": "Evaluación de articulaciones y tejidos del pie/tobillo",
+      "part": 203044,
+      "fa": 176560,
+      "fbcd": 88280
+    },
+    {
+      "name": "Resonancia Magnética de Pierna",
+      "desc": "Estudio de la pierna (tibia, peroné, tejidos blandos)",
+      "part": 208966,
+      "fa": 181710,
+      "fbcd": 90850
+    },
+    {
+      "name": "Resonancia Magnética de Muslo o Cadera (Unilateral)",
+      "desc": "Evaluación de cadera, fémur y musculatura del muslo",
+      "part": 211427,
+      "fa": 183850,
+      "fbcd": 91920
+    },
+    {
+      "name": "Colangioresonancia Magnética",
+      "desc": "Estudio de vías biliares y conducto pancreático sin contraste",
+      "part": 165888,
+      "fa": 144250,
+      "fbcd": 72120,
+      "note": "Ayuno estricto mín. 6h · máx. 8h · sin contraste"
+    },
+    {
+      "name": "Protocolo PEP (Resonancia Magnética)",
+      "desc": "Protocolo especial combinado (códigos 0405016 y 0405011)",
+      "part": 685860,
+      "fa": 596400,
+      "fbcd": 298190,
+      "note": "Sin contraste. Combina códigos 0405016 y 0405011"
+    }
+  ],
+  "tac": [
+    {
+      "name": "TAC Cráneo Encefálica (Cerebro)",
+      "desc": "Tomografía computarizada del cerebro y estructuras craneales",
+      "part": 104213,
+      "fa": 90620,
+      "fbcd": 55760
+    },
+    {
+      "name": "TAC Hipotálamo-Hipófisis",
+      "desc": "Estudio tomográfico de la región selar y pituitaria",
+      "part": 109675,
+      "fa": 95370,
+      "fbcd": 58690,
+      "autoContrast": true
+    },
+    {
+      "name": "TAC Fosa Posterior",
+      "desc": "Evaluación del cerebelo y tronco encefálico por TC",
+      "part": 94197,
+      "fa": 81910,
+      "fbcd": 50400,
+      "autoContrast": true
+    },
+    {
+      "name": "TAC Temporal-Oído",
+      "desc": "Estudio de huesos temporales y estructuras del oído",
+      "part": 90448,
+      "fa": 78650,
+      "fbcd": 48400
+    },
+    {
+      "name": "TAC Cavidades Perinasales (CPN)",
+      "desc": "Evaluación de senos paranasales y fosas nasales",
+      "part": 120945,
+      "fa": 105170,
+      "fbcd": 64720
+    },
+    {
+      "name": "TAC Órbitas / Maxilofacial",
+      "desc": "Estudio de órbitas oculares y huesos de la cara",
+      "part": 120945,
+      "fa": 105170,
+      "fbcd": 64720
+    },
+    {
+      "name": "TAC Columna Cervical",
+      "desc": "Tomografía de vértebras cervicales y canal medular",
+      "part": 132492,
+      "fa": 115210,
+      "fbcd": 70900
+    },
+    {
+      "name": "TAC Columna Dorsal (mínimo 6 espacios)",
+      "desc": "Estudio de la columna torácica con mínimo 6 niveles",
+      "part": 116092,
+      "fa": 100950,
+      "fbcd": 62120
+    },
+    {
+      "name": "TAC Columna Lumbar",
+      "desc": "Evaluación de vértebras lumbares y discos intervertebrales",
+      "part": 116092,
+      "fa": 100950,
+      "fbcd": 62120
+    },
+    {
+      "name": "TAC Cuello (Partes Blandas)",
+      "desc": "Estudio de tejidos blandos del cuello (tiroides, ganglios)",
+      "part": 97911,
+      "fa": 85140,
+      "fbcd": 52390,
+      "autoContrast": true
+    },
+    {
+      "name": "TAC de Tórax Completo",
+      "desc": "Incluye esternón, clavículas, articulaciones, escápula, costillas. Bilateral",
+      "part": 154641,
+      "fa": 134470,
+      "fbcd": 82750
+    },
+    {
+      "name": "TAC de Abdomen",
+      "desc": "Evaluación de hígado, vías biliares, páncreas, bazo, suprarrenales y riñones",
+      "part": 93104,
+      "fa": 80960,
+      "fbcd": 49820,
+      "autoContrast": true
+    },
+    {
+      "name": "TAC Musculoesquelética",
+      "desc": "Muslo, pierna, rodillas, antebrazo, codo, muñeca, mano, hombro, pie, tobillo. Bilateral solo rodillas",
+      "part": 83364,
+      "fa": 72490,
+      "fbcd": 44610
+    },
+    {
+      "name": "TAC de Pelvis",
+      "desc": "Incluye sacro, coxis, caderas, huesos pélvicos, articulaciones sacroilíacas. Bilateral",
+      "part": 95484,
+      "fa": 83030,
+      "fbcd": 51090
+    },
+    {
+      "name": "TAC de Abdomen y Pelvis",
+      "desc": "Estudio combinado de abdomen y pelvis completa",
+      "part": 151973,
+      "fa": 132150,
+      "fbcd": 81320,
+      "autoContrast": true
+    },
+    {
+      "name": "TAC de Tórax, Abdomen y Pelvis",
+      "desc": "Evaluación completa de tórax, abdomen y pelvis en un estudio",
+      "part": 306613,
+      "fa": 266620,
+      "fbcd": 164070,
+      "autoContrast": true
+    },
+    {
+      "name": "Pielografía por TAC",
+      "desc": "Estudio de vías urinarias con contraste endovenoso",
+      "part": 40020,
+      "fa": 34800,
+      "fbcd": 21410
+    },
+    {
+      "name": "Urografía por TAC (UroTAC)",
+      "desc": "Evaluación completa del tracto urinario por tomografía",
+      "part": 89401,
+      "fa": 77740,
+      "fbcd": 47840,
+      "autoContrast": true
+    },
+    {
+      "name": "AngioTAC de Cuello",
+      "desc": "Estudio vascular de arterias carótidas y vertebrales",
+      "part": 103799,
+      "fa": 90260,
+      "fbcd": 55540,
+      "autoContrast": true
+    },
+    {
+      "name": "AngioTAC de Pelvis",
+      "desc": "Evaluación de vasos ilíacos y pélvicos",
+      "part": 75693,
+      "fa": 65820,
+      "fbcd": 40500,
+      "autoContrast": true
+    },
+    {
+      "name": "AngioTAC de Encéfalo",
+      "desc": "Estudio vascular cerebral con contraste (polígono de Willis)",
+      "part": 126316,
+      "fa": 109840,
+      "fbcd": 67590,
+      "autoContrast": true
+    },
+    {
+      "name": "AngioTAC de Tórax",
+      "desc": "Evaluación de aorta torácica y arterias pulmonares (TEP)",
+      "part": 190164,
+      "fa": 165360,
+      "fbcd": 101760,
+      "autoContrast": true
+    },
+    {
+      "name": "AngioTAC de Abdomen",
+      "desc": "Estudio de aorta abdominal, arterias renales y mesentéricas",
+      "part": 176065,
+      "fa": 153100,
+      "fbcd": 94210,
+      "autoContrast": true
+    },
+    {
+      "name": "AngioTAC de Extremidades Inferiores (bilateral)",
+      "desc": "Evaluación vascular arterial de ambas piernas",
+      "part": 143670,
+      "fa": 124930,
+      "fbcd": 76880,
+      "autoContrast": true
+    },
+    {
+      "name": "AngioTAC de Extremidad Superior (unilateral)",
+      "desc": "Estudio vascular arterial de un brazo",
+      "part": 147189,
+      "fa": 127990,
+      "fbcd": 78760,
+      "autoContrast": true
+    }
+  ],
+  "ecografia": [
+    {
+      "name": "Ecografía Abdominal",
+      "desc": "Evaluación de hígado, vesícula, páncreas, bazo y riñones",
+      "part": 41216,
+      "fa": 35840,
+      "fbcd": 22050,
+      "note": "6 horas de ayuno total (líquidos y sólidos)"
+    },
+    {
+      "name": "Ecografía Abdominal y Pelviana Femenina",
+      "desc": "Estudio abdominal completo más órganos pélvicos femeninos",
+      "part": 63146,
+      "fa": 54910,
+      "fbcd": 33780,
+      "note": "6 horas de ayuno total (líquidos y sólidos)"
+    },
+    {
+      "name": "Ecografía Abdominal y Pelviana Masculina",
+      "desc": "Estudio abdominal completo más órganos pélvicos masculinos",
+      "part": 64135,
+      "fa": 55770,
+      "fbcd": 34310,
+      "note": "6 horas de ayuno total (líquidos y sólidos)"
+    },
+    {
+      "name": "Ecografía Renal y Vesical Femenina",
+      "desc": "Evaluación de riñones y vejiga en mujeres",
+      "part": 50496,
+      "fa": 43910,
+      "fbcd": 27010,
+      "note": "6 horas de ayuno total (líquidos y sólidos)"
+    },
+    {
+      "name": "Ecografía Renal y Vesical Masculina",
+      "desc": "Evaluación de riñones y vejiga en hombres",
+      "part": 51485,
+      "fa": 44770,
+      "fbcd": 27540,
+      "note": "6 horas de ayuno total (líquidos y sólidos)"
+    },
+    {
+      "name": "Ecografía Pelviana Femenina",
+      "desc": "Estudio de útero, ovarios y estructuras pélvicas femeninas",
+      "part": 21931,
+      "fa": 19070,
+      "fbcd": 11730,
+      "note": "6 horas de ayuno total (líquidos y sólidos)"
+    },
+    {
+      "name": "Ecografía Pélvica Masculina (Prostática)",
+      "desc": "Evaluación de próstata y vejiga por vía abdominal",
+      "part": 22920,
+      "fa": 19930,
+      "fbcd": 12260,
+      "note": "6 horas de ayuno total (líquidos y sólidos)"
+    },
+    {
+      "name": "Ecografía Renal Bilateral o de Bazo",
+      "desc": "Estudio de ambos riñones o evaluación esplénica",
+      "part": 28566,
+      "fa": 24840,
+      "fbcd": 15280,
+      "note": "6 horas de ayuno total (líquidos y sólidos)"
+    },
+    {
+      "name": "Ecografía Mamaria Bilateral (incluye Doppler)",
+      "desc": "Evaluación de ambas mamas con estudio vascular Doppler",
+      "part": 28715,
+      "fa": 24970,
+      "fbcd": 15360,
+      "note": "Pacientes >40 años deben traer mamografía con menos de 6 meses de antigüedad. No aplicar desodorante, cremas ni talcos en la zona."
+    },
+    {
+      "name": "Ecografía Testicular (uni o bilateral, incluye Doppler)",
+      "desc": "Estudio de testículos con evaluación vascular",
+      "part": 28347,
+      "fa": 24650,
+      "fbcd": 15170
+    },
+    {
+      "name": "Ecografía Tiroidea (incluye Doppler)",
+      "desc": "Evaluación de la glándula tiroides con estudio vascular",
+      "part": 28715,
+      "fa": 24970,
+      "fbcd": 15360
+    },
+    {
+      "name": "Ecografía de Partes Blandas / Musculoesquelética (ATM)",
+      "desc": "Estudio de tejidos blandos, músculos o articulaciones por zona",
+      "part": 28715,
+      "fa": 24970,
+      "fbcd": 15360
+    },
+    {
+      "name": "Ecografía Inguinal",
+      "desc": "Evaluación de la región inguinal (hernias, ganglios)",
+      "part": 28715,
+      "fa": 24970,
+      "fbcd": 15360
+    },
+    {
+      "name": "Ecografía de Pared Abdominal",
+      "desc": "Estudio de la pared abdominal (hernias, masas)",
+      "part": 28715,
+      "fa": 24970,
+      "fbcd": 15360,
+      "note": "6 horas de ayuno total (líquidos y sólidos)"
+    },
+    {
+      "name": "Doppler Vascular Periférico (arterial y venoso, bilateral)",
+      "desc": "Evaluación de arterias y venas de extremidades",
+      "part": 94242,
+      "fa": 81950,
+      "fbcd": 50430
+    },
+    {
+      "name": "Doppler Venoso por Insuficiencia o Várices (EEII)",
+      "desc": "Estudio de insuficiencia venosa y várices en piernas",
+      "part": 94242,
+      "fa": 81950,
+      "fbcd": 50430
+    },
+    {
+      "name": "Doppler por Trombosis Venosa Profunda (TVP)",
+      "desc": "Descarte de trombosis venosa profunda en extremidades",
+      "part": 94242,
+      "fa": 81950,
+      "fbcd": 50430
+    },
+    {
+      "name": "Doppler Carotídeo / Vasos del Cuello",
+      "desc": "Evaluación de arterias carótidas y vertebrales",
+      "part": 88999,
+      "fa": 77390,
+      "fbcd": 47620
+    },
+    {
+      "name": "Doppler Testicular",
+      "desc": "Estudio vascular testicular (torsión, varicocele)",
+      "part": 97117,
+      "fa": 84450,
+      "fbcd": 51970
+    },
+    {
+      "name": "Doppler Renal",
+      "desc": "Evaluación vascular de arterias y venas renales",
+      "part": 97117,
+      "fa": 84450,
+      "fbcd": 51970,
+      "note": "Ayuno estricto de sólidos y líquidos mínimo 8 horas"
+    },
+    {
+      "name": "Doppler Abdominal",
+      "desc": "Estudio vascular de vasos abdominales principales",
+      "part": 97117,
+      "fa": 84450,
+      "fbcd": 51970,
+      "note": "Ayuno estricto de sólidos y líquidos mínimo 8 horas"
+    },
+    {
+      "name": "Elastografía Hepática",
+      "desc": "Medición de rigidez hepática para evaluar fibrosis del hígado",
+      "part": 228884,
+      "fa": 199030,
+      "fbcd": 99510,
+      "note": "Ayuno mínimo de 6 horas"
+    }
+  ],
+  "radiografia": [
+    {
+      "name": "Radiografía de Partes Blandas / Laringe / Cavum / Rinofaringe",
+      "desc": "Estudio de tejidos blandos del cuello y nasofaringe",
+      "part": 14547,
+      "fa": 12650,
+      "fbcd": 7780
+    },
+    {
+      "name": "Radiografía de Tórax Proyección Complementaria",
+      "desc": "Proyecciones oblicuas, selectivas u otras adicionales",
+      "part": 13397,
+      "fa": 11650,
+      "fbcd": 7170
+    },
+    {
+      "name": "Radiografía de Tórax Simple (frontal o lateral)",
+      "desc": "Estudio básico del tórax en una proyección",
+      "part": 16526,
+      "fa": 14370,
+      "fbcd": 8840
+    },
+    {
+      "name": "Radiografía de Tórax Frontal y Lateral",
+      "desc": "Estudio estándar del tórax en dos proyecciones",
+      "part": 29796,
+      "fa": 25910,
+      "fbcd": 15940
+    },
+    {
+      "name": "Radiografía de Abdomen Simple",
+      "desc": "Evaluación radiológica del abdomen (gas, niveles)",
+      "part": 15145,
+      "fa": 13170,
+      "fbcd": 8100
+    },
+    {
+      "name": "Radiografía de Abdomen Proyección Complementaria",
+      "desc": "Proyección lateral y/o oblicua adicional del abdomen",
+      "part": 10914,
+      "fa": 9490,
+      "fbcd": 5840
+    },
+    {
+      "name": "Radiografía Renal Simple",
+      "desc": "Estudio radiológico simple de la región renal",
+      "part": 13938,
+      "fa": 12120,
+      "fbcd": 7460
+    },
+    {
+      "name": "Radiografía Vesical Simple o Perivesical",
+      "desc": "Evaluación radiológica de la vejiga y región perivesical",
+      "part": 12006,
+      "fa": 10440,
+      "fbcd": 6420
+    },
+    {
+      "name": "Radiografía CPN / Órbitas / ATM / Huesos Nasales / Malar / Maxilar / Cara",
+      "desc": "Estudio de cavidades perinasales, órbitas, ATM, huesos faciales",
+      "part": 16399,
+      "fa": 14260,
+      "fbcd": 8770
+    },
+    {
+      "name": "Radiografía de Cráneo Frontal y Lateral",
+      "desc": "Estudio radiológico del cráneo en dos proyecciones",
+      "part": 17147,
+      "fa": 14910,
+      "fbcd": 9170
+    },
+    {
+      "name": "Radiografía de Cráneo Proyección Especial (Base/Towne)",
+      "desc": "Proyección especial de base de cráneo",
+      "part": 12017,
+      "fa": 10450,
+      "fbcd": 6430
+    },
+    {
+      "name": "Radiografía de Oído (unilateral o bilateral)",
+      "desc": "Estudio radiológico de peñascos y oído",
+      "part": 20746,
+      "fa": 18040,
+      "fbcd": 11100
+    },
+    {
+      "name": "Radiografía Silla Turca Frontal y Lateral",
+      "desc": "Evaluación radiológica de la silla turca",
+      "part": 19171,
+      "fa": 16670,
+      "fbcd": 10260
+    },
+    {
+      "name": "Radiografía Columna Cervical o Atlas-Axis (frontal y lateral)",
+      "desc": "Estudio de columna cervical alta en dos proyecciones",
+      "part": 16526,
+      "fa": 14370,
+      "fbcd": 8840
+    },
+    {
+      "name": "Radiografía Columna Cervical (frontal, lateral y oblicuas)",
+      "desc": "Estudio completo de columna cervical en 4 proyecciones",
+      "part": 27807,
+      "fa": 24180,
+      "fbcd": 14880
+    },
+    {
+      "name": "Radiografía Columna Cervical Flexión y Extensión (dinámicas)",
+      "desc": "Evaluación de inestabilidad cervical con movimiento",
+      "part": 15594,
+      "fa": 13560,
+      "fbcd": 8340
+    },
+    {
+      "name": "Radiografía Columna Dorsal / Dorsolumbar / Parrilla Costal",
+      "desc": "Estudio de columna torácica o parrilla costal (frontal y lateral)",
+      "part": 19240,
+      "fa": 16730,
+      "fbcd": 10290
+    },
+    {
+      "name": "Radiografía Columna Lumbar o Lumbosacra (frontal, lateral, focalizada)",
+      "desc": "Estudio de columna lumbar con foco en 5° espacio",
+      "part": 28485,
+      "fa": 24770,
+      "fbcd": 15240
+    },
+    {
+      "name": "Radiografía Columna Lumbar Flexión y Extensión (dinámicas)",
+      "desc": "Evaluación de inestabilidad lumbar con movimiento",
+      "part": 23161,
+      "fa": 20140,
+      "fbcd": 12390
+    },
+    {
+      "name": "Radiografía Columna Lumbar Oblicuas Adicionales",
+      "desc": "Proyecciones oblicuas complementarias de columna lumbar",
+      "part": 15594,
+      "fa": 13560,
+      "fbcd": 8340
+    },
+    {
+      "name": "Radiografía Columna Total AP/LAT Panorámica con Folio Graduado",
+      "desc": "Estudio panorámico de toda la columna con medición",
+      "part": 21310,
+      "fa": 18530,
+      "fbcd": 11400,
+      "note": "Se cobra por dos proyecciones"
+    },
+    {
+      "name": "Radiografía de Cadera / Coxofemoral / Pelvis",
+      "desc": "Estudio de cadera derecha, izquierda o pelvis completa",
+      "part": 12661,
+      "fa": 11010,
+      "fbcd": 6770,
+      "note": "Solo una proyección por examen"
+    },
+    {
+      "name": "Radiografía Pelvis/Cadera de Recién Nacido o Niño < 6 años",
+      "desc": "Evaluación de caderas en lactantes y niños pequeños",
+      "part": 12661,
+      "fa": 11010,
+      "fbcd": 6770,
+      "note": "Solo una proyección por examen"
+    },
+    {
+      "name": "Radiografía Pelvis/Cadera Proyecciones Especiales",
+      "desc": "Rotación interna, abducción, lateral, Lawenstein u otras",
+      "part": 11546,
+      "fa": 10040,
+      "fbcd": 6180
+    },
+    {
+      "name": "Radiografía Articulaciones Sacroilíacas / Sacrocoxis",
+      "desc": "Estudio de articulaciones sacroilíacas y sacrocoxis",
+      "part": 17377,
+      "fa": 15110,
+      "fbcd": 9300
+    },
+    {
+      "name": "Radiografía de Extremidades (brazo, antebrazo, codo, muñeca, mano, dedos, pie)",
+      "desc": "Estudio de cualquier segmento de extremidad superior o inferior",
+      "part": 14409,
+      "fa": 12530,
+      "fbcd": 7710,
+      "note": "Siempre incluye proyecciones AP y Lateral"
+    },
+    {
+      "name": "Radiografía de Clavícula",
+      "desc": "Evaluación radiológica de la clavícula",
+      "part": 16859,
+      "fa": 14660,
+      "fbcd": 9020
+    },
+    {
+      "name": "Radiografía Edad Ósea: Carpo y Mano",
+      "desc": "Determinación de edad ósea mediante radiografía de mano",
+      "part": 12017,
+      "fa": 10450,
+      "fbcd": 6430
+    },
+    {
+      "name": "Radiografía Edad Ósea: Rodilla Frontal",
+      "desc": "Determinación de edad ósea mediante radiografía de rodilla",
+      "part": 12546,
+      "fa": 10910,
+      "fbcd": 6710
+    },
+    {
+      "name": "Radiografía Estudio de Escafoides",
+      "desc": "Evaluación específica del hueso escafoides de la muñeca",
+      "part": 18849,
+      "fa": 16390,
+      "fbcd": 10080
+    },
+    {
+      "name": "Radiografía Muñeca Derecha AP-LAT-OBL",
+      "desc": "Estudio completo de muñeca derecha en 3 proyecciones",
+      "part": 16295,
+      "fa": 14170,
+      "fbcd": 8720
+    },
+    {
+      "name": "Radiografía Muñeca Izquierda AP-LAT-OBL",
+      "desc": "Estudio completo de muñeca izquierda en 3 proyecciones",
+      "part": 16295,
+      "fa": 14170,
+      "fbcd": 8720
+    },
+    {
+      "name": "Radiografía Tobillo Derecho AP-LAT-OBL",
+      "desc": "Estudio completo de tobillo derecho en 3 proyecciones",
+      "part": 16295,
+      "fa": 14170,
+      "fbcd": 8720
+    },
+    {
+      "name": "Radiografía Tobillo Izquierdo AP-LAT-OBL",
+      "desc": "Estudio completo de tobillo izquierdo en 3 proyecciones",
+      "part": 16295,
+      "fa": 14170,
+      "fbcd": 8720
+    },
+    {
+      "name": "Radiografía Hombro / Fémur / Rodilla / Pierna / Costilla / Esternón / Escápula",
+      "desc": "Estudio de articulaciones y huesos grandes de extremidades",
+      "part": 17043,
+      "fa": 14820,
+      "fbcd": 9120
+    },
+    {
+      "name": "Teleradiografía de Extremidades Inferiores",
+      "desc": "Medición de longitud de miembros inferiores",
+      "part": 34086,
+      "fa": 29640,
+      "fbcd": 18240,
+      "note": "Se cobra por dos proyecciones (cada extremidad)"
+    },
+    {
+      "name": "Radiografía Proyecciones Especiales (oblicuas, rótulas, sesamoideos, Rosemberg)",
+      "desc": "Proyecciones especiales en hombro, brazo, codo, rodilla u otros",
+      "part": 11856,
+      "fa": 10310,
+      "fbcd": 6340
+    },
+    {
+      "name": "Radiografía Túnel Intercondíleo o Radio-Carpiano",
+      "desc": "Proyección especial del túnel intercondíleo o articulación radio-carpiana",
+      "part": 11546,
+      "fa": 10040,
+      "fbcd": 6180
+    }
+  ],
+  "mamografia": [
+    {
+      "name": "Mamografía Bilateral",
+      "desc": "Estudio mamográfico de ambas mamas (cráneo-caudal y oblicua)",
+      "part": 35133,
+      "fa": 30550,
+      "fbcd": 18800,
+      "note": "Aseo en zona del examen. No aplicar desodorante, cremas ni talcos."
+    },
+    {
+      "name": "Mamografía Unilateral",
+      "desc": "Estudio mamográfico de una mama",
+      "part": 20631,
+      "fa": 17940,
+      "fbcd": 11040
+    },
+    {
+      "name": "Mamografía Proyección Complementaria",
+      "desc": "Proyección adicional focalizada o magnificada",
+      "part": 7532,
+      "fa": 6550,
+      "fbcd": 4030
+    }
+  ],
+  "contraste": [
+    {
+      "name": "Medio de Contraste TAC Cerebro/Cavidades",
+      "desc": "Contraste endovenoso para TAC de cerebro o cavidades",
+      "part": 25000,
+      "fa": 25000,
+      "fbcd": 25000
+    },
+    {
+      "name": "Medio de Contraste TAC Tórax/Abdomen/Pelvis/Cuello/UroTAC",
+      "desc": "Contraste endovenoso para TAC de tórax, abdomen, pelvis o cuello",
+      "part": 43000,
+      "fa": 43000,
+      "fbcd": 43000
+    },
+    {
+      "name": "Medio de Contraste AngioTAC",
+      "desc": "Contraste endovenoso específico para estudios de angiografía por TAC",
+      "part": 50000,
+      "fa": 50000,
+      "fbcd": 50000
+    }
+  ],
+  "cardiologia": [
+    {
+      "name": "Electrocardiograma (ECG)",
+      "desc": "Registro de la actividad eléctrica del corazón en reposo",
+      "part": 10000,
+      "fa": 10000,
+      "fbcd": 10000,
+      "particular": true
+    },
+    {
+      "name": "Holter de Ritmo Cardíaco (24 horas)",
+      "desc": "Monitoreo continuo del ritmo cardíaco durante 24 horas",
+      "part": 50000,
+      "fa": 50000,
+      "fbcd": 50000,
+      "particular": true,
+      "note": "Paciente debe traer 1 pila AA"
+    },
+    {
+      "name": "Holter de Presión Arterial (MAPA 24 horas)",
+      "desc": "Monitoreo ambulatorio de presión arterial durante 24 horas",
+      "part": 40000,
+      "fa": 40000,
+      "fbcd": 40000,
+      "particular": true,
+      "note": "Paciente debe traer 2 pilas AA"
+    }
+  ],
+  "canastas": []
+}

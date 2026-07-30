@@ -1,0 +1,71 @@
+Entiendo perfectamente el problema. Las IA suelen tener dificultades interpretando "estilos" o colores directamente desde archivos si no se les especifica la regla exacta de manera textual y estructurada. Además, la pérdida de responsividad (que la página se "achique" o se rompa el diseño al agregar un perfil) es un error de CSS/diseño clásico que hay que pedirle que solucione con prioridad.
+
+A continuación, tienes el nuevo prompt completamente reformulado, ultra-detallado y masticado con instrucciones técnicas explícitas para que la IA que está programando tu web no cometa errores.
+
+Copia y pega el siguiente prompt:
+Asunto: Solución de Bugs de UI (Responsividad) y Actualización de Reglas de Negocio en Módulos de Laboratorio e Imagenología.
+
+Descripción del Problema y Requerimientos:
+Necesitamos corregir varios errores críticos de diseño y funcionalidad en la plataforma de cotizaciones, además de integrar datos específicos del archivo de Excel adjunto y de la imagen de referencia Captura.PNG.
+
+Aplica estrictamente las siguientes instrucciones de desarrollo divididas por módulos:
+
+1. Corrección de Bug Crítico de UI (Módulo de Cotización)
+Problema: Al agregar un perfil de laboratorio completo, la página web experimenta un error de renderizado (se bugea), pierde su estructura responsiva y el contenedor visual se reduce de tamaño (se achica).
+
+Solución Técnica Requerida: Revisa y corrige las propiedades de CSS (como flex-direction, grid-template-columns, width, u desbordamientos de texto con overflow). Asegúrate de que al inyectar múltiples exámenes (componentes de un perfil) al carrito de cotización, el contenedor mantenga su ancho completo, se adapte dinámicamente de forma fluida y no rompa la maquetación ni en escritorio ni en dispositivos móviles.
+
+2. Inclusión de Exámenes Externos (No Realizados Internamente)
+Requerimiento: En el buscador y en la lista final de la cotización, se deben añadir obligatoriamente al final de todo el catálogo cada uno de los exámenes que NO realizamos en nuestro laboratorio clínico (puedes verlos detallados en la pestaña SOLO PARTICULARES del Excel).
+
+Formato Obligatorio en Interfaz: Cada uno de estos exámenes externos debe mostrarse de manera estricta en texto de color ROJO, incluyendo su respectivo código y su valor particular asignado (según los datos del Excel).
+
+3. Mapeo Explícito de Colores por Perfil (Referencia: Captura.PNG)
+Para evitar errores de interpretación con los estilos visuales, debes programar la interfaz aplicando de forma exacta los siguientes colores de fondo (background-color) para los encabezados de cada perfil en la sección de laboratorio:
+
+Perfil Bioquímico (Código 0302075): Color Naranja.
+
+Perfil Hepático (Código 0302076): Color Azul Celeste.
+
+Perfil Lipídico (Código 0302034): Color Amarillo.
+
+Perfil Renal: Color Negro (con texto en blanco para legibilidad).
+
+Perfil Tiroideo: Color Verde.
+
+HOMA: Color Gris Claro.
+
+Cinética del Fierro: Color Azul Oscuro / Marino (con texto en blanco).
+
+RAC (Relación Entre): Color Rosado Pálido / Salmón.
+
+Insulina Post Pandrial / Perfil Tiroideo: Color Verde.
+
+Insulina Post Carga: Color Azul Grisáceo / Pizarra.
+
+Glucosa Post Pandrial: Color Amarillo Claro (Notas de "No se vende líquido" en Rojo).
+
+Glucosa Post Carga: Color Rojo.
+
+Anticuerpos Antitiroides: Color Negro (con texto en blanco).
+
+Perfil de Coagulación: Color Gris Oscuro.
+
+4. Actualización de Precios desde Fonasa para Perfiles sin Valor
+Requerimiento: En la pestaña de PERFILES, notarás que algunos perfiles o exámenes no tienen el precio digitalizado directamente pero sí cuentan con su código Fonasa.
+
+Lógica de Precios: Para estos casos, se deben consultar o estructurar bajo los valores oficiales de Fonasa (Disponibles en: [https://nuevo.fonasa.gob.cl/cotiza-tu-bono/](https://nuevo.fonasa.gob.cl/cotiza-tu-bono/)). Aplica la siguiente equivalencia para guardarlos en la base de datos:
+
+El Monto Nivel 2: Particular corresponderá a nuestro Valor Particular.
+
+El Copago Nivel 2: Valor Fonasa corresponderá a nuestro Valor Fonasa.
+(Nota al programador/IA: Si no puedes hacer el scraping o consulta automática de la URL, deja los campos de precio de esos códigos listos y vacíos en el backend; el administrador los rellenará a mano, pero la estructura del código y perfil debe quedar creada).
+
+5. Optimización del Módulo de Imagenología (Multi-Selección y Cantidades)
+Multi-Selección: Modifica la lógica actual para permitir que el usuario o el operador pueda agregar más de un examen de imagenología a la misma cotización (actualmente la interfaz restringe o no muestra correctamente múltiples ítems de esta categoría).
+
+Duplicados / Cantidad: Debe ser completamente posible agregar dos o más unidades del mismo examen exacto (ej. agregar Cantidad: 2 de la misma Resonancia).
+
+Lógica de Descuentos: El descuento configurado en el sistema debe aplicar de forma masiva e individual a cada ítem repetido. Es decir, si el paciente agrega 2 Resonancias idénticas y hay un descuento activo para ese examen, el descuento debe calcularse y aplicarse a las 2 resonancias por igual, multiplicando correctamente el beneficio en el total de la cotización.
+
+Por favor, confirma la recepción de estas instrucciones y prioriza la resolución del bug visual del carrito antes de avanzar con la carga de los nuevos códigos en rojo.

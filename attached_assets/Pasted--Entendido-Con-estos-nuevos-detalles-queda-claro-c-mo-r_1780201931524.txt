@@ -1,0 +1,40 @@
+¡Entendido! Con estos nuevos detalles queda claro cómo refinar el comportamiento de la base de datos, corregir las excepciones de los exámenes que no deben venderse y optimizar la interfaz para los perfiles de laboratorio.
+
+Aquí tienes la reformulación perfecta y estructurada para que se la envíes directamente a la IA o desarrollador:
+
+Copia y pega el siguiente prompt:
+Asunto: Corrección de reglas para exámenes particulares, exclusiones críticas de laboratorio y optimización de UI para perfiles.
+
+Descripción de los Ajustes:
+Necesitamos aplicar correcciones inmediatas sobre la lógica de importación del Excel, ajustar la visualización de precios y optimizar la experiencia de usuario (UX) en la sección de perfiles para evitar sobrecargar la pantalla.
+
+Aplica detalladamente las siguientes instrucciones:
+
+1. Corrección en la lógica de Exámenes Particulares (Ajuste de Alerta)
+Corrección: La IA interpretó erróneamente que los exámenes particulares debían marcarse en rojo o llevar el texto explícito de "* PARTICULAR *".
+
+Nueva Regla Visual y de Precios: No es necesario añadir la palabra "* PARTICULAR *" al nombre del examen. En su lugar, el sistema debe marcar/destacar visualmente en AMARILLO estos ítems.
+
+Precios: El precio que se debe mostrar para estos casos es el Valor Particular, asegurando estrictamente que no se altere ni modifique el monto de precio original registrado en el Excel.
+
+2. Filtro y Exclusión de Exámenes que "NO SE HACEN"
+Regla de Exclusión: Existen ciertos ítems en el catálogo de laboratorio que están marcados con la observación o condición de "NO SE HACEN". Estos exámenes NO deben permitir agregarse a la cotización bajo ninguna circunstancia.
+
+Comportamiento en Sistema: Al igual que ya hiciste correctamente con el código 0301095, para estos casos el sistema únicamente debe registrar o mapear en la base de datos el código y el nombre para control interno, pero no deben quedar disponibles para la venta ni sumarse al cotizador.
+
+Exclusiones Específicas Urgentes (Bloquear en la plataforma): Asegúrate de aplicar esta misma regla de bloqueo (no permitir agregar) a los siguientes exámenes específicos:
+
+Dímero-D
+
+Amplificación de DNA de Bordetella Pertussis por técnica de biología molecular en tiempo real.
+
+Virus Papiloma Humano por PCR con genotipificación de papiloma de alto riesgo de Cáncer Cérvico Uterino tipos 16 y 18.
+
+3. Rediseño del Espacio de Perfiles (Optimización de UI / Acordeón)
+Problema de Espacio: Actualmente, los perfiles de laboratorio (al contener listas largas de exámenes internos) ocupan demasiado espacio vertical en la pantalla, saturando la página web.
+
+Solución de Diseño Requerida: Implementa un componente de tipo Acordeón o Desplegable (Dropdown / Toggle) para cada perfil.
+
+Interacción: Por defecto, el perfil debe mostrarse de forma compacta (solo su encabezado con su respectivo código y color asignado anteriormente). Cuando el usuario haga clic en un botón o en el título del perfil, este debe "desplazarse" o expandirse suavemente hacia abajo para revelar los exámenes individuales que lo componen. Al volver a hacer clic, debe contraerse.
+
+Por favor, confirma que comprendes la diferencia entre los exámenes marcados en amarillo (particulares que sí se cotizan) y las exclusiones de los que no se hacen (como el Dímero-D o el Virus Papiloma Humano que quedan bloqueados).

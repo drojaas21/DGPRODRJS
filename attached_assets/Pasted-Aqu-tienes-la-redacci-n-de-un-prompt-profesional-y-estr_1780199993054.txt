@@ -1,0 +1,34 @@
+Aquí tienes la redacción de un prompt profesional y estructurado listo para que se lo envíes al desarrollador web, a la agencia de software o a la IA que esté programando tu página web.
+
+Este prompt detalla con total claridad cada requerimiento técnico y visual basándose rigurosamente en el archivo Excel que adjuntaste.
+
+Copia y pega el siguiente texto como prompt:
+Asunto: Actualización y optimización del módulo de cotización y buscador de exámenes de laboratorio según archivo maestro adjunto.
+
+Descripción del Proyecto: Necesitamos actualizar e integrar la lógica completa de exámenes clínicos en nuestra plataforma/página web utilizando los datos provistos en el archivo de Excel adjunto (valor laboratorio mejorado (1).xlsm). El sistema debe reflejar fielmente los códigos, nombres, precios, perfiles, observaciones, colores de interfaz y las indicaciones de preparación del paciente.
+
+Por favor, lee detalladamente las siguientes instrucciones de desarrollo para implementar los cambios:
+
+1. Inclusión de Códigos en la Vista de "Perfiles"
+Requerimiento: En el buscador y en la interfaz de usuario donde se muestran los "Perfiles" de exámenes (ej. Perfil Bioquímico, Perfil Hepático, etc.), se deben asociar de forma estricta los códigos Fonasa correspondientes que aparecen en la pestaña PERFILES del Excel.
+
+Lógica: Cada perfil tiene un código general (ej. Perfil Bioquímico: 0302075), pero además, al desplegarse o listarse, los exámenes individuales que componen dicho perfil deben mostrar su respectivo código interno (ej. Glicemia: 0302047, Uremia: 0302057). Esto es vital para asegurar una correcta trazabilidad y evitar confusiones con exámenes particulares.
+
+2. Incorporación de Exámenes Externos (No realizados en el laboratorio clínico)
+Requerimiento: Deben agregarse a la base de datos de la web todos los exámenes cargados en el archivo, incluyendo aquellos que NO se realizan de forma directa o interna en nuestro laboratorio clínico, pero que de igual manera se ofrecen o se gestionan (como los listados en la pestaña SOLO PARTICULARES o los marcados con observaciones especiales).
+
+Lógica: El usuario debe poder buscarlos, agregarlos al carrito de cotización y visualizar su precio de forma normal, manteniendo la consistencia con el catálogo del Excel.
+
+3. Visualización de "Observaciones" y Respeto de Colores Corporativos
+Requerimiento: Es obligatorio mapear y mostrar la columna de OBSERVACIÓN (de la pestaña EXAMENES DE LABORATORIO) en la interfaz pública cuando el paciente busque un examen (ej. indicaciones como "BOLETA", convenios especiales, etc.).
+
+Diseño e Interfaz UI: Se deben respetar estrictamente los mismos patrones de colores de las celdas presentes en el Excel para identificar las secciones, perfiles o tipos de exámenes. Los usuarios (y el personal interno) ya están familiarizados con este código visual, por lo que la interfaz web debe replicar de manera idéntica dicha paleta de colores para mantener la consistencia cognitiva y evitar confusiones.
+
+4. Módulo de Preparación e Indicaciones del Paciente
+Ubicación 1 (En la Cotización): Al generar el PDF, correo o desglose de la cotización final, deben incluirse automáticamente las instrucciones de preparación correspondientes a los exámenes seleccionados.
+
+Ubicación 2 (En la Web / Zona Inferior): En la página web de cotizaciones, justo abajo del botón de "Generar Cotización", en el sector de laboratorio, se debe habilitar un apartado con tipografía pequeña/sutil que muestre las notas generales e instrucciones de preparación del paciente extraídas de la pestaña PREPARACION del Excel (ej. horarios de atención de lunes a viernes de 08:00 a 10:30, sábados de 09:00 a 10:30, y la regla obligatoria de ayuno mínimo de 8 horas y máximo de 12 horas).
+
+Notas Adicionales: Cualquier nota al pie o advertencia crítica de cobro (como los códigos de toma de muestra venosa en adultos 0307011) debe aparecer como una nota aclaratoria fija o automática al cotizar.
+
+Entregable esperado: Un flujo web donde el usuario busca un examen individual o perfil (visualizando códigos, observaciones y colores del Excel), lo añade a la cotización, y al finalizar recibe tanto el valor total como las instrucciones obligatorias de preparación impresas abajo de su resumen.
