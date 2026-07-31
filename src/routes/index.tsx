@@ -192,9 +192,10 @@ function Index() {
           <CashRegister />
         ) : (
           <div className="grid gap-5 lg:grid-cols-[1fr_360px]">
-            {/* Left: catalog */}
-            <div>
-              <div className={tab === "examenes" ? "" : "hidden"}>
+            {/* Left: catalog — both panels share the same grid cell so the
+                column never shrinks when switching tabs */}
+            <div className="grid">
+              <div style={{ gridArea: "1/1" }} className={tab !== "examenes" ? "invisible pointer-events-none" : ""}>
                 <ExamQuoter
                   cart={imagingCart}
                   setCart={setImagingCart}
@@ -202,7 +203,7 @@ function Index() {
                   convenio={convenio}
                 />
               </div>
-              <div className={tab === "laboratorio" ? "" : "hidden"}>
+              <div style={{ gridArea: "1/1" }} className={tab !== "laboratorio" ? "invisible pointer-events-none" : ""}>
                 <LabQuoter cart={labCart} setCart={setLabCart} prevision={prevision} />
               </div>
             </div>
