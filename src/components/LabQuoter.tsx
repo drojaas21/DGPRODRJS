@@ -340,7 +340,7 @@ export function LabQuoter({
         </div>
 
         {/* ── Tiempos de entrega (collapsible) ── */}
-        <TurnaroundPanel />
+        {/* <TurnaroundPanel /> */}{/* OCULTO: pendiente confirmar tiempos con laboratorio */}
       </div>
 
       {/* ── Perfiles: vista completa ── */}
@@ -651,9 +651,9 @@ function ExamList({
                   </span>
                 )}
               </div>
-              {(e.prep || e.turnaround || e.fasting) && (
+              {(e.prep || e.fasting) && (
                 <span className="mt-1.5 flex flex-wrap gap-1">
-                  {e.turnaround && <TurnaroundBadge type={e.turnaround} />}
+                  {/* TurnaroundBadge oculto: pendiente confirmar tiempos con laboratorio */}
                   {e.fasting && <FastingBadge />}
                   {e.prep && <PrepBadge type={e.prep} />}
                 </span>
