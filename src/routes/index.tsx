@@ -332,7 +332,7 @@ function Index() {
                                   <Trash2 className="h-3.5 w-3.5" />
                                 </button>
                               </div>
-                              {item.category === "resonancia" && (
+                              {(item.category === "resonancia" || item.category === "tac") && (
                                 <div className="mt-2 space-y-1.5">
                                   <button
                                     onClick={() => toggleImagingContrast(item.key)}
