@@ -183,6 +183,10 @@ function buildLabPrepRows(items: Array<{ exam: LabExam; qty: number }>): [string
   const rows: [string, string][] = [];
 
   for (const { exam } of items) {
+    // Glucofresh siempre acompaña a PTGO o Curva de Insulina; su preparación
+    // ya está incluida en la fila de esos exámenes, así que no se repite.
+    if (exam.code === "GLUCOSA LIQ") continue;
+
     const notes: string[] = [];
     const name = exam.name.replace(/\*PARTICULAR\*/gi, "").replace(/\s{2,}/g, " ").trim();
 
