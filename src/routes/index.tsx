@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import {
   Scan, FlaskConical, Wallet, FileDown,
   ShoppingCart, Trash2, Plus, Minus, FlaskConical as LabIcon,
@@ -44,6 +44,15 @@ const convenioIcons: Record<Convenio, LucideIcon> = {
 
 function Index() {
   const [tab, setTab] = useState<Tab>("examenes");
+  const leftColRef = useRef<HTMLDivElement>(null);
+  const [leftColMinH, setLeftColMinH] = useState(0);
+
+  const switchTab = (next: Tab) => {
+    if (leftColRef.current) {
+      setLeftColMinH((h) => Math.max(h, leftColRef.current!.offsetHeight));
+    }
+    setTab(next);
+  };
   const [imagingCart, setImagingCart] = useState<CartItem[]>([]);
   const [labCart, setLabCart] = useState<LabCartItem[]>([]);
   const [prevision, setPrevision] = useState<Prevision>("particular");
@@ -165,7 +174,7 @@ function Index() {
               return (
                 <button
                   key={t.id}
-                  onClick={() => setTab(t.id)}
+                  onClick={() => switchTab(t.id)}
                   className={`relative flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all ${
                     active
                       ? "bg-gradient-brand text-primary-foreground shadow-[var(--shadow-lift)]"
@@ -192,10 +201,10 @@ function Index() {
           <CashRegister />
         ) : (
           <div className="grid gap-5 lg:grid-cols-[1fr_360px]">
-            {/* Left: catalog — both panels share the same grid cell so the
-                column never shrinks when switching tabs */}
-            <div className="grid">
-              <div style={{ gridArea: "1/1" }} className={tab !== "examenes" ? "invisible pointer-events-none" : ""}>
+            {/* Left: catalog — minHeight is locked to the tallest panel seen
+                so the column never shrinks when switching tabs */}
+            <div ref={leftColRef} style={{ minHeight: leftColMinH || undefined }}>
+              <div className={tab === "examenes" ? "" : "hidden"}>
                 <ExamQuoter
                   cart={imagingCart}
                   setCart={setImagingCart}
@@ -203,7 +212,7 @@ function Index() {
                   convenio={convenio}
                 />
               </div>
-              <div style={{ gridArea: "1/1" }} className={tab !== "laboratorio" ? "invisible pointer-events-none" : ""}>
+              <div className={tab === "laboratorio" ? "" : "hidden"}>
                 <LabQuoter cart={labCart} setCart={setLabCart} prevision={prevision} />
               </div>
             </div>
