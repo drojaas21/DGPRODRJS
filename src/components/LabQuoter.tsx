@@ -317,7 +317,7 @@ export function LabQuoter({
             <input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Buscar examen o código FONASA (ej: glucosa, 0302047)…"
+              placeholder=""
               className="w-full rounded-xl border border-input bg-background py-2.5 pl-10 pr-9 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-ring/30"
             />
             {query && (
