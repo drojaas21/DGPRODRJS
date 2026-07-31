@@ -160,7 +160,7 @@ function Index() {
         </div>
       </header>
 
-      <main className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
+      <main className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6">
 
         {/* ── Tabs ── */}
         <div className="mb-6 flex items-center justify-between gap-4">
@@ -480,7 +480,7 @@ function Index() {
         )}
       </main>
 
-      <footer className="mx-auto max-w-7xl px-4 py-8 text-center text-xs text-muted-foreground sm:px-6">
+      <footer className="mx-auto w-full max-w-7xl px-4 py-8 text-center text-xs text-muted-foreground sm:px-6">
         DiagnoPRO Temuco · Cotización referencial sujeta a confirmación.
       </footer>
     </div>
