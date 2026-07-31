@@ -66,3 +66,9 @@ id = "PST_UTM2p3kYA5lEspd5P"
 uri = "file://exports/resonancias-y-scanner-diagnopro.pdf"
 type = "pdf"
 title = "Resonancias y Scanner — DiagnoPRO Temuco"
+
+[[outputs]]
+id = "rNL0uZsdDOVYhbRT5n6-c"
+uri = "file://catalogo-laboratorio.pdf"
+type = "pdf"
+title = "Catálogo de Exámenes de Laboratorio"
