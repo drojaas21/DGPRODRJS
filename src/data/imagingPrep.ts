@@ -13,7 +13,7 @@ const WATER_PELVIS =
 const FAST_6H = "Ayuno total de 6 horas (sólidos y líquidos).";
 const FAST_4H = "Ayuno total de 4 horas (sólidos y líquidos).";
 export const POST_CONTRAST =
-  "Post-contraste: Beber ≈2 litros de agua diarios durante 2–3 días. Si usa Metformina, suspénderla 48 horas post-examen. Consulte de inmediato ante dificultad respiratoria, hinchazón facial o urticaria.";
+  "Post-contraste: Beber ≈2 litros de agua diarios durante 2–3 días. Si usa Metformina, suspénderla 2 días después del examen. Consulte de inmediato ante dificultad respiratoria, hinchazón facial o urticaria.";
 const CONTRAST_NOTE =
   "Requiere medio de contraste endovenoso. Ayuno mínimo 6 horas (sólidos y líquidos).";
 

@@ -461,7 +461,7 @@ export async function generateCombinedPDF(args: GenerateCombinedPDFArgs) {
     if (hasContrast) {
       y = checkPage(doc, y, 20, "Indicaciones");
       const postLines = doc.splitTextToSize(
-        "Post-contraste: Hidratarse con al menos 2 litros de agua al día durante 2–3 días. Si usa Metformina, consulte a su médico sobre la suspensión del medicamento. Ante cualquier reacción (dificultad respiratoria, hinchazón facial, urticaria), consulte de inmediato.",
+        "Post-contraste: Hidratarse con al menos 2 litros de agua al día durante 2–3 días. Si usa Metformina, suspénderla 2 días después del examen. Ante cualquier reacción (dificultad respiratoria, hinchazón facial, urticaria), consulte de inmediato.",
         170
       );
       const postH = postLines.length * 4.4 + 7;
