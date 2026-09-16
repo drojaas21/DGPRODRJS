@@ -1049,8 +1049,7 @@
       "part": 50000,
       "fa": 50000,
       "fbcd": 50000,
-      "particular": true,
-      "note": "Paciente debe traer 1 pila AA"
+      "particular": true
     },
     {
       "name": "Holter de Presión Arterial (MAPA 24 horas)",
@@ -1058,8 +1057,7 @@
       "part": 40000,
       "fa": 40000,
       "fbcd": 40000,
-      "particular": true,
-      "note": "Paciente debe traer 2 pilas AA"
+      "particular": true
     }
   ],
   "canastas": []

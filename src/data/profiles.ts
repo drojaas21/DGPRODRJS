@@ -106,7 +106,7 @@ export const labProfiles: LabProfile[] = [
       { name: "Transaminasa GOT", code: "0302063" },
       { name: "Bilirrubina total", code: "0302012" },
       { name: "Fosfatasa alcalina", code: "0302040" },
-      { name: "LDH", code: "0302030" },
+      { name: "Creatinina", code: "0302023" },
       { name: "Calcio", code: "0302015" },
       { name: "Fósforo", code: "0302042" },
     ],
@@ -234,7 +234,7 @@ export const labProfiles: LabProfile[] = [
     fonasa_a: 19340,
     fonasa_bcd: 11480,
     particular: 22240,
-    note: "No se vende líquido. Paciente debe traer desayuno. Si es diabético, tomar su desayuno habitual.",
+    note: "Se vende glucosa líquida (Glucofresh).",
     items: [
       { name: "Venosa adultos ×2", code: "0307011" },
       { name: "Insulina basal ×2", code: "0303017" },
@@ -261,7 +261,7 @@ export const labProfiles: LabProfile[] = [
     fonasa_a: 5680,
     fonasa_bcd: 3320,
     particular: 6532,
-    note: "No se vende líquido.",
+    note: "Se vende glucosa líquida (Glucofresh).",
     items: [
       { name: "Venosa adultos ×2", code: "0307011" },
       { name: "Glucosa ×2", code: "0302047" },
