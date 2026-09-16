@@ -41,7 +41,11 @@ export const discountMatrix = discountsJson as Record<
   ExamCategory,
   Record<Convenio, number>
 >;
-export const labDatabase = labJson as LabExam[];
+export const labDatabase = (labJson as LabExam[]).map((exam) =>
+  exam.code === "0301014" && !/test de coombs/i.test(exam.name)
+    ? { ...exam, name: `${exam.name} / Test de Coombs` }
+    : exam
+);
 
 export const categoryMeta: Record<
   ExamCategory,

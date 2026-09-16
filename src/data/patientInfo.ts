@@ -31,8 +31,10 @@ export const patientInfoMap: Record<string, string> = {
     "Visualiza los órganos abdominales: hígado, páncreas, riñones, bazo y retroperitoneo con gran detalle. Indicado cuando la ecografía o el TAC no son suficientes, especialmente para caracterizar lesiones hepáticas. Se requiere ayuno de 6 horas previo al examen. Dura 45-60 minutos.",
   "Resonancia Magnética Renal":
     "Estudio detallado de los riñones y vías urinarias. Permite evaluar masas renales, quistes complejos o alteraciones vasculares renales. Se recomienda ayuno de 6 horas. Dura 30-45 minutos.",
-  "Resonancia Magnética de Pelvis / Defecografía":
-    "Examina los órganos y estructuras dentro de la pelvis: útero, ovarios, vejiga, recto y músculos del piso pélvico. Muy útil en ginecología, urología y cirugía colorrectal. Se requiere ayuno de 6 horas. Dura 40-60 minutos.",
+  "Resonancia Magnética de Pelvis":
+    "Examina los órganos y estructuras dentro de la pelvis: útero, ovarios, vejiga y recto. Muy útil en ginecología, urología y cirugía colorrectal. Se requiere ayuno de 6 horas. Dura 30-45 minutos.",
+  "Defecografía por Resonancia Magnética":
+    "Evalúa el movimiento del piso pélvico y la evacuación mediante imágenes dinámicas. Es útil para estudiar prolapso, incontinencia y trastornos del piso pélvico. Se requiere ayuno de 6 horas. Dura 30-45 minutos.",
   "Resonancia Magnética de Próstata":
     "Estudio detallado de la glándula prostática, indicado para diagnosticar o estadificar cáncer de próstata. Se usa la resonancia multiparamétrica que combina varias secuencias de imagen. Se recomienda enema rectal previo según indicación médica. Dura 45-60 minutos.",
   "Resonancia Magnética de Abdomen y Pelvis":

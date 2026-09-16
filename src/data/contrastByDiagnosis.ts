@@ -141,9 +141,15 @@ export const contrastByDiagnosis: Record<string, string[]> = {
     "Tumores sacros (cordoma, metástasis)",
     "Infección sacroilíaca o sacra",
   ],
-  "Resonancia Magnética de Pelvis / Defecografía": [
+  "Resonancia Magnética de Pelvis": [
+    "Tumores o masas pélvicas",
+    "Dolor pélvico complejo",
+    "Endometriosis profunda con compromiso de órganos",
+  ],
+  "Defecografía por Resonancia Magnética": [
     "Tumores rectales o pelvianos",
     "Fístulas perianales complejas (enfermedad de Crohn)",
+    "Prolapso, incontinencia o trastornos del piso pélvico",
   ],
   "Resonancia Magnética de Órganos Pelvianos": [
     "Cáncer cérvico-uterino o de endometrio (estadificación)",

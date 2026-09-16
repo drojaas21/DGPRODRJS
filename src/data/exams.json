@@ -165,8 +165,16 @@
       "note": "Ayuno mín. 6h · máx. 6h"
     },
     {
-      "name": "Resonancia Magnética de Pelvis / Defecografía",
-      "desc": "Evaluación de estructuras pélvicas y función del piso pélvico",
+      "name": "Resonancia Magnética de Pelvis",
+      "desc": "Evaluación de estructuras y órganos pélvicos",
+      "part": 247652,
+      "fa": 215350,
+      "fbcd": 107670,
+      "note": "Ayuno mín. 6h · máx. 6h · vejiga semillena (orinar 1h antes)"
+    },
+    {
+      "name": "Defecografía por Resonancia Magnética",
+      "desc": "Evaluación dinámica del piso pélvico y la evacuación",
       "part": 247652,
       "fa": 215350,
       "fbcd": 107670,

@@ -10,9 +10,20 @@ const labData = JSON.parse(
   fs.readFileSync(path.join(__dirname, "../src/data/lab.json"), "utf8")
 );
 
+const DISCONTINUED_CODES = new Set([
+  "0301008", // Antitrombina III
+  "0301091", // Proteína C funcional
+  "0301092", // Proteína S
+  "0301093", // Resistencia a la Proteína C activada
+  "0301100", // Antitrombina III antigénica
+]);
+
 // Filter out exams that are not performed
 const exams = labData.filter(
-  (e) => e.obs !== "NO SE REALIZA" && !String(e.obs).startsWith("NO SE REALIZA")
+  (e) =>
+    !DISCONTINUED_CODES.has(e.code) &&
+    e.obs !== "NO SE REALIZA" &&
+    !String(e.obs).startsWith("NO SE REALIZA")
 );
 
 // Category mapping by code prefix
@@ -145,6 +156,9 @@ for (const cat of ORDER) {
     let name = e.name
       .replace(/\s*\*PARTICULAR\*\s*/gi, "")
       .trim();
+    if (e.code === "0301014" && !/test de coombs/i.test(name)) {
+      name += " / Test de Coombs";
+    }
     // Trim very long names to avoid wrapping issues (keep first 90 chars)
     // Actually let jsPDF wrap them naturally
 

@@ -10,7 +10,16 @@ import { formatCLP, normalize } from "@/lib/format";
 
 export type LabCartItem = { exam: LabExam; qty: number };
 
-const blockedCodes = new Set(["0301095", "0306118", "0306123"]);
+const blockedCodes = new Set([
+  "0301095",
+  "0306118",
+  "0306123",
+  "0301008",
+  "0301091",
+  "0301092",
+  "0301093",
+  "0301100",
+]);
 
 function cleanName(name: string): string {
   return name.replace(/\*PARTICULAR\*/gi, "").replace(/\s{2,}/g, " ").trim();
