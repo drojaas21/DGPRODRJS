@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useRef, useState } from "react";
 import {
-  Scan, FlaskConical, Wallet, FileDown,
+  Scan, FlaskConical, FileDown,
   ShoppingCart, Trash2, Plus, Minus, FlaskConical as LabIcon,
   Landmark, Building2, ShieldCheck, Users, AlertTriangle,
   type LucideIcon,
@@ -9,7 +9,6 @@ import {
 import logo from "@/assets/logo-diagnopro.svg";
 import { ExamQuoter, type CartItem } from "@/components/ExamQuoter";
 import { LabQuoter, type LabCartItem } from "@/components/LabQuoter";
-import { CashRegister } from "@/components/CashRegister";
 import { discountMatrix, convenioMeta, categoryMeta, type Convenio, type LabExam } from "@/data/catalog";
 import { findLabDuplicates } from "@/data/profiles";
 import { formatCLP } from "@/lib/format";
@@ -20,13 +19,12 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-type Tab = "examenes" | "laboratorio" | "caja";
+type Tab = "examenes" | "laboratorio";
 type Prevision = "particular" | "fa" | "fbcd";
 
 const tabs: { id: Tab; label: string; icon: typeof Scan }[] = [
   { id: "examenes", label: "Imagenología", icon: Scan },
   { id: "laboratorio", label: "Laboratorio", icon: FlaskConical },
-  { id: "caja", label: "Caja", icon: Wallet },
 ];
 
 const previsionOpts: { key: Prevision; label: string }[] = [
@@ -153,7 +151,7 @@ function Index() {
             <img src={logo} alt="DiagnoPRO Temuco" className="h-9 w-auto" />
             <div className="hidden border-l border-border pl-3 sm:block">
               <p className="text-sm font-bold leading-tight text-foreground">Cotizador Clínico</p>
-              <p className="text-xs text-muted-foreground">Imagenología · Laboratorio · Caja</p>
+              <p className="text-xs text-muted-foreground">Imagenología · Laboratorio</p>
             </div>
           </div>
           <ThemePicker />
@@ -197,10 +195,7 @@ function Index() {
         </div>
 
         {/* ── Content ── */}
-        {tab === "caja" ? (
-          <CashRegister />
-        ) : (
-          <div className="grid gap-5 lg:grid-cols-[1fr_360px]">
+        <div className="grid gap-5 lg:grid-cols-[1fr_360px]">
             {/* Left: catalog — minHeight is locked to the tallest panel seen
                 so the column never shrinks when switching tabs */}
             <div ref={leftColRef} style={{ minHeight: leftColMinH || undefined }}>
@@ -476,8 +471,7 @@ function Index() {
                 )}
               </div>
             </div>
-          </div>
-        )}
+        </div>
       </main>
 
       <footer className="mx-auto w-full max-w-7xl px-4 py-8 text-center text-xs text-muted-foreground sm:px-6">
