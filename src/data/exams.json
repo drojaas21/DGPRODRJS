@@ -560,7 +560,7 @@
       "part": 63146,
       "fa": 54910,
       "fbcd": 33780,
-      "note": "6 horas de ayuno total (líquidos y sólidos)"
+      "note": "6 horas de ayuno solo de sólidos"
     },
     {
       "name": "Ecografía Abdominal y Pelviana Masculina",
@@ -568,7 +568,7 @@
       "part": 64135,
       "fa": 55770,
       "fbcd": 34310,
-      "note": "6 horas de ayuno total (líquidos y sólidos)"
+      "note": "6 horas de ayuno solo de sólidos"
     },
     {
       "name": "Ecografía Renal y Vesical Femenina",
@@ -576,7 +576,7 @@
       "part": 50496,
       "fa": 43910,
       "fbcd": 27010,
-      "note": "6 horas de ayuno total (líquidos y sólidos)"
+      "note": "6 horas de ayuno solo de sólidos"
     },
     {
       "name": "Ecografía Renal y Vesical Masculina",
@@ -584,7 +584,7 @@
       "part": 51485,
       "fa": 44770,
       "fbcd": 27540,
-      "note": "6 horas de ayuno total (líquidos y sólidos)"
+      "note": "6 horas de ayuno solo de sólidos"
     },
     {
       "name": "Ecografía Pelviana Femenina",

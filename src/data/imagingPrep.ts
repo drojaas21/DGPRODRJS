@@ -11,6 +11,7 @@ const NO_SMOKE = "No fumar ni mascar chicle previo al examen.";
 const WATER_PELVIS =
   "Beber 1.5 litros de agua paulatinamente desde 1 hora antes y retener la orina hasta el examen.";
 const FAST_6H = "Ayuno total de 6 horas (sólidos y líquidos).";
+const ECO_FAST_6H_SOLIDS = "Ayuno de 6 horas solo de sólidos.";
 const FAST_4H = "Ayuno total de 4 horas (sólidos y líquidos).";
 export const POST_CONTRAST =
   "Post-contraste: Beber ≈2 litros de agua diarios durante 2–3 días. Si usa Metformina, suspénderla 2 días después del examen. Consulte de inmediato ante dificultad respiratoria, hinchazón facial o urticaria.";
@@ -66,13 +67,13 @@ export function getImagingPrep(examName: string, category: ExamCategory): PrepEn
       (n.includes("renal") || n.includes("rinon")) &&
       (n.includes("vesical") || n.includes("vejiga"))
     ) {
-      return { steps: [ARRIVAL, ID_ORDER, FAST_6H, WATER_PELVIS, NO_SMOKE] };
+      return { steps: [ARRIVAL, ID_ORDER, ECO_FAST_6H_SOLIDS, WATER_PELVIS, NO_SMOKE] };
     }
     if (n.includes("renal") || n.includes("rinon")) {
       return { steps: [ARRIVAL, ID_ORDER, FAST_6H, NO_SMOKE] };
     }
     if (n.includes("abdom") && (n.includes("pelv") || n.includes("pelvian"))) {
-      return { steps: [ARRIVAL, ID_ORDER, FAST_6H, WATER_PELVIS, NO_SMOKE] };
+      return { steps: [ARRIVAL, ID_ORDER, ECO_FAST_6H_SOLIDS, WATER_PELVIS, NO_SMOKE] };
     }
     if (n.includes("abdom")) {
       return { steps: [ARRIVAL, ID_ORDER, FAST_6H, NO_SMOKE] };
@@ -154,13 +155,13 @@ export function getImagingPrepNote(examName: string, category: ExamCategory, wit
       return "Sin desodorante, cremas ni talco en zona mamaria o axilas. Pacientes mayores de 40 años: traer mamografía reciente (máximo 6 meses).";
     }
     if (n.includes("abdom") && (n.includes("pelv") || n.includes("pelvian"))) {
-      return "Ayuno 6–8 horas. Vejiga llena: beber 1.5 L de agua 1 hora antes, no orinar hasta el examen.";
+      return "Ayuno de sólidos durante 6–8 horas. Vejiga llena: beber 1.5 L de agua 1 hora antes, no orinar hasta el examen.";
     }
     if (n.includes("abdom")) {
       return "Ayuno 6–8 horas (sólidos y líquidos).";
     }
     if ((n.includes("renal") || n.includes("rinon")) && (n.includes("vesical") || n.includes("vejiga"))) {
-      return "Ayuno 6 horas. Vejiga llena: beber 1.5 L de agua 1 hora antes, no orinar.";
+      return "Ayuno de sólidos durante 6 horas. Vejiga llena: beber 1.5 L de agua 1 hora antes, no orinar.";
     }
     if (n.includes("renal") || n.includes("rinon")) {
       return "Ayuno mínimo 6 horas (sólidos y líquidos).";
