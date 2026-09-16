@@ -96,7 +96,7 @@ export const patientInfoMap: Record<string, string> = {
   "TAC de Tórax, Abdomen y Pelvis":
     "Estudio de cuerpo completo desde el cuello hasta la pelvis. Indicado principalmente en oncología, traumatismo grave o evaluación de enfermedad sistémica. Requiere contraste endovenoso. Dura 20-30 minutos. Implica una dosis de radiación mayor, solo se indica cuando está médicamente justificado.",
   "Pielografía por TAC":
-    "Estudio de las vías urinarias (riñones, uréteres, vejiga) con contraste endovenoso que permite visualizar obstrucciones, cálculos renales y tumores del tracto urinario. Requiere un período de espera mientras el contraste se elimina por la orina. Dura 20-30 minutos en total.",
+    "Estudio de las vías urinarias (riñones, uréteres, vejiga) sin contraste endovenoso para evaluar obstrucciones y cálculos renales. Requiere beber agua antes del examen para mantener la vejiga llena. Dura 20-30 minutos.",
   "Urografía por TAC (UroTAC)":
     "Evaluación completa del tracto urinario (riñones, uréteres y vejiga) usando tomografía con contraste. Considerado el estudio de elección para hematuria (sangre en la orina). Se realizan imágenes en varias fases para visualizar todo el sistema. Requiere contraste endovenoso y buena hidratación previa.",
   "AngioTAC de Encéfalo":

@@ -14,6 +14,7 @@ import { findLabDuplicates } from "@/data/profiles";
 import { formatCLP } from "@/lib/format";
 import { generateCombinedPDF, type ExamCartPDFItem } from "@/lib/pdf";
 import { ThemePicker } from "@/components/ThemePicker";
+import { isPieloTAC } from "@/data/imagingPrep";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -123,7 +124,7 @@ function Index() {
         discountAmt: discountAmt * item.qty,
         discountedUnit,
         lineTotal: discountedUnit * item.qty,
-        withContrast: item.withContrast,
+        withContrast: isPieloTAC(item.exam.name) ? false : item.withContrast,
       };
     });
     void generateCombinedPDF({
@@ -327,7 +328,7 @@ function Index() {
                                   <Trash2 className="h-3.5 w-3.5" />
                                 </button>
                               </div>
-                              {(item.category === "resonancia" || item.category === "tac") && (
+                              {(item.category === "resonancia" || item.category === "tac") && !isPieloTAC(item.exam.name) && (
                                 <div className="mt-2 space-y-1.5">
                                   <button
                                     onClick={() => toggleImagingContrast(item.key)}

@@ -474,11 +474,11 @@
     },
     {
       "name": "Pielografía por TAC",
-      "desc": "Estudio de vías urinarias con contraste endovenoso",
+      "desc": "Estudio de vías urinarias sin contraste endovenoso",
       "part": 40020,
       "fa": 34800,
       "fbcd": 21410,
-      "autoContrast": true
+      "note": "Beber 1,5 litros de agua 1 hora antes y retener la orina hasta el examen"
     },
     {
       "name": "Urografía por TAC (UroTAC)",

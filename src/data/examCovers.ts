@@ -65,7 +65,7 @@ export const examCovers: Record<string, string[]> = {
   "TAC de Pelvis": ["Sacro", "Coxis", "Caderas (bilateral)", "Huesos pélvicos", "Articulaciones sacroilíacas", "Acetábulo"],
   "TAC de Abdomen y Pelvis": ["Hígado", "Páncreas", "Bazo", "Riñones", "Suprarrenales", "Aorta abdominal", "Sacro", "Caderas", "Huesos pélvicos", "Útero", "Próstata"],
   "TAC de Tórax, Abdomen y Pelvis": ["Pulmones", "Mediastino", "Hígado", "Páncreas", "Riñones", "Bazo", "Pelvis completa", "Estudio oncológico completo", "Revisión total"],
-  "Pielografía por TAC": ["Riñones", "Uréteres", "Vejiga", "Vías urinarias con contraste"],
+  "Pielografía por TAC": ["Riñones", "Uréteres", "Vejiga", "Vías urinarias sin contraste"],
   "Urografía por TAC (UroTAC)": ["Riñones", "Uréteres completos", "Vejiga", "Vías urinarias superiores e inferiores"],
   "AngioTAC de Cuello": ["Arteria carótida derecha", "Arteria carótida izquierda", "Arterias vertebrales", "Vasos del cuello"],
   "AngioTAC de Pelvis": ["Arterias ilíacas", "Arteria ilíaca común", "Arteria ilíaca interna", "Arteria ilíaca externa", "Vasos pélvicos"],

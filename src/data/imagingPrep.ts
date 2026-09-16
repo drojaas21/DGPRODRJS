@@ -42,6 +42,9 @@ export function getImagingPrep(examName: string, category: ExamCategory): PrepEn
   }
 
   if (category === "tac") {
+    if (isPieloTAC(examName)) {
+      return { steps: [ARRIVAL, ID_ORDER, WATER_PELVIS] };
+    }
     if (n.includes("abdom") || n.includes("pelv")) {
       return { steps: [ARRIVAL, ID_ORDER, FAST_6H, WATER_PELVIS, NO_SMOKE], postProtocol: POST_CONTRAST };
     }
@@ -98,6 +101,11 @@ export function getImagingPrep(examName: string, category: ExamCategory): PrepEn
   return { steps: [ARRIVAL, ID_ORDER] };
 }
 
+export function isPieloTAC(examName: string): boolean {
+  const n = norm(examName);
+  return n.includes("pielograf") && n.includes("tac");
+}
+
 export function needsCreatinineAlert(category: ExamCategory): boolean {
   return category === "contraste" || category === "tac";
 }
@@ -108,6 +116,7 @@ export function needsRMSafetyAlert(category: ExamCategory): boolean {
 
 export function itemHasContrast(examName: string, category: ExamCategory, autoContrast?: boolean): boolean {
   if (category === "contraste") return true;
+  if (isPieloTAC(examName)) return false;
   const n = norm(examName);
   return !!autoContrast || n.includes("contraste") || n.includes("gadolinio");
 }
@@ -135,6 +144,9 @@ export function getImagingPrepNote(examName: string, category: ExamCategory, wit
   }
 
   if (category === "tac") {
+    if (isPieloTAC(examName)) {
+      return "Beber 1.5 litros de agua paulatinamente desde 1 hora antes; retener la orina hasta completar el examen.";
+    }
     if (!withContrast) return null;
     const parts: string[] = [CONTRAST_NOTE];
     const needsWater =
