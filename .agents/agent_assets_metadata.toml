@@ -105,3 +105,17 @@ mtime_ms = 1789577662943
 storage_uri = "gcs://replit-rams-assets-picard/rams/assets/repl:b3f6f5a0-f08c-4ab5-9c87-5b88c0cd26b8/53264698-dde2-4748-9cfe-68d522cda401/a897cba5-ea8e-4d8f-b645-5452c838d049"
 storage_version_token = "1789577671987197"
 content_type = "application/octet-stream"
+
+[[outputs]]
+id = "z2ZNVo0X39Uckygu-bpZp"
+uri = "file://diagnoPRO-integracion-fuente-y-dist.zip"
+type = "unspecified"
+title = "DiagnoPRO — código fuente + versión publicada"
+description = "Paquete para integración empresarial. Incluye el código fuente completo, la carpeta dist lista para publicar y una guía de integración. Excluye node_modules, .git y secretos."
+logical_id = "1fd192a8-1ffb-4241-a90c-b49325051ded"
+content_hash = "sha256:ba65e222b52c7dc2dd69c2a8f4a46496fd66b474cc5d789e4341f4c3e8f275f2"
+size = 4616214
+mtime_ms = 1790033391254
+storage_uri = "gcs://replit-rams-assets-picard/rams/assets/repl:b3f6f5a0-f08c-4ab5-9c87-5b88c0cd26b8/1fd192a8-1ffb-4241-a90c-b49325051ded/03a14bbc-52a8-4343-a688-c6e964489277"
+storage_version_token = "1790033398138636"
+content_type = "application/octet-stream"
