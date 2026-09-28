@@ -133,29 +133,27 @@ export function getImagingPrepNote(examName: string, category: ExamCategory, wit
     if (withContrast) {
       parts.push(CONTRAST_NOTE);
     } else if (n.includes("colangior")) {
-      parts.push("Ayuno de 6 horas (sólidos y líquidos).");
+      parts.push("Ayuno de sólidos y líquidos 6 h.");
     } else if (n.includes("abdom") || n.includes("pelv") || n.includes("prostat")) {
-      parts.push("Ayuno mínimo 4 horas (sólidos y líquidos).");
+      parts.push("Ayuno de sólidos y líquidos 4 h.");
     }
     if (n.includes("corazon") || n.includes("cardiaca") || n.includes("cardiac")) {
-      parts.push("Evitar cafeína (café, té, bebidas cola) las 24 horas previas.");
+      parts.push("Evitar cafeína 24 h antes.");
     }
     return parts.join(" ");
   }
 
   if (category === "tac") {
     if (isPieloTAC(examName)) {
-      return "Beber 1.5 litros de agua paulatinamente desde 1 hora antes; retener la orina hasta completar el examen.";
+      return "Beber 1,5 L de agua desde 1 h antes. Retener la orina.";
     }
-    if (!withContrast) return null;
-    const parts: string[] = [CONTRAST_NOTE];
-    const needsWater =
-      n.includes("abdom") || n.includes("pelv") ||
-      n.includes("pielog") || n.includes("urograf") || n.includes("urotac");
-    if (needsWater) {
-      parts.push("Beber 1.5 litros de agua paulatinamente desde 1 hora antes; retener la orina hasta completar el examen.");
+    if (n.includes("abdom") || n.includes("pelv")) {
+      return "Ayuno de sólidos y líquidos 6 h. Beber 1,5 L de agua desde 1 h antes. Retener la orina.";
     }
-    return parts.join(" ");
+    if (n.includes("urograf") || n.includes("urotac")) {
+      return "Beber 1,5 L de agua desde 1 h antes. Retener la orina.";
+    }
+    return null;
   }
 
   if (category === "contraste") {
@@ -164,39 +162,39 @@ export function getImagingPrepNote(examName: string, category: ExamCategory, wit
 
   if (category === "ecografia") {
     if (n.includes("mama") || n.includes("mamaria")) {
-      return "Sin desodorante, cremas ni talco en zona mamaria o axilas. Pacientes mayores de 40 años: traer mamografía reciente (máximo 6 meses).";
+      return "Sin desodorante, cremas ni talco. Mayores de 40 años: traer mamografía reciente (<6 meses).";
     }
     if (n.includes("abdom") && (n.includes("pelv") || n.includes("pelvian"))) {
-      return "Ayuno de sólidos durante 6–8 horas. Vejiga llena: beber 1.5 L de agua 1 hora antes, no orinar hasta el examen.";
+      return "Ayuno de sólidos 6 h. Beber 1,5 L de agua desde 1 h antes. No orinar.";
     }
     if (n.includes("abdom")) {
-      return "Ayuno 6–8 horas (sólidos y líquidos).";
+      return "Ayuno de sólidos y líquidos 6 h.";
     }
     if ((n.includes("renal") || n.includes("rinon")) && (n.includes("vesical") || n.includes("vejiga"))) {
-      return "Ayuno de sólidos durante 6 horas. Vejiga llena: beber 1.5 L de agua 1 hora antes, no orinar.";
+      return "Ayuno de sólidos 6 h. Beber 1,5 L de agua desde 1 h antes. No orinar.";
     }
     if (n.includes("renal") || n.includes("rinon")) {
-      return "Ayuno mínimo 6 horas (sólidos y líquidos).";
+      return "Ayuno de sólidos y líquidos 6 h.";
     }
     if (n.includes("pelv")) {
-      return "Vejiga llena: beber 1.5 L de agua paulatinamente 1 hora antes, no orinar.";
+      return "Beber 1,5 L de agua desde 1 h antes. No orinar.";
     }
     if (n.includes("elastograf")) {
-      return "Ayuno mínimo 2–3 horas (sólidos y líquidos).";
+      return "Ayuno de sólidos y líquidos 2–3 h.";
     }
     return null;
   }
 
   if (category === "mamografia") {
-    return "Sin desodorante, cremas ni talco en zona mamaria o axilas. Traer estudios anteriores si los tiene.";
+    return "Sin desodorante, cremas ni talco. Traer estudios anteriores si los tiene.";
   }
 
   if (category === "cardiologia") {
     if (n.includes("holter") && (n.includes("ritmo") || n.includes("ecg") || n.includes("24"))) {
-      return "Ducharse la noche anterior (no podrá durante las 24 h del monitoreo). Usar ropa cómoda, sin cremalleras metálicas.";
+      return "Ducharse la noche anterior. Usar ropa cómoda y sin cremalleras metálicas.";
     }
     if (n.includes("holter") || n.includes("mapa") || n.includes("presion")) {
-      return "Ropa cómoda con manga holgada en el brazo no dominante. Actividad normal durante el registro.";
+      return "Usar ropa cómoda y manga holgada. Mantener actividad normal durante el registro.";
     }
     return null;
   }

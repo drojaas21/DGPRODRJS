@@ -1,7 +1,7 @@
 import { jsPDF } from "jspdf";
 import autoTable from "jspdf-autotable";
 import { formatCLP } from "./format";
-import { getImagingPrepNote, itemHasContrast } from "@/data/imagingPrep";
+import { getImagingPrepNote } from "@/data/imagingPrep";
 import type { Exam, ExamCategory, Convenio, LabExam } from "@/data/catalog";
 import { categoryMeta, convenioMeta } from "@/data/catalog";
 import logoUrl from "@/assets/logo-diagnopro.png?url";
@@ -130,11 +130,7 @@ function buildImagingPrepRows(items: ExamCartPDFItem[]): [string, string][] {
     const key = `${item.category}::${item.exam.name}`;
     if (seen.has(key)) continue;
     seen.add(key);
-    const note = getImagingPrepNote(
-      item.exam.name,
-      item.category,
-      itemHasContrast(item.exam.name, item.category, item.exam.autoContrast || item.withContrast)
-    );
+    const note = getImagingPrepNote(item.exam.name, item.category, false);
     if (note) rows.push([item.exam.name, note]);
   }
   return rows;
@@ -142,29 +138,19 @@ function buildImagingPrepRows(items: ExamCartPDFItem[]): [string, string][] {
 
 function buildLabPrepRows(items: Array<{ exam: LabExam; qty: number }>): [string, string][] {
   const FASTING_NOTE =
-    "Asistir con ayuno mínimo de 8 horas y máximo de 12 horas (no consumir alimentos sólidos ni líquidos, excepto agua). " +
-    "Para evitar sobreayuno, se recomienda consumir una colación liviana (galletas, yogur o fruta) a las 23:00 horas del día anterior.";
+    "Ayuno de sólidos y líquidos: mínimo 8 h, máximo 12 h. Última colación a las 23:00 h del día anterior. Evitar sobreayuno.";
 
   const ORINA_MANANA_GENERAL =
-    "Utilizar la primera orina de la mañana (segundo chorro). Realizar higiene genital con agua antes de recolectar. " +
-    "Recolectar en el envase estéril provisto por el laboratorio. Entregar dentro de las 2 horas siguientes a la recolección.";
+    "Primera orina de la mañana, segundo chorro. Recolectar en frasco estéril y entregar dentro de 2 h.";
 
   const UROCULTIVO_NOTE =
-    "Para mayor exactitud del examen, es imprescindible utilizar la primera orina de la mañana: al haber permanecido más tiempo en la vejiga, " +
-    "la concentración bacteriana es significativamente mayor, lo que mejora la sensibilidad del cultivo. " +
-    "Realizar higiene genital con toalla húmeda antes de recolectar (sin jabón). " +
-    "No tocar el interior del envase ni la tapa. Desechar el primer chorro de orina; recolectar el chorro medio en el envase estéril (10–20 mL). " +
-    "Llevar inmediatamente al laboratorio o conservar refrigerado máximo 2 horas. Evitar orinar durante la noche previo a la toma.";
+    "Primera orina de la mañana, segundo chorro. Higiene genital previa. Recolectar en frasco estéril y entregar de inmediato.";
 
   const ORINA_24H_NOTE =
-    "Recolectar toda la orina durante 24 horas en el envase provisto por el laboratorio. " +
-    "Primer día: desechar la primera micción de la mañana (anotar la hora) y comenzar a recolectar desde la segunda micción en adelante. " +
-    "Segundo día: recolectar la primera micción de la mañana a la misma hora que comenzó el día anterior. " +
-    "Conservar el envase refrigerado durante toda la recolección. Entregar al laboratorio a más tardar 2 horas después de completada.";
+    "Recolectar toda la orina durante 24 h. Desechar la primera micción y comenzar desde la segunda; completar con la primera del día siguiente. Mantener refrigerada.";
 
   const PSA_NOTE =
-    "Abstinencia sexual de 48 horas previas al examen. " +
-    "Evitar eyaculación, tacto rectal, masaje prostático o biopsia en los 7 días anteriores al examen.";
+    "Abstinencia sexual 48 h. Evitar tacto rectal, masaje o biopsia prostática durante los 7 días previos.";
 
   // Codes and name fragments that indicate PTGO / glucose curve
   const isPTGO = (e: LabExam) =>
@@ -193,22 +179,17 @@ function buildLabPrepRows(items: Array<{ exam: LabExam; qty: number }>): [string
     // ── Casos especiales (tienen su propia instrucción completa) ──────────────
     if (isPTGO(exam)) {
       notes.push(
-        "Ayuno de 10 a 12 horas. Llegar antes de las 09:00. " +
-        "Se tomará sangre en ayunas y luego deberá beber el Glucofresh en 5 minutos. " +
-        "Se tomarán 2 muestras más a los 60 y 120 minutos. " +
-        "Permanecer en reposo las 2 horas del procedimiento: no comer, no beber (solo agua), no fumar ni hacer ejercicio."
+        "Ayuno de 8–12 h. Llegar antes de las 09:00 h. Beber Glucofresh y permanecer en reposo durante 2 h. " +
+        "No comer, fumar ni hacer ejercicio."
       );
     } else if (isInsulinaCurve(exam)) {
       notes.push(
-        "Ayuno de 10 a 12 horas. Llegar antes de las 09:00. " +
-        "Se tomará sangre en ayunas y luego deberá beber el Glucofresh. " +
-        "Se realizarán extracciones en los intervalos indicados por el médico. " +
-        "Permanecer en reposo durante el procedimiento: no comer, no beber (solo agua), no fumar ni hacer ejercicio."
+        "Ayuno de 8–12 h. Llegar antes de las 09:00 h. Beber Glucofresh y permanecer en reposo durante el procedimiento. " +
+        "No comer, fumar ni hacer ejercicio."
       );
     } else if (isGlucosaCurve(exam)) {
       notes.push(
-        "Ayuno mínimo de 8 horas. Acudir al laboratorio en la mañana. Se realizarán dos extracciones de sangre separadas por el intervalo indicado. " +
-        "Permanecer en reposo, no comer, no fumar ni realizar ejercicio entre las extracciones."
+        "Ayuno de 8–12 h. Acudir en la mañana. Permanecer en reposo entre las muestras; no comer, fumar ni hacer ejercicio."
       );
     } else {
       // ── Preparaciones estándar ────────────────────────────────────────────
@@ -415,14 +396,10 @@ export async function generateCombinedPDF(args: GenerateCombinedPDFArgs) {
   // ── Preparaciones (agrupadas) ────────────────────────────────────────────
   const imagingPrepRows = buildImagingPrepRows(args.imagingItems);
   const labPrepRows     = buildLabPrepRows(args.labItems);
-  const hasContrast     = args.imagingItems.some((it) =>
-    itemHasContrast(it.exam.name, it.category, it.exam.autoContrast || it.withContrast)
-  );
-
   const imagingGroups = groupPreps(imagingPrepRows, "Imagenología");
   const labGroups     = groupPreps(labPrepRows, "Laboratorio");
   const allGroups     = [...imagingGroups, ...labGroups];
-  const hasAnyPrep    = allGroups.length > 0 || hasContrast;
+  const hasAnyPrep    = allGroups.length > 0;
 
   y = checkPage(doc, y, 18, "Indicaciones");
   doc.setFont("helvetica", "bold");
@@ -457,23 +434,6 @@ export async function generateCombinedPDF(args: GenerateCombinedPDFArgs) {
       y = doc.lastAutoTable.finalY + 4;
     }
 
-    // Post-contrast block — caja simple con borde gris
-    if (hasContrast) {
-      y = checkPage(doc, y, 20, "Indicaciones");
-      const postLines = doc.splitTextToSize(
-        "Post-contraste: Hidratarse con al menos 2 litros de agua al día durante 2–3 días. Si usa Metformina, suspénderla 2 días después del examen. Ante cualquier reacción (dificultad respiratoria, hinchazón facial, urticaria), consulte de inmediato.",
-        170
-      );
-      const postH = postLines.length * 4.4 + 7;
-      doc.setDrawColor(...GRAY_MID);
-      doc.setLineWidth(0.25);
-      doc.rect(15, y, 180, postH, "D");
-      doc.setFont("helvetica", "normal");
-      doc.setFontSize(7.5);
-      doc.setTextColor(...BLACK);
-      doc.text(postLines, 19, y + 5.5);
-      y += postH + 5;
-    }
   } else {
     doc.setFont("helvetica", "normal");
     doc.setFontSize(8.5);
