@@ -96,14 +96,14 @@ content_type = "application/pdf"
 id = "6Y_wzD0FziVYD5dN0udXl"
 uri = "file://dist-static.zip"
 type = "unspecified"
-title = "Dist estática final"
-description = "Versión compilada sin la etiqueta visual Ayuno en laboratorio."
+title = "dist compilado"
+description = "Paquete estático actualizado del cotizador DiagnoPRO."
 logical_id = "53264698-dde2-4748-9cfe-68d522cda401"
-content_hash = "sha256:90aee675051d87de3309c2f8207bbc8eb8de6d18d574498b32f7bfc4d2a8f200"
-size = 760423
-mtime_ms = 1790564335506
-storage_uri = "gcs://replit-rams-assets-picard/rams/assets/repl:b3f6f5a0-f08c-4ab5-9c87-5b88c0cd26b8/53264698-dde2-4748-9cfe-68d522cda401/5513e7b1-f551-4945-a9b1-68ee76c540c1"
-storage_version_token = "1790564343023220"
+content_hash = "sha256:fbc4a686b3841d806e8695b88eadbede264a3d7ca86297b71461793bd5157903"
+size = 760455
+mtime_ms = 1790564912000
+storage_uri = "gcs://replit-rams-assets-picard/rams/assets/repl:b3f6f5a0-f08c-4ab5-9c87-5b88c0cd26b8/53264698-dde2-4748-9cfe-68d522cda401/9e0513d7-3a2d-419c-8969-063e740cd402"
+storage_version_token = "1790565142077296"
 content_type = "application/octet-stream"
 
 [[outputs]]
