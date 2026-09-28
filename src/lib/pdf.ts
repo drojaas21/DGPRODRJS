@@ -1,7 +1,7 @@
 import { jsPDF } from "jspdf";
 import autoTable from "jspdf-autotable";
 import { formatCLP } from "./format";
-import { getImagingPrepNote } from "@/data/imagingPrep";
+import { getImagingPrepNote, itemHasContrast } from "@/data/imagingPrep";
 import type { Exam, ExamCategory, Convenio, LabExam } from "@/data/catalog";
 import { categoryMeta, convenioMeta } from "@/data/catalog";
 import logoUrl from "@/assets/logo-diagnopro.png?url";
@@ -130,7 +130,11 @@ function buildImagingPrepRows(items: ExamCartPDFItem[]): [string, string][] {
     const key = `${item.category}::${item.exam.name}`;
     if (seen.has(key)) continue;
     seen.add(key);
-    const note = getImagingPrepNote(item.exam.name, item.category, false);
+    const note = getImagingPrepNote(
+      item.exam.name,
+      item.category,
+      itemHasContrast(item.exam.name, item.category, item.exam.autoContrast || item.withContrast)
+    );
     if (note) rows.push([item.exam.name, note]);
   }
   return rows;
@@ -396,10 +400,13 @@ export async function generateCombinedPDF(args: GenerateCombinedPDFArgs) {
   // ── Preparaciones (agrupadas) ────────────────────────────────────────────
   const imagingPrepRows = buildImagingPrepRows(args.imagingItems);
   const labPrepRows     = buildLabPrepRows(args.labItems);
+  const hasContrast     = args.imagingItems.some((it) =>
+    itemHasContrast(it.exam.name, it.category, it.exam.autoContrast || it.withContrast)
+  );
   const imagingGroups = groupPreps(imagingPrepRows, "Imagenología");
   const labGroups     = groupPreps(labPrepRows, "Laboratorio");
   const allGroups     = [...imagingGroups, ...labGroups];
-  const hasAnyPrep    = allGroups.length > 0;
+  const hasAnyPrep    = allGroups.length > 0 || hasContrast;
 
   y = checkPage(doc, y, 18, "Indicaciones");
   doc.setFont("helvetica", "bold");
@@ -432,6 +439,23 @@ export async function generateCombinedPDF(args: GenerateCombinedPDFArgs) {
       });
       // @ts-expect-error lastAutoTable injected by plugin
       y = doc.lastAutoTable.finalY + 4;
+    }
+
+    if (hasContrast) {
+      y = checkPage(doc, y, 18, "Indicaciones");
+      const postLines = doc.splitTextToSize(
+        "Después del examen: beber 2 L de agua al día durante 2–3 días. Si usa metformina, consultar la indicación médica. Consultar ante dificultad respiratoria, hinchazón facial o urticaria.",
+        170
+      );
+      const postH = postLines.length * 4.4 + 7;
+      doc.setDrawColor(...GRAY_MID);
+      doc.setLineWidth(0.25);
+      doc.rect(15, y, 180, postH, "D");
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(7.5);
+      doc.setTextColor(...BLACK);
+      doc.text(postLines, 19, y + 5.5);
+      y += postH + 5;
     }
 
   } else {

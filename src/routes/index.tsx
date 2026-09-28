@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useRef, useState } from "react";
 import {
-  Scan, FlaskConical, FileDown,
+  Scan, FileDown,
   ShoppingCart, Trash2, Plus, Minus, FlaskConical as LabIcon,
   Landmark, Building2, ShieldCheck, Users, AlertTriangle,
   type LucideIcon,
@@ -25,7 +25,7 @@ type Prevision = "particular" | "fa" | "fbcd";
 
 const tabs: { id: Tab; label: string; icon: typeof Scan }[] = [
   { id: "examenes", label: "Imagenología", icon: Scan },
-  { id: "laboratorio", label: "Laboratorio", icon: FlaskConical },
+  { id: "laboratorio", label: "Laboratorio", icon: LabIcon },
 ];
 
 const previsionOpts: { key: Prevision; label: string }[] = [
@@ -93,11 +93,6 @@ function Index() {
   const changeImagingQty = (key: string, delta: number) => {
     setImagingCart((prev) =>
       prev.map((c) => c.key === key ? { ...c, qty: c.qty + delta } : c).filter((c) => c.qty > 0)
-    );
-  };
-  const toggleImagingContrast = (key: string) => {
-    setImagingCart((prev) =>
-      prev.map((c) => c.key === key ? { ...c, withContrast: !c.withContrast } : c)
     );
   };
   const removeImaging = (key: string) => setImagingCart((prev) => prev.filter((c) => c.key !== key));
@@ -328,26 +323,6 @@ function Index() {
                                   <Trash2 className="h-3.5 w-3.5" />
                                 </button>
                               </div>
-                              {(item.category === "resonancia" || item.category === "tac") && !isPieloTAC(item.exam.name) && (
-                                <div className="mt-2 space-y-1.5">
-                                  <button
-                                    onClick={() => toggleImagingContrast(item.key)}
-                                    className={`flex w-full items-center gap-1.5 rounded-lg border px-2 py-1.5 text-[11px] font-semibold transition-all ${
-                                      item.withContrast || item.exam.autoContrast
-                                        ? "border-orange-300 bg-orange-50 text-orange-700 dark:border-orange-700 dark:bg-orange-950/40 dark:text-orange-400"
-                                        : "border-border bg-muted/30 text-muted-foreground hover:border-orange-300 hover:text-orange-600"
-                                    }`}
-                                    disabled={!!item.exam.autoContrast}
-                                  >
-                                    <FlaskConical className="h-3 w-3 shrink-0" />
-                                    {item.exam.autoContrast
-                                      ? "Requiere contraste (fijo)"
-                                      : item.withContrast
-                                      ? "Con contraste ✓"
-                                      : "Sin contraste — click para activar"}
-                                  </button>
-                                </div>
-                              )}
                               <div className="mt-2 flex items-center justify-between">
                                 <div className="flex items-center gap-1.5 rounded-lg border border-border bg-muted/40 px-1.5 py-1">
                                   <button onClick={() => changeImagingQty(item.key, -1)} className="flex h-5 w-5 items-center justify-center rounded text-foreground hover:bg-muted">
