@@ -36,15 +36,44 @@ export type LabExam = {
   fasting?: true;
 };
 
-export const examDatabase = examsJson as Record<ExamCategory, Exam[]>;
+const PARTICULAR_RATE = 1.15;
+
+function normalizeParticularPrice(particular: number, fonasaA: number | null | undefined): number {
+  if (!particular || !fonasaA) return particular;
+
+  const calculated = fonasaA * PARTICULAR_RATE;
+  const lower = Math.floor(calculated);
+  const isHalfPeso = Math.abs(calculated - (lower + 0.5)) < 0.000001;
+
+  // Algunas planillas guardan el cálculo de 115% como n.499999999 y luego
+  // lo convierten a entero hacia abajo. Solo corregimos ese caso: los
+  // precios particulares digitados manualmente permanecen intactos.
+  return isHalfPeso && particular === lower ? particular + 1 : particular;
+}
+
+export const examDatabase = Object.fromEntries(
+  Object.entries(examsJson as Record<ExamCategory, Exam[]>).map(([category, exams]) => [
+    category,
+    exams.map((exam) => ({
+      ...exam,
+      part: normalizeParticularPrice(exam.part, exam.fa),
+    })),
+  ])
+) as Record<ExamCategory, Exam[]>;
 export const discountMatrix = discountsJson as Record<
   ExamCategory,
   Record<Convenio, number>
 >;
 export const labDatabase = (labJson as LabExam[]).map((exam) =>
-  exam.code === "0301014" && !/test de coombs/i.test(exam.name)
-    ? { ...exam, name: `${exam.name} / Test de Coombs` }
-    : exam
+  {
+    const normalizedExam = {
+      ...exam,
+      particular: normalizeParticularPrice(exam.particular, exam.fonasa_a),
+    };
+    return exam.code === "0301014" && !/test de coombs/i.test(exam.name)
+      ? { ...normalizedExam, name: `${exam.name} / Test de Coombs` }
+      : normalizedExam;
+  }
 );
 
 export const categoryMeta: Record<
