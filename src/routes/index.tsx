@@ -191,7 +191,7 @@ function Index() {
         </div>
 
         {/* ── Content ── */}
-        <div className="grid gap-5 lg:grid-cols-[1fr_360px]">
+        <div className="grid gap-5 md:grid-cols-[minmax(0,1fr)_320px] xl:grid-cols-[minmax(0,1fr)_360px]">
             {/* Left: catalog — minHeight is locked to the tallest panel seen
                 so the column never shrinks when switching tabs */}
             <div ref={leftColRef} style={{ minHeight: leftColMinH || undefined }}>
