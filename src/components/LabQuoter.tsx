@@ -487,14 +487,6 @@ function TurnaroundBadge({ type }: { type: string }) {
   );
 }
 
-function FastingBadge() {
-  return (
-    <span className="inline-flex items-center rounded-full bg-orange-100 px-2 py-0.5 text-[10px] font-semibold text-orange-800 dark:bg-orange-900/40 dark:text-orange-300">
-      Ayuno
-    </span>
-  );
-}
-
 function PrepBadge({ type }: { type: "orina_manana" | "orina_24h" | "psa" }) {
   const meta = {
     orina_manana: { label: "Primera orina de la mañana", color: "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400" },
@@ -660,10 +652,9 @@ function ExamList({
                   </span>
                 )}
               </div>
-              {(e.prep || e.fasting) && (
+              {e.prep && (
                 <span className="mt-1.5 flex flex-wrap gap-1">
                   {/* TurnaroundBadge oculto: pendiente confirmar tiempos con laboratorio */}
-                  {e.fasting && <FastingBadge />}
                   {e.prep && <PrepBadge type={e.prep} />}
                 </span>
               )}
