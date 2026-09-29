@@ -124,9 +124,7 @@ export function itemHasContrast(examName: string, category: ExamCategory, autoCo
 export function getImagingPrepNote(examName: string, category: ExamCategory, withContrast?: boolean): string | null {
   const n = norm(examName);
 
-  if (category === "radiografia") {
-    return "Retirar objetos metálicos de la zona a examinar (aros, collares, cinturones, monedas, etc.).";
-  }
+  if (category === "radiografia") return null;
 
   if (category === "resonancia") {
     const parts: string[] = [];
