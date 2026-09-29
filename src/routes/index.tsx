@@ -1,16 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useMemo, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import {
   Scan, FileDown,
   ShoppingCart, Trash2, Plus, Minus, FlaskConical as LabIcon,
-  Landmark, Building2, ShieldCheck, Users, AlertTriangle,
+  Landmark, Building2, ShieldCheck, Users,
   type LucideIcon,
 } from "lucide-react";
 import logo from "@/assets/logo-diagnopro.svg";
 import { ExamQuoter, type CartItem } from "@/components/ExamQuoter";
 import { LabQuoter, type LabCartItem } from "@/components/LabQuoter";
 import { discountMatrix, convenioMeta, categoryMeta, type Convenio, type LabExam } from "@/data/catalog";
-import { findLabDuplicates } from "@/data/profiles";
 import { formatCLP } from "@/lib/format";
 import { generateCombinedPDF, type ExamCartPDFItem } from "@/lib/pdf";
 import { ThemePicker } from "@/components/ThemePicker";
@@ -84,11 +83,6 @@ function Index() {
 
   const labSelectedTotal = labCart.reduce((s, i) => s + getLabPrice(i.exam) * i.qty, 0);
   const combinedTotal = imagingGrandTotal + labSelectedTotal;
-
-  const labDuplicateWarnings = useMemo(
-    () => findLabDuplicates(labCart.map((i) => ({ code: i.exam.code, name: i.exam.name }))),
-    [labCart]
-  );
 
   const changeImagingQty = (key: string, delta: number) => {
     setImagingCart((prev) =>
@@ -377,24 +371,6 @@ function Index() {
                         })}
                       </>
                     )}
-                  </div>
-                )}
-
-                {/* Duplicate warnings */}
-                {labDuplicateWarnings.length > 0 && (
-                  <div className="mt-3 rounded-xl border border-amber-300 bg-amber-50 p-3 dark:border-amber-700 dark:bg-amber-950/40">
-                    <p className="mb-1.5 flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide text-amber-800 dark:text-amber-300">
-                      <AlertTriangle className="h-3.5 w-3.5 shrink-0" />
-                      Posible cobro duplicado
-                    </p>
-                    <ul className="space-y-1">
-                      {labDuplicateWarnings.map((w, i) => (
-                        <li key={i} className="text-[11px] leading-snug text-amber-800 dark:text-amber-200">• {w}</li>
-                      ))}
-                    </ul>
-                    <p className="mt-1.5 text-[10px] text-amber-700/80 dark:text-amber-300/70">
-                      Verifica si corresponde cobrarlo aparte o eliminarlo de la cotización.
-                    </p>
                   </div>
                 )}
 

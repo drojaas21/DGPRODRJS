@@ -3,7 +3,8 @@ import autoTable from "jspdf-autotable";
 import { formatCLP } from "./format";
 import { getImagingPrepNote, itemHasContrast } from "@/data/imagingPrep";
 import type { Exam, ExamCategory, Convenio, LabExam } from "@/data/catalog";
-import { categoryMeta, convenioMeta } from "@/data/catalog";
+import { convenioMeta } from "@/data/catalog";
+import { getImagingFonasaCode } from "@/data/imagingFonasaCodes";
 import logoUrl from "@/assets/logo-diagnopro.png?url";
 
 // ── Palette — minimal, mostly grayscale ─────────────────────────────────────
@@ -43,8 +44,6 @@ export type GenerateCombinedPDFArgs = {
   grandTotal: number;
   observations: string;
 };
-
-type PrepGroup = { prep: string; exams: string[]; tipo: "Imagenología" | "Laboratorio" };
 
 // ── Logo loader (SVG → PNG via canvas) ──────────────────────────────────────
 async function loadLogoDataUrl(): Promise<string | null> {
@@ -111,18 +110,6 @@ function subtotalBar(doc: jsPDF, y: number, label: string, amount: number): numb
   return y + 12;
 }
 
-// ── Prep grouping ────────────────────────────────────────────────────────────
-function groupPreps(rows: [string, string][], tipo: "Imagenología" | "Laboratorio"): PrepGroup[] {
-  const map = new Map<string, string[]>();
-  for (const [examName, prepText] of rows) {
-    const key = prepText.trim();
-    if (!map.has(key)) map.set(key, []);
-    const list = map.get(key)!;
-    if (!list.includes(examName)) list.push(examName);
-  }
-  return Array.from(map.entries()).map(([prep, exams]) => ({ prep, exams, tipo }));
-}
-
 function buildImagingPrepRows(items: ExamCartPDFItem[]): [string, string][] {
   const seen = new Set<string>();
   const rows: [string, string][] = [];
@@ -143,6 +130,22 @@ function buildImagingPrepRows(items: ExamCartPDFItem[]): [string, string][] {
 function buildLabPrepRows(items: Array<{ exam: LabExam; qty: number }>): [string, string][] {
   const FASTING_NOTE =
     "Ayuno de sólidos y líquidos: mínimo 8 h, máximo 12 h. Última colación a las 23:00 h del día anterior. Evitar sobreayuno.";
+  const noFastingCodes = new Set([
+    "0301026", // Ferritina
+    "0301041", // Hemoglobina glicada
+    "0302005", // Ácido úrico
+    "0302015", // Calcio
+    "0302023", // Creatinina en sangre
+    "PERFIL RENAL",
+    "0302034", // Perfil lipídico
+    "0302042", // Fósforo
+    "0302056", // Magnesio
+    "0302057", // Urea / nitrógeno ureico
+    "0302064", // Triglicéridos
+    "0302067", // Colesterol total
+    "0302068", // Colesterol HDL
+    "0302076", // Perfil hepático
+  ]);
 
   const ORINA_MANANA_GENERAL =
     "Primera orina de la mañana, segundo chorro. Recolectar en frasco estéril y entregar dentro de 2 h.";
@@ -197,7 +200,10 @@ function buildLabPrepRows(items: Array<{ exam: LabExam; qty: number }>): [string
       );
     } else {
       // ── Preparaciones estándar ────────────────────────────────────────────
-      if (exam.fasting) notes.push(FASTING_NOTE);
+      const isCreatinine = /creatinina/i.test(exam.name) && !/clearance/i.test(exam.name);
+      if (exam.fasting && !noFastingCodes.has(exam.code.toUpperCase()) && !isCreatinine) {
+        notes.push(FASTING_NOTE);
+      }
 
       if (exam.prep === "orina_manana") {
         notes.push(isUrocultivo(exam) ? UROCULTIVO_NOTE : ORINA_MANANA_GENERAL);
@@ -271,12 +277,12 @@ export async function generateCombinedPDF(args: GenerateCombinedPDFArgs) {
     const hasDiscount = args.imagingItems.some((it) => it.discountPct > 0);
 
     const head = hasDiscount
-      ? [["Cat.", "Examen", "Cant.", "Precio", "Desc.", "Total"]]
-      : [["Cat.", "Examen", "Cant.", "Precio unitario", "Total"]];
+      ? [["Código FONASA", "Examen", "Cant.", "Precio", "Desc.", "Total"]]
+      : [["Código FONASA", "Examen", "Cant.", "Precio unitario", "Total"]];
 
     const body = args.imagingItems.map((it) => {
-      const catLabel = categoryMeta[it.category]?.short ?? it.category.toUpperCase();
-      const row: string[] = [catLabel, it.exam.name, String(it.qty), formatCLP(it.baseUnit)];
+      const fonasaCode = getImagingFonasaCode(it.exam.name) ?? "—";
+      const row: string[] = [fonasaCode, it.exam.name, String(it.qty), formatCLP(it.baseUnit)];
       if (hasDiscount) row.push(it.discountPct > 0 ? `-${it.discountPct}%` : "");
       row.push(formatCLP(it.lineTotal));
       return row;
@@ -294,13 +300,13 @@ export async function generateCombinedPDF(args: GenerateCombinedPDFArgs) {
       },
       bodyStyles: { fontSize: 8.5, cellPadding: { top: 2.5, bottom: 2.5, left: 3, right: 3 }, textColor: BLACK },
       columnStyles: hasDiscount ? {
-        0: { cellWidth: 18, fontSize: 7.5 },
+        0: { cellWidth: 25, fontSize: 7.5 },
         2: { halign: "center", cellWidth: 14 },
         3: { halign: "right", cellWidth: 28 },
         4: { halign: "center", cellWidth: 18 },
         5: { halign: "right", cellWidth: 28, fontStyle: "bold" },
       } : {
-        0: { cellWidth: 18, fontSize: 7.5 },
+        0: { cellWidth: 25, fontSize: 7.5 },
         2: { halign: "center", cellWidth: 14 },
         3: { halign: "right", cellWidth: 34 },
         4: { halign: "right", cellWidth: 28, fontStyle: "bold" },
@@ -403,10 +409,10 @@ export async function generateCombinedPDF(args: GenerateCombinedPDFArgs) {
   const hasContrast     = args.imagingItems.some((it) =>
     itemHasContrast(it.exam.name, it.category, it.exam.autoContrast || it.withContrast)
   );
-  const imagingGroups = groupPreps(imagingPrepRows, "Imagenología");
-  const labGroups     = groupPreps(labPrepRows, "Laboratorio");
-  const allGroups     = [...imagingGroups, ...labGroups];
-  const hasAnyPrep    = allGroups.length > 0 || hasContrast;
+  const preparations = Array.from(
+    new Set([...imagingPrepRows, ...labPrepRows].map(([, prep]) => prep.trim()).filter(Boolean))
+  );
+  const hasAnyPrep = preparations.length > 0 || hasContrast;
 
   y = checkPage(doc, y, 18, "Indicaciones");
   doc.setFont("helvetica", "bold");
@@ -416,12 +422,12 @@ export async function generateCombinedPDF(args: GenerateCombinedPDFArgs) {
   y += 6.5;
 
   if (hasAnyPrep) {
-    if (allGroups.length > 0) {
-      // Tabla cuadriculada: Tipo | Preparación | Aplica a
+    if (preparations.length > 0) {
+      // Solo se listan las instrucciones, sin asociarlas a nombres de exámenes.
       autoTable(doc, {
         startY: y,
-        head: [["Tipo", "Preparación", "Aplica a"]],
-        body: allGroups.map((g) => [g.tipo, g.prep, g.exams.join(", ")]),
+        head: [["Preparación"]],
+        body: preparations.map((prep) => [prep]),
         theme: "grid",
         headStyles: {
           fillColor: GRAY_LIGHT, textColor: BLACK,
@@ -429,11 +435,7 @@ export async function generateCombinedPDF(args: GenerateCombinedPDFArgs) {
           lineColor: GRAY_MID, lineWidth: 0.25,
         },
         bodyStyles: { fontSize: 8, cellPadding: { top: 2.5, bottom: 2.5, left: 3, right: 3 }, textColor: BLACK, valign: "top" },
-        columnStyles: {
-          0: { cellWidth: 26, fontSize: 7.5 },
-          1: { cellWidth: 96 },
-          2: { cellWidth: 58, fontSize: 7.5, textColor: GRAY_TEXT },
-        },
+        columnStyles: { 0: { cellWidth: 180 } },
         styles:  { lineColor: GRAY_MID, lineWidth: 0.25, overflow: "linebreak" },
         margin:  { left: 15, right: 15 },
       });

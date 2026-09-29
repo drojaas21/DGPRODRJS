@@ -130,10 +130,10 @@ export function getImagingPrepNote(examName: string, category: ExamCategory, wit
 
   if (category === "resonancia") {
     const parts: string[] = [];
-    if (withContrast) {
+    if (n.includes("colangior")) {
+      parts.push("Ayuno de sólidos y líquidos mínimo 8 horas.");
+    } else if (withContrast) {
       parts.push(CONTRAST_NOTE);
-    } else if (n.includes("colangior")) {
-      parts.push("Ayuno de sólidos y líquidos 6 h.");
     } else if (n.includes("abdom") || n.includes("pelv") || n.includes("prostat")) {
       parts.push("Ayuno de sólidos y líquidos 4 h.");
     }

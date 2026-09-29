@@ -96,14 +96,14 @@ content_type = "application/pdf"
 id = "6Y_wzD0FziVYD5dN0udXl"
 uri = "file://dist-static.zip"
 type = "unspecified"
-title = "dist compilado"
-description = "Paquete estático actualizado del cotizador DiagnoPRO."
+title = "dist actualizado"
+description = "Versión estática actualizada con las instrucciones PDF corregidas, códigos FONASA y sin aviso de cobro duplicado."
 logical_id = "53264698-dde2-4748-9cfe-68d522cda401"
-content_hash = "sha256:fbc4a686b3841d806e8695b88eadbede264a3d7ca86297b71461793bd5157903"
-size = 760455
-mtime_ms = 1790564912000
-storage_uri = "gcs://replit-rams-assets-picard/rams/assets/repl:b3f6f5a0-f08c-4ab5-9c87-5b88c0cd26b8/53264698-dde2-4748-9cfe-68d522cda401/9e0513d7-3a2d-419c-8969-063e740cd402"
-storage_version_token = "1790565142077296"
+content_hash = "sha256:6f500e9a4d9d4c9d8b26c46ca16e4e4864d4a8cd25ea10962ef95f8c2a66345e"
+size = 759771
+mtime_ms = 1790714117743
+storage_uri = "gcs://replit-rams-assets-picard/rams/assets/repl:b3f6f5a0-f08c-4ab5-9c87-5b88c0cd26b8/53264698-dde2-4748-9cfe-68d522cda401/02fc20a2-238d-4a74-9b91-70600e43020e"
+storage_version_token = "1790714135859473"
 content_type = "application/octet-stream"
 
 [[outputs]]

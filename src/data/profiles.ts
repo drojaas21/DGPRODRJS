@@ -15,76 +15,8 @@ export type LabProfile = {
   note?: string;
 };
 
-function cleanExamName(name: string): string {
-  return name.replace(/\*PARTICULAR\*/gi, "").replace(/\s{2,}/g, " ").trim();
-}
-
 export function profileCartKey(p: LabProfile): string {
   return p.code ?? `PERFIL-${p.name}`;
-}
-
-/**
- * Detecta exámenes repetidos en la cotización de laboratorio:
- * - Un examen individual cuyo código ya está incluido dentro de un perfil agregado.
- * - Dos perfiles agregados que comparten exámenes con el mismo código.
- * No marca los ×2 intencionales dentro de un mismo perfil (ej. glucosas post carga).
- */
-export function findLabDuplicates(
-  cart: Array<{ code: string; name: string }>
-): string[] {
-  const byKey = new Map<string, LabProfile>();
-  for (const p of labProfiles) {
-    if (p.code) byKey.set(p.code, p);
-    byKey.set(`PERFIL-${p.name}`, p);
-  }
-
-  const profilesInCart: LabProfile[] = [];
-  const individuals: Array<{ code: string; name: string }> = [];
-  for (const item of cart) {
-    const p = byKey.get(item.code);
-    if (p) profilesInCart.push(p);
-    else individuals.push(item);
-  }
-
-  const warnings: string[] = [];
-
-  // Examen individual vs perfil
-  for (const item of individuals) {
-    const owners = profilesInCart.filter((p) =>
-      p.items.some((it) => it.code === item.code)
-    );
-    if (owners.length > 0) {
-      warnings.push(
-        `${cleanExamName(item.name)} (${item.code}) ya viene incluido en ${owners
-          .map((o) => o.name)
-          .join(" y ")}. Se estaría cobrando dos veces.`
-      );
-    }
-  }
-
-  // Perfil vs perfil
-  for (let i = 0; i < profilesInCart.length; i++) {
-    for (let j = i + 1; j < profilesInCart.length; j++) {
-      const a = profilesInCart[i];
-      const b = profilesInCart[j];
-      const sharedCodes = new Set<string>();
-      const sharedNames: string[] = [];
-      for (const it of a.items) {
-        if (!it.code || sharedCodes.has(it.code)) continue;
-        if (b.items.some((x) => x.code === it.code)) {
-          sharedCodes.add(it.code);
-          sharedNames.push(`${it.name} (${it.code})`);
-        }
-      }
-      if (sharedNames.length > 0) {
-        warnings.push(
-          `${a.name} y ${b.name} comparten: ${sharedNames.join(", ")}.`
-        );
-      }
-    }
-  }
-
-  return warnings;
 }
 
 export const labProfiles: LabProfile[] = [
