@@ -96,14 +96,14 @@ content_type = "application/pdf"
 id = "6Y_wzD0FziVYD5dN0udXl"
 uri = "file://dist-static.zip"
 type = "unspecified"
-title = "dist actualizado sin indicaciones de radiografía"
-description = "Paquete estático actualizado; la sección de preparaciones del PDF ya no muestra instrucciones para radiografías."
+title = "dist actualizado: agua permitida cuando corresponde"
+description = "Paquete estático con preparaciones que diferencian el ayuno de sólidos del consumo de agua para los exámenes que lo requieren."
 logical_id = "53264698-dde2-4748-9cfe-68d522cda401"
-content_hash = "sha256:80275e37986d3977ead8637864fc7c28b27268a1313e642aebe2b08094b5bd14"
-size = 759713
-mtime_ms = 1790714571611
-storage_uri = "gcs://replit-rams-assets-picard/rams/assets/repl:b3f6f5a0-f08c-4ab5-9c87-5b88c0cd26b8/53264698-dde2-4748-9cfe-68d522cda401/ce0b4f11-3369-4ffc-a999-4def4d406ef5"
-storage_version_token = "1790714580075978"
+content_hash = "sha256:7c82dc33109feba8f5a2b33c9425fa3fabcf1c4019760895f12a1b3ce21c4922"
+size = 759874
+mtime_ms = 1790729854766
+storage_uri = "gcs://replit-rams-assets-picard/rams/assets/repl:b3f6f5a0-f08c-4ab5-9c87-5b88c0cd26b8/53264698-dde2-4748-9cfe-68d522cda401/1414ab05-34a9-4487-844e-2728ac266224"
+storage_version_token = "1790729865381344"
 content_type = "application/octet-stream"
 
 [[outputs]]

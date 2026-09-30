@@ -60,7 +60,7 @@ export const patientInfoMap: Record<string, string> = {
   "Resonancia Magnética de Muslo o Cadera (Unilateral)":
     "Examina la articulación coxofemoral (cadera), el fémur, los músculos del muslo y las estructuras periarticulares. Indicado para dolor inguinal o de cadera, sospecha de necrosis avascular de cadera, artropatías o lesiones musculares. Dura 30-45 minutos.",
   "Colangioresonancia Magnética":
-    "Estudio de la vía biliar (conductos que conectan hígado, vesícula y duodeno) y el conducto pancreático sin necesidad de contraste. Permite visualizar cálculos en la vía biliar, estenosis o patología pancreática. Se requiere ayuno de 6 horas y se bebe agua como contraste natural. Dura 30-45 minutos.",
+    "Estudio de la vía biliar (conductos que conectan hígado, vesícula y duodeno) y el conducto pancreático sin necesidad de contraste. Permite visualizar cálculos en la vía biliar, estenosis o patología pancreática. Requiere ayuno de sólidos mínimo 8 horas; el agua se bebe según la indicación del centro como contraste natural. Dura 30-45 minutos.",
   "Protocolo PEP (Resonancia Magnética)":
     "Protocolo especial que combina dos estudios de resonancia en una misma sesión. Incluye resonancia de columna total (0405016) y resonancia de extremidades (0405011). Se indica para evaluaciones integrales en enfermedades que afectan múltiples regiones. Dura aproximadamente 90-120 minutos.",
 
@@ -120,9 +120,9 @@ export const patientInfoMap: Record<string, string> = {
   "Ecografía Abdominal":
     "Examen con ultrasonido (no usa radiación) que evalúa el hígado, vesícula biliar, páncreas, bazo y riñones. Se realiza con un transductor (sonda) sobre el abdomen. Requiere ayuno de 6-8 horas para que la vesícula biliar esté llena y sea bien evaluada. Dura 15-20 minutos.",
   "Ecografía Abdominal y Pelviana Femenina":
-    "Evaluación ecográfica completa del abdomen más útero, ovarios y estructuras pélvicas femeninas. Requiere ayuno de 6-8 horas y vejiga llena para la parte pélvica (beber agua 1 hora antes sin orinar). Dura 20-30 minutos.",
+    "Evaluación ecográfica completa del abdomen más útero, ovarios y estructuras pélvicas femeninas. Requiere ayuno de sólidos de 6-8 horas; se permite agua. Para la parte pélvica, beber 1,5 litros de agua 1 hora antes y no orinar. Dura 20-30 minutos.",
   "Ecografía Abdominal y Pelviana Masculina":
-    "Evaluación ecográfica del abdomen más vejiga y próstata. Requiere ayuno de 6-8 horas y vejiga llena para la parte pélvica. Dura 20-25 minutos.",
+    "Evaluación ecográfica del abdomen más vejiga y próstata. Requiere ayuno de sólidos de 6-8 horas; se permite agua. Para la parte pélvica, beber 1,5 litros de agua 1 hora antes y no orinar. Dura 20-25 minutos.",
   "Ecografía Pelviana Femenina":
     "Evalúa el útero, ovarios, trompas y estructuras pélvicas femeninas. Indicada para ciclos menstruales irregulares, dolor pélvico, sospecha de quistes ováricos o seguimiento ginecológico. Se realiza con vejiga llena (beber agua 1 hora antes sin orinar). Dura 15-20 minutos.",
   "Ecografía Mamaria Bilateral (incluye Doppler)":
