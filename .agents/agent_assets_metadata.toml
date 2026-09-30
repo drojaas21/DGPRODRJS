@@ -96,14 +96,14 @@ content_type = "application/pdf"
 id = "6Y_wzD0FziVYD5dN0udXl"
 uri = "file://dist-static.zip"
 type = "unspecified"
-title = "Cotizador actualizado — preparación TAC y ecografía"
-description = "Paquete estático actualizado con ayuno de 4 h para TAC que lo requieren, indicaciones de agua específicas para UroTAC y TAC abdomen/pelvis, PieloTAC con solo ingesta de agua y preparaciones de ecografía de 6 h sin la frase “se permite agua”."
+title = "Cotizador actualizado — preparación sin permiso de agua simple"
+description = "Paquete estático actualizado. Se quitó “se permite agua simple” de las preparaciones para contraste; las indicaciones de ayuno y las preparaciones específicas se mantienen."
 logical_id = "53264698-dde2-4748-9cfe-68d522cda401"
-content_hash = "sha256:0b0c36c15205a1ce55e2b6b16b05532d44b2c8fb88aa8ff7fd22a69c7fdf003e"
-size = 759822
-mtime_ms = 1790731233679
-storage_uri = "gcs://replit-rams-assets-picard/rams/assets/repl:b3f6f5a0-f08c-4ab5-9c87-5b88c0cd26b8/53264698-dde2-4748-9cfe-68d522cda401/56b7a894-c1d4-450a-9208-c9716726ed34"
-storage_version_token = "1790731243626439"
+content_hash = "sha256:0bec14945b0ec07d5cb4efa80cbd6e6b13552566dd0a47e7139591c05faad7fb"
+size = 759815
+mtime_ms = 1790731319335
+storage_uri = "gcs://replit-rams-assets-picard/rams/assets/repl:b3f6f5a0-f08c-4ab5-9c87-5b88c0cd26b8/53264698-dde2-4748-9cfe-68d522cda401/fb02045e-6fb9-4be2-9d06-7a9e9e47e782"
+storage_version_token = "1790731325423123"
 content_type = "application/octet-stream"
 
 [[outputs]]

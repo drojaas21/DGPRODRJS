@@ -17,7 +17,7 @@ const TAC_FAST_AND_WATER =
 export const POST_CONTRAST =
   "Post-contraste: Beber ≈2 litros de agua diarios durante 2–3 días. Si usa Metformina, suspénderla 2 días después del examen. Consulte de inmediato ante dificultad respiratoria, hinchazón facial o urticaria.";
 const CONTRAST_NOTE =
-  "Requiere medio de contraste endovenoso. Ayuno de sólidos mínimo 6 horas; se permite agua simple.";
+  "Requiere medio de contraste endovenoso. Ayuno de sólidos mínimo 6 horas.";
 
 function norm(s: string): string {
   return s
@@ -45,7 +45,7 @@ export function getImagingPrep(
         ARRIVAL,
         ID_ORDER,
         ...(withContrast
-          ? ["Con contraste (gadolinio): ayuno de sólidos de 4 a 6 horas; se permite agua simple."]
+          ? ["Con contraste (gadolinio): ayuno de sólidos de 4 a 6 horas."]
           : []),
       ],
     };
