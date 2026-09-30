@@ -1,7 +1,7 @@
 import { useMemo, useState, type Dispatch, type SetStateAction } from "react";
 import {
   Search, X, Plus, Minus, FlaskConical, Check,
-  AlertCircle, ChevronDown, ChevronUp, Timer,
+  ChevronDown, ChevronUp, Timer,
 } from "lucide-react";
 import { labDatabase, type LabExam } from "@/data/catalog";
 import { labProfiles, profileCartKey, type LabProfile } from "@/data/profiles";
@@ -50,49 +50,10 @@ const labGroups: LabGroup[] = [
     profileNames: "all",
   },
   {
-    id: "hematologia",
-    label: "Hematología",
-    short: "HEM",
-    prefixes: ["0301"],
-    profileNames: ["Cinética del Fierro", "Perfil de Coagulación"],
-  },
-  {
-    id: "bioquimica",
-    label: "Bioquímica",
-    short: "BIO",
-    prefixes: ["0302"],
-    profileNames: [
-      "Perfil Bioquímico", "Perfil Hepático", "Perfil Lipídico", "Perfil Renal",
-      "HOMA", "Insulina Post Pandrial", "Insulina Post Carga",
-      "Glucosa Post Pandrial", "Glucosa Post Carga",
-    ],
-  },
-  {
-    id: "hormonas",
-    label: "Hormonas",
-    short: "HOR",
-    prefixes: ["0303"],
-    profileNames: ["Perfil Tiroideo"],
-  },
-  {
-    id: "inmunologia",
-    label: "Inmunología",
-    short: "INM",
-    prefixes: ["0305"],
-    profileNames: ["Anticuerpos Antitiroides", "GAME", "Perfil ENA"],
-  },
-  {
-    id: "orina",
-    label: "Orina y Líquidos",
-    short: "ORI",
-    prefixes: ["0306", "0309", "0310"],
-    profileNames: ["RAC (Microalbuminuria / Creatinuria)"],
-  },
-  {
-    id: "procedimientos",
-    label: "Procedimientos",
-    short: "PROC",
-    prefixes: ["0307", "0308"],
+    id: "examenes",
+    label: "Exámenes",
+    short: "Exámenes",
+    prefixes: [""],
     profileNames: [],
   },
 ];
@@ -356,7 +317,7 @@ export function LabQuoter({
       {!isSearching && activeGroup === "perfiles" && (
         <div className="rounded-2xl border bg-card p-5 shadow-[var(--shadow-card)]">
           <h3 className="mb-3 text-sm font-bold uppercase tracking-wide text-foreground">
-            Perfiles destacados
+            Perfiles
           </h3>
           <div className="grid gap-2.5 sm:grid-cols-2">
             {labProfiles.map((p) => (
@@ -386,7 +347,7 @@ export function LabQuoter({
           {/* Exámenes del grupo */}
           <div className="p-4">
             <p className="mb-2.5 text-[11px] font-bold uppercase tracking-widest text-muted-foreground">
-              Exámenes — {activeGroupDef.label}
+              Exámenes
             </p>
             <div className="max-h-[500px] space-y-2 overflow-y-auto pr-1">
               {groupResults.length === 0 && (
@@ -405,19 +366,12 @@ export function LabQuoter({
       {isSearching && (
         <div className="rounded-2xl border bg-card p-4 shadow-[var(--shadow-card)]">
           <div className="max-h-[520px] space-y-2 overflow-y-auto pr-1">
-            <ExamList items={mainResults} cart={cart} onAdd={add} onChangeQty={changeQty} />
-
-            {soloResults.length > 0 && (
-              <>
-                <div className="flex items-center gap-2 rounded-lg border border-orange-200 bg-orange-50 px-3 py-2 dark:border-orange-700 dark:bg-orange-950/40">
-                  <AlertCircle className="h-3.5 w-3.5 shrink-0 text-orange-500 dark:text-orange-400" />
-                  <p className="text-[11px] font-semibold text-orange-700 dark:text-orange-400">
-                    Solo Particulares — Exámenes externos ({soloResults.length})
-                  </p>
-                </div>
-                <ExamList items={soloResults} cart={cart} onAdd={add} onChangeQty={changeQty} isSolo />
-              </>
-            )}
+            <ExamList
+              items={[...mainResults, ...soloResults]}
+              cart={cart}
+              onAdd={add}
+              onChangeQty={changeQty}
+            />
 
             {totalSearchResults === 0 && (
               <div className="flex flex-col items-center gap-2 py-12 text-center text-sm text-muted-foreground">
@@ -586,13 +540,11 @@ function ExamList({
   cart,
   onAdd,
   onChangeQty,
-  isSolo = false,
 }: {
   items: LabExam[];
   cart: LabCartItem[];
   onAdd: (e: LabExam) => void;
   onChangeQty: (code: string, delta: number) => void;
-  isSolo?: boolean;
 }) {
   return (
     <>
@@ -600,6 +552,7 @@ function ExamList({
         const cartItem = cart.find((c) => c.exam.code === e.code);
         const inCart = !!cartItem;
         const blocked = isBlocked(e);
+        const isSolo = soloParticularCodes.has(e.code);
         const isBoleta = !isSolo && e.obs?.toUpperCase().includes("BOLETA");
 
         let cardCls = "border-border bg-background";

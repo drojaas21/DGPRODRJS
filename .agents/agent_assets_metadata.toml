@@ -96,14 +96,14 @@ content_type = "application/pdf"
 id = "6Y_wzD0FziVYD5dN0udXl"
 uri = "file://dist-static.zip"
 type = "unspecified"
-title = "Cotizador actualizado — preparación sin permiso de agua simple"
-description = "Paquete estático actualizado. Se quitó “se permite agua simple” de las preparaciones para contraste; las indicaciones de ayuno y las preparaciones específicas se mantienen."
+title = "Cotizador actualizado — Laboratorio con dos secciones"
+description = "Paquete estático actualizado: Laboratorio muestra únicamente Perfiles y Exámenes. Se mantienen los exámenes externos en la lista de exámenes y se quita su bloque como sección aparte."
 logical_id = "53264698-dde2-4748-9cfe-68d522cda401"
-content_hash = "sha256:0bec14945b0ec07d5cb4efa80cbd6e6b13552566dd0a47e7139591c05faad7fb"
-size = 759815
-mtime_ms = 1790731319335
-storage_uri = "gcs://replit-rams-assets-picard/rams/assets/repl:b3f6f5a0-f08c-4ab5-9c87-5b88c0cd26b8/53264698-dde2-4748-9cfe-68d522cda401/fb02045e-6fb9-4be2-9d06-7a9e9e47e782"
-storage_version_token = "1790731325423123"
+content_hash = "sha256:82175a9162deee37d72443e2393daf5435796f25daa5e229cec6abdec585f517"
+size = 759486
+mtime_ms = 1790731644392
+storage_uri = "gcs://replit-rams-assets-picard/rams/assets/repl:b3f6f5a0-f08c-4ab5-9c87-5b88c0cd26b8/53264698-dde2-4748-9cfe-68d522cda401/b64a27e7-6b8d-4685-8214-06dc283eaddb"
+storage_version_token = "1790731650044802"
 content_type = "application/octet-stream"
 
 [[outputs]]
