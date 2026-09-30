@@ -119,3 +119,17 @@ mtime_ms = 1790564335705
 storage_uri = "gcs://replit-rams-assets-picard/rams/assets/repl:b3f6f5a0-f08c-4ab5-9c87-5b88c0cd26b8/1fd192a8-1ffb-4241-a90c-b49325051ded/f43959f0-9e4f-4d03-ba11-37c3b7e2b7a4"
 storage_version_token = "1790564344153513"
 content_type = "application/octet-stream"
+
+[[outputs]]
+id = "SuHtrJ5ProWM_onoWfzqD"
+uri = "file://dist-folder.zip"
+type = "unspecified"
+title = "Carpeta dist completa"
+description = "Descarga del build estático con la estructura dist/ incluida dentro del ZIP. El archivo se verificó sin errores."
+logical_id = "0b63163d-a4bc-4363-b280-8c0342931e72"
+content_hash = "sha256:c8918d449d14caae35d9dd5014db71037f094fead703aec135a069bbdfc7fc72"
+size = 759784
+mtime_ms = 1790731704706
+storage_uri = "gcs://replit-rams-assets-picard/rams/assets/repl:b3f6f5a0-f08c-4ab5-9c87-5b88c0cd26b8/0b63163d-a4bc-4363-b280-8c0342931e72/5e73cbc5-2429-4192-8325-0c29608c5e90"
+storage_version_token = "1790731720747169"
+content_type = "application/octet-stream"
