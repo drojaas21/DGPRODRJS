@@ -42,3 +42,11 @@ src/
 ## User preferences
 
 - Keep existing project structure and stack.
+
+## Preparación de exámenes
+
+- Para TAC/Scanner que requieren ayuno, indicar ayuno de sólidos 4 h.
+- UroTAC y TAC de abdomen/pelvis: “Ayuno de sólidos 4 h; Beber 1,5 L desde 1 h antes y no orinar.”
+- PieloTAC: solo “Beber 1,5 L desde 1 h antes y no orinar.”
+- Para ecografías que requieren ayuno, indicar 6 h; si también requieren vejiga llena, añadir “Beber 1,5 L desde 1 h antes y no orinar.”
+- No usar “se permite agua” en estas indicaciones de preparación.

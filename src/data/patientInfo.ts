@@ -88,19 +88,19 @@ export const patientInfoMap: Record<string, string> = {
   "TAC de Tórax Completo":
     "Tomografía detallada de toda la caja torácica, incluyendo pulmones, pleura, esternón, costillas, clavículas y escápulas. Indicado para nódulos pulmonares, enfermedad pulmonar crónica, trauma torácico o seguimiento oncológico. Dura 10-15 minutos.",
   "TAC de Abdomen":
-    "Tomografía de los órganos abdominales: hígado, vías biliares, páncreas, bazo, suprarrenales y riñones. Indicado para dolor abdominal agudo o crónico, masas abdominales, seguimiento oncológico o evaluación de urgencia. Con contraste, el estudio es mucho más informativo. Dura 15-20 minutos.",
+    "Tomografía de los órganos abdominales: hígado, vías biliares, páncreas, bazo, suprarrenales y riñones. Indicado para dolor abdominal agudo o crónico, masas abdominales, seguimiento oncológico o evaluación de urgencia. Preparación: ayuno de sólidos 4 h; beber 1,5 L desde 1 h antes y no orinar. Dura 15-20 minutos.",
   "TAC Musculoesquelética":
     "Tomografía enfocada en un segmento de extremidad (muslo, pierna, rodilla, antebrazo, codo, muñeca, mano, hombro, pie o tobillo). Útil para fracturas complejas, tumores óseos o patología articular que requiere evaluación ósea detallada. Dura 10-15 minutos.",
   "TAC de Pelvis":
-    "Tomografía de la pelvis, incluyendo sacro, cóccix, caderas, huesos pélvicos y articulaciones sacroilíacas. Indicado para traumatismos pélvicos, tumores pélvicos, evaluación preoperatoria o patología articular de cadera. Generalmente incluye contraste endovenoso. Dura 10-15 minutos.",
+    "Tomografía de la pelvis, incluyendo sacro, cóccix, caderas, huesos pélvicos y articulaciones sacroilíacas. Indicado para traumatismos pélvicos, tumores pélvicos, evaluación preoperatoria o patología articular de cadera. Preparación: ayuno de sólidos 4 h; beber 1,5 L desde 1 h antes y no orinar. Dura 10-15 minutos.",
   "TAC de Abdomen y Pelvis":
-    "Estudio combinado que evalúa simultáneamente abdomen y pelvis, cubriendo todos los órganos desde el diafragma hasta el suelo pélvico. Es uno de los estudios más completos disponibles. Generalmente requiere contraste oral y endovenoso. Dura 15-20 minutos.",
+    "Estudio combinado que evalúa simultáneamente abdomen y pelvis, cubriendo todos los órganos desde el diafragma hasta el suelo pélvico. Es uno de los estudios más completos disponibles. Preparación: ayuno de sólidos 4 h; beber 1,5 L desde 1 h antes y no orinar. Dura 15-20 minutos.",
   "TAC de Tórax, Abdomen y Pelvis":
-    "Estudio de cuerpo completo desde el cuello hasta la pelvis. Indicado principalmente en oncología, traumatismo grave o evaluación de enfermedad sistémica. Requiere contraste endovenoso. Dura 20-30 minutos. Implica una dosis de radiación mayor, solo se indica cuando está médicamente justificado.",
+    "Estudio de cuerpo completo desde el cuello hasta la pelvis. Indicado principalmente en oncología, traumatismo grave o evaluación de enfermedad sistémica. Preparación: ayuno de sólidos 4 h; beber 1,5 L desde 1 h antes y no orinar. Dura 20-30 minutos. Implica una dosis de radiación mayor, solo se indica cuando está médicamente justificado.",
   "Pielografía por TAC":
-    "Estudio de las vías urinarias (riñones, uréteres, vejiga) sin contraste endovenoso para evaluar obstrucciones y cálculos renales. Requiere beber agua antes del examen para mantener la vejiga llena. Dura 20-30 minutos.",
+    "Estudio de las vías urinarias (riñones, uréteres, vejiga) sin contraste endovenoso para evaluar obstrucciones y cálculos renales. Preparación: beber 1,5 L desde 1 h antes y no orinar. Dura 20-30 minutos.",
   "Urografía por TAC (UroTAC)":
-    "Evaluación completa del tracto urinario (riñones, uréteres y vejiga) usando tomografía con contraste. Considerado el estudio de elección para hematuria (sangre en la orina). Se realizan imágenes en varias fases para visualizar todo el sistema. Requiere contraste endovenoso y buena hidratación previa.",
+    "Evaluación completa del tracto urinario (riñones, uréteres y vejiga) usando tomografía con contraste. Considerado el estudio de elección para hematuria (sangre en la orina). Se realizan imágenes en varias fases para visualizar todo el sistema. Preparación: ayuno de sólidos 4 h; beber 1,5 L desde 1 h antes y no orinar.",
   "AngioTAC de Encéfalo":
     "Tomografía especial para visualizar los vasos sanguíneos del cerebro, incluyendo el polígono de Willis. Se indica para detectar aneurismas cerebrales, accidente cerebrovascular isquémico agudo o malformaciones vasculares. Requiere contraste endovenoso. Dura 10-15 minutos.",
   "AngioTAC de Tórax":
@@ -118,13 +118,13 @@ export const patientInfoMap: Record<string, string> = {
 
   // ── ECOGRAFÍA ─────────────────────────────────────────────────────────────
   "Ecografía Abdominal":
-    "Examen con ultrasonido (no usa radiación) que evalúa el hígado, vesícula biliar, páncreas, bazo y riñones. Se realiza con un transductor (sonda) sobre el abdomen. Requiere ayuno de 6-8 horas para que la vesícula biliar esté llena y sea bien evaluada. Dura 15-20 minutos.",
+    "Examen con ultrasonido (no usa radiación) que evalúa el hígado, vesícula biliar, páncreas, bazo y riñones. Se realiza con un transductor (sonda) sobre el abdomen. Requiere ayuno de sólidos 6 h para que la vesícula biliar esté llena y sea bien evaluada. Dura 15-20 minutos.",
   "Ecografía Abdominal y Pelviana Femenina":
-    "Evaluación ecográfica completa del abdomen más útero, ovarios y estructuras pélvicas femeninas. Requiere ayuno de sólidos de 6-8 horas; se permite agua. Para la parte pélvica, beber 1,5 litros de agua 1 hora antes y no orinar. Dura 20-30 minutos.",
+    "Evaluación ecográfica completa del abdomen más útero, ovarios y estructuras pélvicas femeninas. Preparación: ayuno de sólidos 6 h; beber 1,5 L desde 1 h antes y no orinar. Dura 20-30 minutos.",
   "Ecografía Abdominal y Pelviana Masculina":
-    "Evaluación ecográfica del abdomen más vejiga y próstata. Requiere ayuno de sólidos de 6-8 horas; se permite agua. Para la parte pélvica, beber 1,5 litros de agua 1 hora antes y no orinar. Dura 20-25 minutos.",
+    "Evaluación ecográfica del abdomen más vejiga y próstata. Preparación: ayuno de sólidos 6 h; beber 1,5 L desde 1 h antes y no orinar. Dura 20-25 minutos.",
   "Ecografía Pelviana Femenina":
-    "Evalúa el útero, ovarios, trompas y estructuras pélvicas femeninas. Indicada para ciclos menstruales irregulares, dolor pélvico, sospecha de quistes ováricos o seguimiento ginecológico. Se realiza con vejiga llena (beber agua 1 hora antes sin orinar). Dura 15-20 minutos.",
+    "Evalúa el útero, ovarios, trompas y estructuras pélvicas femeninas. Indicada para ciclos menstruales irregulares, dolor pélvico, sospecha de quistes ováricos o seguimiento ginecológico. Preparación: beber 1,5 L desde 1 h antes y no orinar. Dura 15-20 minutos.",
   "Ecografía Mamaria Bilateral (incluye Doppler)":
     "Evaluación por ultrasonido de ambas mamas con estudio del flujo sanguíneo (Doppler). Complementa la mamografía para caracterizar nódulos, especialmente en mujeres jóvenes con tejido mamario denso. No usa radiación. Dura 20-30 minutos.",
   "Ecografía Tiroidea (incluye Doppler)":

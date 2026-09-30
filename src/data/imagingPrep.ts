@@ -8,12 +8,12 @@ export type PrepEntry = {
 const ARRIVAL = "Llegar 20 minutos antes de su hora.";
 const ID_ORDER = "Traer cédula de identidad y orden médica.";
 const NO_SMOKE = "No fumar ni mascar chicle previo al examen.";
-const WATER_PELVIS =
-  "Beber 1.5 litros de agua paulatinamente desde 1 hora antes y retener la orina hasta el examen.";
+const WATER_PELVIS = "Beber 1,5 L desde 1 h antes y no orinar.";
 const FAST_6H = "Ayuno total de 6 horas (sólidos y líquidos).";
-const FAST_6H_SOLIDS = "Ayuno de sólidos durante 6 horas; se permite agua simple.";
-const FAST_4_TO_6H = "Ayuno de 4 a 6 horas.";
-const FAST_4H = "Ayuno total de 4 horas (sólidos y líquidos).";
+const FAST_6H_SOLIDS = "Ayuno de sólidos 6 h.";
+const FAST_4H_SOLIDS = "Ayuno de sólidos 4 h.";
+const TAC_FAST_AND_WATER =
+  "Ayuno de sólidos 4 h; Beber 1,5 L desde 1 h antes y no orinar.";
 export const POST_CONTRAST =
   "Post-contraste: Beber ≈2 litros de agua diarios durante 2–3 días. Si usa Metformina, suspénderla 2 días después del examen. Consulte de inmediato ante dificultad respiratoria, hinchazón facial o urticaria.";
 const CONTRAST_NOTE =
@@ -56,13 +56,19 @@ export function getImagingPrep(
       return { steps: [ARRIVAL, ID_ORDER, WATER_PELVIS] };
     }
     if (n.includes("urograf") || n.includes("urotac")) {
-      return { steps: [ARRIVAL, ID_ORDER, WATER_PELVIS], postProtocol: POST_CONTRAST };
+      return {
+        steps: [ARRIVAL, ID_ORDER, FAST_4H_SOLIDS, WATER_PELVIS],
+        postProtocol: POST_CONTRAST,
+      };
     }
-    if (n.includes("abdom") || n.includes("pelv")) {
-      return { steps: [ARRIVAL, ID_ORDER, FAST_4_TO_6H, NO_SMOKE], postProtocol: POST_CONTRAST };
+    if (!n.includes("angio") && (n.includes("abdom") || n.includes("pelv"))) {
+      return {
+        steps: [ARRIVAL, ID_ORDER, FAST_4H_SOLIDS, WATER_PELVIS, NO_SMOKE],
+        postProtocol: POST_CONTRAST,
+      };
     }
-    if (withContrast || itemHasContrast(examName, category)) {
-      return { steps: [ARRIVAL, ID_ORDER, FAST_4_TO_6H, NO_SMOKE], postProtocol: POST_CONTRAST };
+    if (withContrast || itemHasContrast(examName, category) || n.includes("angio")) {
+      return { steps: [ARRIVAL, ID_ORDER, FAST_4H_SOLIDS, NO_SMOKE], postProtocol: POST_CONTRAST };
     }
     return { steps: [ARRIVAL, ID_ORDER, NO_SMOKE], postProtocol: POST_CONTRAST };
   }
@@ -159,16 +165,16 @@ export function getImagingPrepNote(examName: string, category: ExamCategory, wit
 
   if (category === "tac") {
     if (isPieloTAC(examName)) {
-      return "Beber 1,5 L de agua desde 1 h antes. Retener la orina.";
+      return WATER_PELVIS;
     }
     if (n.includes("urograf") || n.includes("urotac")) {
-      return "Beber 1,5 L de agua desde 1 h antes. Retener la orina.";
+      return TAC_FAST_AND_WATER;
     }
-    if (n.includes("abdom") || n.includes("pelv")) {
-      return FAST_4_TO_6H;
+    if (!n.includes("angio") && (n.includes("abdom") || n.includes("pelv"))) {
+      return TAC_FAST_AND_WATER;
     }
-    if (withContrast) {
-      return FAST_4_TO_6H;
+    if (withContrast || n.includes("angio")) {
+      return FAST_4H_SOLIDS;
     }
     return null;
   }
@@ -182,13 +188,13 @@ export function getImagingPrepNote(examName: string, category: ExamCategory, wit
       return "Sin desodorante, cremas ni talco. Mayores de 40 años: traer mamografía reciente (<6 meses).";
     }
     if (n.includes("abdom") && (n.includes("pelv") || n.includes("pelvian"))) {
-      return "Ayuno de sólidos 6 h; se permite agua. Beber 1,5 L desde 1 h antes y no orinar.";
+      return "Ayuno de sólidos 6 h; Beber 1,5 L desde 1 h antes y no orinar.";
     }
     if (n.includes("abdom")) {
-      return "Ayuno de sólidos 6 h; se permite agua simple.";
+      return "Ayuno de sólidos 6 h.";
     }
     if ((n.includes("renal") || n.includes("rinon")) && (n.includes("vesical") || n.includes("vejiga"))) {
-      return "Ayuno de sólidos 6 h; se permite agua. Beber 1,5 L desde 1 h antes y no orinar.";
+      return "Ayuno de sólidos 6 h; Beber 1,5 L desde 1 h antes y no orinar.";
     }
     if (n.includes("renal") || n.includes("rinon")) {
       return "Ayuno de sólidos y líquidos 6 h.";

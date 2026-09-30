@@ -29,10 +29,14 @@ function getPageNote(note?: string): string | null {
 function getPageDescription(exam: Exam, category: ExamCategory): string {
   if (category !== "tac") return exam.desc;
   const n = normalize(exam.name);
-  if (n.includes("uro") || n.includes("pielograf")) return exam.desc;
+  if (
+    n.includes("uro") ||
+    n.includes("pielograf") ||
+    (!n.includes("angio") && (n.includes("abdom") || n.includes("pelv")))
+  ) return exam.desc;
 
-  if (exam.autoContrast || n.includes("abdom") || n.includes("pelv") || n.includes("angio")) {
-    return `${exam.desc} · Ayuno de 4 a 6 horas.`;
+  if (exam.autoContrast || n.includes("angio")) {
+    return `${exam.desc} · Ayuno de sólidos 4 h.`;
   }
   return exam.desc;
 }

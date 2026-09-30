@@ -447,7 +447,8 @@
       "part": 93104,
       "fa": 80960,
       "fbcd": 49820,
-      "autoContrast": true
+      "autoContrast": true,
+      "note": "Ayuno de sólidos 4 h; Beber 1,5 L desde 1 h antes y no orinar."
     },
     {
       "name": "TAC Musculoesquelética",
@@ -462,7 +463,8 @@
       "part": 95484,
       "fa": 83030,
       "fbcd": 51090,
-      "autoContrast": true
+      "autoContrast": true,
+      "note": "Ayuno de sólidos 4 h; Beber 1,5 L desde 1 h antes y no orinar."
     },
     {
       "name": "TAC de Abdomen y Pelvis",
@@ -470,7 +472,8 @@
       "part": 151973,
       "fa": 132150,
       "fbcd": 81320,
-      "autoContrast": true
+      "autoContrast": true,
+      "note": "Ayuno de sólidos 4 h; Beber 1,5 L desde 1 h antes y no orinar."
     },
     {
       "name": "TAC de Tórax, Abdomen y Pelvis",
@@ -478,7 +481,8 @@
       "part": 306613,
       "fa": 266620,
       "fbcd": 164070,
-      "autoContrast": true
+      "autoContrast": true,
+      "note": "Ayuno de sólidos 4 h; Beber 1,5 L desde 1 h antes y no orinar."
     },
     {
       "name": "Pielografía por TAC",
@@ -486,7 +490,7 @@
       "part": 40020,
       "fa": 34800,
       "fbcd": 21410,
-      "note": "Beber 1,5 litros de agua 1 hora antes y retener la orina hasta el examen"
+      "note": "Beber 1,5 L desde 1 h antes y no orinar."
     },
     {
       "name": "Urografía por TAC (UroTAC)",
@@ -494,7 +498,8 @@
       "part": 89401,
       "fa": 77740,
       "fbcd": 47840,
-      "autoContrast": true
+      "autoContrast": true,
+      "note": "Ayuno de sólidos 4 h; Beber 1,5 L desde 1 h antes y no orinar."
     },
     {
       "name": "AngioTAC de Cuello",
@@ -560,7 +565,7 @@
       "part": 41216,
       "fa": 35840,
       "fbcd": 22050,
-      "note": "Ayuno de sólidos durante 6 horas; se permite agua simple"
+      "note": "Ayuno de sólidos 6 h."
     },
     {
       "name": "Ecografía Abdominal y Pelviana Femenina",
@@ -568,7 +573,7 @@
       "part": 63146,
       "fa": 54910,
       "fbcd": 33780,
-      "note": "Ayuno de sólidos durante 6 horas; beber 1,5 litros de agua 1 hora antes y no orinar"
+      "note": "Ayuno de sólidos 6 h; Beber 1,5 L desde 1 h antes y no orinar."
     },
     {
       "name": "Ecografía Abdominal y Pelviana Masculina",
@@ -576,7 +581,7 @@
       "part": 64135,
       "fa": 55770,
       "fbcd": 34310,
-      "note": "Ayuno de sólidos durante 6 horas; beber 1,5 litros de agua 1 hora antes y no orinar"
+      "note": "Ayuno de sólidos 6 h; Beber 1,5 L desde 1 h antes y no orinar."
     },
     {
       "name": "Ecografía Renal y Vesical Femenina",
@@ -584,7 +589,7 @@
       "part": 50496,
       "fa": 43910,
       "fbcd": 27010,
-      "note": "Ayuno de sólidos durante 6 horas; beber 1,5 litros de agua 1 hora antes y no orinar"
+      "note": "Ayuno de sólidos 6 h; Beber 1,5 L desde 1 h antes y no orinar."
     },
     {
       "name": "Ecografía Renal y Vesical Masculina",
@@ -592,7 +597,7 @@
       "part": 51485,
       "fa": 44770,
       "fbcd": 27540,
-      "note": "Ayuno de sólidos durante 6 horas; beber 1,5 litros de agua 1 hora antes y no orinar"
+      "note": "Ayuno de sólidos 6 h; Beber 1,5 L desde 1 h antes y no orinar."
     },
     {
       "name": "Ecografía Pelviana Femenina",
@@ -600,7 +605,7 @@
       "part": 21931,
       "fa": 19070,
       "fbcd": 11730,
-      "note": "Vejiga llena: beber 1,5 litros de agua 1 hora antes y no orinar"
+      "note": "Beber 1,5 L desde 1 h antes y no orinar."
     },
     {
       "name": "Ecografía Pélvica Masculina (Prostática)",
@@ -608,7 +613,7 @@
       "part": 22920,
       "fa": 19930,
       "fbcd": 12260,
-      "note": "Vejiga llena: beber 1,5 litros de agua 1 hora antes y no orinar"
+      "note": "Beber 1,5 L desde 1 h antes y no orinar."
     },
     {
       "name": "Ecografía Renal Bilateral o de Bazo",

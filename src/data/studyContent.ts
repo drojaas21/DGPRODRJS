@@ -88,7 +88,7 @@ export const studyCards: StudyCard[] = [
         title: "Preparación y Seguridad del Paciente",
         items: [
           "**Sin contraste**: generalmente no requiere preparación especial. Retirar objetos metálicos de la región a explorar.",
-          "**Con contraste iodado IV**: ayuno de 4–6 horas. **Creatinina sérica obligatoria** (vigente, idealmente <7 días). TFG <30 contraindica contraste estándar.",
+          "**Con contraste iodado IV**: ayuno de sólidos 4 h. **Creatinina sérica obligatoria** (vigente, idealmente <7 días). TFG <30 contraindica contraste estándar.",
           "**Metformina**: suspender 48 h antes y 48 h después del contraste IV en pacientes con riesgo de nefrotoxicidad (consultar con médico).",
           "Pacientes con **alergia previa a contraste**: notificar al radiólogo; puede requerirse premedicación con corticoides + antihistamínico.",
           "**Embarazo**: considerar riesgo-beneficio. La radiación es ionizante; preferir alternativas (eco, RM) cuando sea posible. En urgencias vitales, el TAC se realiza igual.",
@@ -135,8 +135,8 @@ export const studyCards: StudyCard[] = [
       {
         title: "Preparación y Seguridad del Paciente",
         items: [
-          "**Eco Abdominal**: ayuno de **6–8 horas** (mejora la ventana acústica al reducir el gas intestinal). Hidratación con agua está permitida.",
-          "**Eco Pélvica/Ginecológica transabdominal**: **vejiga llena** (beber 1 litro de agua 1 hora antes y no orinar). Mejora la ventana acústica pélvica.",
+          "**Eco Abdominal**: ayuno de sólidos **6 horas** (mejora la ventana acústica al reducir el gas intestinal).",
+          "**Eco Pélvica/Ginecológica transabdominal**: **vejiga llena** (beber 1,5 L desde 1 hora antes y no orinar). Mejora la ventana acústica pélvica.",
           "**Eco Transvaginal (TVS)**: vejiga vacía. Explicar el procedimiento a la paciente. Uso de preservativo en el transductor intracavitario.",
           "**Eco Tiroides, Partes Blandas, Doppler vascular**: no requieren preparación especial.",
           "**Eco Obstétrica 1.er trimestre**: preferiblemente transvaginal (mayor resolución). No requiere ayuno.",
