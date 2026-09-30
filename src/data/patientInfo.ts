@@ -60,7 +60,7 @@ export const patientInfoMap: Record<string, string> = {
   "Resonancia Magnética de Muslo o Cadera (Unilateral)":
     "Examina la articulación coxofemoral (cadera), el fémur, los músculos del muslo y las estructuras periarticulares. Indicado para dolor inguinal o de cadera, sospecha de necrosis avascular de cadera, artropatías o lesiones musculares. Dura 30-45 minutos.",
   "Colangioresonancia Magnética":
-    "Estudio de la vía biliar (conductos que conectan hígado, vesícula y duodeno) y el conducto pancreático sin necesidad de contraste. Permite visualizar cálculos en la vía biliar, estenosis o patología pancreática. Requiere ayuno de sólidos mínimo 8 horas; el agua se bebe según la indicación del centro como contraste natural. Dura 30-45 minutos.",
+    "Estudio de la vía biliar (conductos que conectan hígado, vesícula y duodeno) y el conducto pancreático sin necesidad de contraste. Permite visualizar cálculos en la vía biliar, estenosis o patología pancreática. Requiere ayuno de 8 a 12 horas. Dura 30-45 minutos.",
   "Protocolo PEP (Resonancia Magnética)":
     "Protocolo especial que combina dos estudios de resonancia en una misma sesión. Incluye resonancia de columna total (0405016) y resonancia de extremidades (0405011). Se indica para evaluaciones integrales en enfermedades que afectan múltiples regiones. Dura aproximadamente 90-120 minutos.",
 

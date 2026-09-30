@@ -32,11 +32,7 @@ export function getImagingPrep(examName: string, category: ExamCategory): PrepEn
     const withContrast = n.includes("contraste") || n.includes("gadolinio");
     if (n.includes("colangior")) {
       return {
-        steps: [
-          ARRIVAL,
-          ID_ORDER,
-          "Ayuno de sólidos mínimo 8 horas. Beber agua según la indicación del centro para el contraste natural.",
-        ],
+        steps: [ARRIVAL, ID_ORDER, "Ayuno de 8 a 12 horas."],
       };
     }
     return {
@@ -138,7 +134,7 @@ export function getImagingPrepNote(examName: string, category: ExamCategory, wit
   if (category === "resonancia") {
     const parts: string[] = [];
     if (n.includes("colangior")) {
-      parts.push("Ayuno de sólidos mínimo 8 horas. Beber agua según la indicación del centro para el contraste natural.");
+      parts.push("Ayuno de 8 a 12 horas.");
     } else if (withContrast) {
       parts.push(CONTRAST_NOTE);
     } else if (n.includes("abdom") || n.includes("pelv") || n.includes("prostat")) {
