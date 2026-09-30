@@ -12,6 +12,7 @@ const WATER_PELVIS =
   "Beber 1.5 litros de agua paulatinamente desde 1 hora antes y retener la orina hasta el examen.";
 const FAST_6H = "Ayuno total de 6 horas (sólidos y líquidos).";
 const FAST_6H_SOLIDS = "Ayuno de sólidos durante 6 horas; se permite agua simple.";
+const FAST_4_TO_6H = "Ayuno de 4 a 6 horas.";
 const FAST_4H = "Ayuno total de 4 horas (sólidos y líquidos).";
 export const POST_CONTRAST =
   "Post-contraste: Beber ≈2 litros de agua diarios durante 2–3 días. Si usa Metformina, suspénderla 2 días después del examen. Consulte de inmediato ante dificultad respiratoria, hinchazón facial o urticaria.";
@@ -25,7 +26,11 @@ function norm(s: string): string {
     .replace(/[\u0300-\u036f]/g, "");
 }
 
-export function getImagingPrep(examName: string, category: ExamCategory): PrepEntry {
+export function getImagingPrep(
+  examName: string,
+  category: ExamCategory,
+  withContrast = false,
+): PrepEntry {
   const n = norm(examName);
 
   if (category === "resonancia") {
@@ -50,8 +55,14 @@ export function getImagingPrep(examName: string, category: ExamCategory): PrepEn
     if (isPieloTAC(examName)) {
       return { steps: [ARRIVAL, ID_ORDER, WATER_PELVIS] };
     }
+    if (n.includes("urograf") || n.includes("urotac")) {
+      return { steps: [ARRIVAL, ID_ORDER, WATER_PELVIS], postProtocol: POST_CONTRAST };
+    }
     if (n.includes("abdom") || n.includes("pelv")) {
-      return { steps: [ARRIVAL, ID_ORDER, FAST_6H_SOLIDS, WATER_PELVIS, NO_SMOKE], postProtocol: POST_CONTRAST };
+      return { steps: [ARRIVAL, ID_ORDER, FAST_4_TO_6H, NO_SMOKE], postProtocol: POST_CONTRAST };
+    }
+    if (withContrast || itemHasContrast(examName, category)) {
+      return { steps: [ARRIVAL, ID_ORDER, FAST_4_TO_6H, NO_SMOKE], postProtocol: POST_CONTRAST };
     }
     return { steps: [ARRIVAL, ID_ORDER, NO_SMOKE], postProtocol: POST_CONTRAST };
   }
@@ -150,17 +161,20 @@ export function getImagingPrepNote(examName: string, category: ExamCategory, wit
     if (isPieloTAC(examName)) {
       return "Beber 1,5 L de agua desde 1 h antes. Retener la orina.";
     }
-    if (n.includes("abdom") || n.includes("pelv")) {
-      return "Ayuno de sólidos 6 h; se permite agua simple. Beber 1,5 L desde 1 h antes y retener la orina.";
-    }
     if (n.includes("urograf") || n.includes("urotac")) {
       return "Beber 1,5 L de agua desde 1 h antes. Retener la orina.";
+    }
+    if (n.includes("abdom") || n.includes("pelv")) {
+      return FAST_4_TO_6H;
+    }
+    if (withContrast) {
+      return FAST_4_TO_6H;
     }
     return null;
   }
 
   if (category === "contraste") {
-    return CONTRAST_NOTE;
+    return null;
   }
 
   if (category === "ecografia") {

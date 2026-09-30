@@ -10,7 +10,7 @@ export const categoryRecommendations: Record<ExamCategory, string[]> = {
     "Diabético con metformina: suspender 2 días antes si lleva contraste.",
   ],
   tac: [
-    "Con contraste / AngioTAC: ayuno de 4 a 6 horas (puede tomar agua y medicamentos).",
+    "Con contraste / AngioTAC: ayuno de 4 a 6 horas.",
     "Creatinina previa si es mayor de 60 años o con factores de riesgo renal.",
     "Informar alergias a yodo o medios de contraste.",
   ],

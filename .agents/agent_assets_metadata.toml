@@ -96,14 +96,14 @@ content_type = "application/pdf"
 id = "6Y_wzD0FziVYD5dN0udXl"
 uri = "file://dist-static.zip"
 type = "unspecified"
-title = "dist actualizado: ayuno colangioresonancia 8–12 horas"
-description = "Cotizador y preparación PDF muestran la misma indicación para colangioresonancia: ayuno de 8 a 12 horas, sin instrucciones adicionales de agua."
+title = "Cotizador actualizado — preparación TAC"
+description = "Versión estática actualizada y validada. El PDF omite la preparación duplicada del ítem Contraste; el TAC muestra ayuno de 4 a 6 horas sin indicar agua para abdomen y otros TAC. PieloTAC/UroTAC mantienen su instrucción específica de agua."
 logical_id = "53264698-dde2-4748-9cfe-68d522cda401"
-content_hash = "sha256:ccbbad8fd3367adefc59b2529bb1fb3b9cbaf75ee4699cbc252c9889eb52b504"
-size = 759831
-mtime_ms = 1790729941178
-storage_uri = "gcs://replit-rams-assets-picard/rams/assets/repl:b3f6f5a0-f08c-4ab5-9c87-5b88c0cd26b8/53264698-dde2-4748-9cfe-68d522cda401/a70c6a3f-6978-46da-a389-ccc48621c7b2"
-storage_version_token = "1790729951033781"
+content_hash = "sha256:85f6f3e880a00097bd677baaeeea436c0332e8e89b3ca04695d6941b0c4a4b27"
+size = 759915
+mtime_ms = 1790730652840
+storage_uri = "gcs://replit-rams-assets-picard/rams/assets/repl:b3f6f5a0-f08c-4ab5-9c87-5b88c0cd26b8/53264698-dde2-4748-9cfe-68d522cda401/ff9c61d6-3d02-404b-989b-72c44c176317"
+storage_version_token = "1790730662766369"
 content_type = "application/octet-stream"
 
 [[outputs]]

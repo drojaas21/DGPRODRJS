@@ -26,6 +26,17 @@ function getPageNote(note?: string): string | null {
   return cleaned || null;
 }
 
+function getPageDescription(exam: Exam, category: ExamCategory): string {
+  if (category !== "tac") return exam.desc;
+  const n = normalize(exam.name);
+  if (n.includes("uro") || n.includes("pielograf")) return exam.desc;
+
+  if (exam.autoContrast || n.includes("abdom") || n.includes("pelv") || n.includes("angio")) {
+    return `${exam.desc} · Ayuno de 4 a 6 horas.`;
+  }
+  return exam.desc;
+}
+
 export type CartItem = {
   key: string;
   category: ExamCategory;
@@ -196,6 +207,7 @@ export function ExamQuoter({
           const fonasaCode = getImagingFonasaCode(exam.name);
           const isInfoOpen = activeInfoKey === key;
           const pageNote = getPageNote(exam.note);
+          const pageDescription = getPageDescription(exam, category);
           return (
             <div key={key} className="rounded-xl border border-border bg-background">
               {/* Main row */}
@@ -218,7 +230,7 @@ export function ExamQuoter({
                 {/* Name + desc + price */}
                 <span className="min-w-0 flex-1">
                   <span className="block text-sm font-semibold leading-snug text-foreground">{exam.name}</span>
-                  <span className="mt-0.5 block text-xs text-muted-foreground line-clamp-1">{exam.desc}</span>
+                  <span className="mt-0.5 block text-xs text-muted-foreground line-clamp-2">{pageDescription}</span>
                   <span className="mt-1 block text-xs font-semibold text-foreground">
                     {formatCLP(price)}
                   </span>
