@@ -9,15 +9,15 @@ const ARRIVAL = "Llegar 20 minutos antes de su hora.";
 const ID_ORDER = "Traer cédula de identidad y orden médica.";
 const NO_SMOKE = "No fumar ni mascar chicle previo al examen.";
 const WATER_PELVIS = "Beber 1,5 L desde 1 h antes y no orinar.";
-const FAST_6H = "Ayuno total de 6 horas (sólidos y líquidos).";
-const FAST_6H_SOLIDS = "Ayuno de sólidos 6 h.";
-const FAST_4H_SOLIDS = "Ayuno de sólidos 4 h.";
+const FAST_6H = "Ayuno total mín. 6 h (sólidos y líquidos).";
+const FAST_6H_SOLIDS = "Ayuno de sólidos mín. 6 h.";
+const FAST_4H_SOLIDS = "Ayuno de sólidos mín. 4 h.";
 const TAC_FAST_AND_WATER =
-  "Ayuno de sólidos 4 h; Beber 1,5 L desde 1 h antes y no orinar.";
+  "Ayuno de sólidos mín. 4 h; Beber 1,5 L desde 1 h antes y no orinar.";
 export const POST_CONTRAST =
   "Post-contraste: Beber ≈2 litros de agua diarios durante 2–3 días. Si usa Metformina, suspénderla 2 días después del examen. Consulte de inmediato ante dificultad respiratoria, hinchazón facial o urticaria.";
 const CONTRAST_NOTE =
-  "Requiere medio de contraste endovenoso. Ayuno de sólidos mínimo 6 horas.";
+  "Requiere medio de contraste endovenoso. Ayuno de sólidos mín. 6 h.";
 
 function norm(s: string): string {
   return s
@@ -37,7 +37,7 @@ export function getImagingPrep(
     const withContrast = n.includes("contraste") || n.includes("gadolinio");
     if (n.includes("colangior")) {
       return {
-        steps: [ARRIVAL, ID_ORDER, "Ayuno de 8 a 12 horas."],
+        steps: [ARRIVAL, ID_ORDER, "Ayuno mín. 8 h y máx. 12 h."],
       };
     }
     return {
@@ -45,7 +45,7 @@ export function getImagingPrep(
         ARRIVAL,
         ID_ORDER,
         ...(withContrast
-          ? ["Con contraste (gadolinio): ayuno de sólidos de 4 a 6 horas."]
+          ? ["Con contraste (gadolinio): ayuno de sólidos mín. 4 h y máx. 6 h."]
           : []),
       ],
     };
@@ -158,11 +158,11 @@ export function getImagingPrepNote(examName: string, category: ExamCategory, wit
   if (category === "resonancia") {
     const parts: string[] = [];
     if (n.includes("colangior")) {
-      parts.push("Ayuno de 8 a 12 horas.");
+      parts.push("Ayuno mín. 8 h y máx. 12 h.");
     } else if (withContrast) {
       parts.push(CONTRAST_NOTE);
     } else if (n.includes("abdom") || n.includes("pelv") || n.includes("prostat")) {
-      parts.push("Ayuno de sólidos y líquidos 4 h.");
+      parts.push("Ayuno de sólidos y líquidos mín. 4 h.");
     }
     if (n.includes("corazon") || n.includes("cardiaca") || n.includes("cardiac")) {
       parts.push("Evitar cafeína 24 h antes.");
@@ -198,22 +198,22 @@ export function getImagingPrepNote(examName: string, category: ExamCategory, wit
       return "Sin desodorante, cremas ni talco. Mayores de 40 años: traer mamografía reciente (<6 meses).";
     }
     if (n.includes("abdom") && (n.includes("pelv") || n.includes("pelvian"))) {
-      return "Ayuno de sólidos 6 h; Beber 1,5 L desde 1 h antes y no orinar.";
+      return "Ayuno de sólidos mín. 6 h; Beber 1,5 L desde 1 h antes y no orinar.";
     }
     if (n.includes("abdom")) {
-      return "Ayuno de sólidos 6 h.";
+      return "Ayuno de sólidos mín. 6 h.";
     }
     if ((n.includes("renal") || n.includes("rinon")) && (n.includes("vesical") || n.includes("vejiga"))) {
-      return "Ayuno de sólidos 6 h; Beber 1,5 L desde 1 h antes y no orinar.";
+      return "Ayuno de sólidos mín. 6 h; Beber 1,5 L desde 1 h antes y no orinar.";
     }
     if (n.includes("renal") || n.includes("rinon")) {
-      return "Ayuno de sólidos y líquidos 6 h.";
+      return "Ayuno de sólidos y líquidos mín. 6 h.";
     }
     if (n.includes("pelv")) {
       return "Beber 1,5 L de agua desde 1 h antes. No orinar.";
     }
     if (n.includes("elastograf")) {
-      return "Ayuno de sólidos y líquidos 2–3 h.";
+      return "Ayuno de sólidos y líquidos mín. 2 h y máx. 3 h.";
     }
     return null;
   }

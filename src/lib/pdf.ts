@@ -129,7 +129,7 @@ function buildImagingPrepRows(items: ExamCartPDFItem[]): [string, string][] {
 
 function buildLabPrepRows(items: Array<{ exam: LabExam; qty: number }>): [string, string][] {
   const FASTING_NOTE =
-    "Durante el ayuno, no consumir sólidos ni líquidos distintos de agua simple. Duración: mínimo 8 h y máximo 12 h. Última colación a las 23:00 h del día anterior. Evitar sobreayuno.";
+    "Durante el ayuno, no consumir sólidos ni líquidos. Duración mín. 8 h y máx. 12 h. Última colación a las 23:00 h del día anterior. Evitar sobreayuno.";
   const noFastingCodes = new Set([
     "0301026", // Ferritina
     "0301041", // Hemoglobina glicada
@@ -186,17 +186,17 @@ function buildLabPrepRows(items: Array<{ exam: LabExam; qty: number }>): [string
     // ── Casos especiales (tienen su propia instrucción completa) ──────────────
     if (isPTGO(exam)) {
       notes.push(
-        "Ayuno de 8–12 h (agua simple permitida). Llegar antes de las 09:00 h. Beber Glucofresh y permanecer en reposo durante 2 h. " +
+        "Ayuno mín. 8 h y máx. 12 h. Llegar antes de las 09:00 h. Beber Glucofresh y permanecer en reposo durante 2 h. " +
         "No comer, fumar ni hacer ejercicio."
       );
     } else if (isInsulinaCurve(exam)) {
       notes.push(
-        "Ayuno de 8–12 h (agua simple permitida). Llegar antes de las 09:00 h. Beber Glucofresh y permanecer en reposo durante el procedimiento. " +
+        "Ayuno mín. 8 h y máx. 12 h. Llegar antes de las 09:00 h. Beber Glucofresh y permanecer en reposo durante el procedimiento. " +
         "No comer, fumar ni hacer ejercicio."
       );
     } else if (isGlucosaCurve(exam)) {
       notes.push(
-        "Ayuno de 8–12 h (agua simple permitida). Acudir en la mañana. Permanecer en reposo entre las muestras; no comer, fumar ni hacer ejercicio."
+        "Ayuno mín. 8 h y máx. 12 h. Acudir en la mañana. Permanecer en reposo entre las muestras; no comer, fumar ni hacer ejercicio."
       );
     } else {
       // ── Preparaciones estándar ────────────────────────────────────────────

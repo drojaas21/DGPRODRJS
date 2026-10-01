@@ -40,7 +40,7 @@ export const studyCards: StudyCard[] = [
           "**Cuestionario de seguridad RM obligatorio** antes de ingresar a la sala: marcapasos, implantes cocleares, clips aneurismáticos, cuerpos extraños metálicos intraoculares.",
           "Retirar **todos los objetos metálicos**: joyas, piercing, audífonos, parches transdérmicos con capa metálica, prótesis dentales removibles.",
           "Para exámenes **con gadolinio IV**: solicitar creatinina sérica previa. TFG <30 mL/min contraindica gadolinio estándar (riesgo de fibrosis sistémica nefrogénica).",
-          "Ayuno de 6 horas si el examen incluye contraste IV. Para RM de abdomen/pelvis: ayuno de 6 h para minimizar artefactos de motilidad.",
+          "Ayuno mínimo de 6 horas si el examen incluye contraste IV. Para RM de abdomen/pelvis: ayuno mínimo de 6 h para minimizar artefactos de motilidad.",
           "Pacientes con **claustrofobia**: coordinar con médico solicitante uso de ansiolítico oral previo. Explicar al paciente la duración y los ruidos del equipo.",
           "RM en **embarazo**: se considera seguro a partir del 2.º trimestre; contraste con gadolinio solo si el beneficio supera el riesgo.",
         ],
@@ -88,7 +88,7 @@ export const studyCards: StudyCard[] = [
         title: "Preparación y Seguridad del Paciente",
         items: [
           "**Sin contraste**: generalmente no requiere preparación especial. Retirar objetos metálicos de la región a explorar.",
-          "**Con contraste iodado IV**: ayuno de sólidos 4 h. **Creatinina sérica obligatoria** (vigente, idealmente <7 días). TFG <30 contraindica contraste estándar.",
+          "**Con contraste iodado IV**: ayuno de sólidos mín. 4 h. **Creatinina sérica obligatoria** (vigente, idealmente <7 días). TFG <30 contraindica contraste estándar.",
           "**Metformina**: suspender 48 h antes y 48 h después del contraste IV en pacientes con riesgo de nefrotoxicidad (consultar con médico).",
           "Pacientes con **alergia previa a contraste**: notificar al radiólogo; puede requerirse premedicación con corticoides + antihistamínico.",
           "**Embarazo**: considerar riesgo-beneficio. La radiación es ionizante; preferir alternativas (eco, RM) cuando sea posible. En urgencias vitales, el TAC se realiza igual.",
@@ -135,7 +135,7 @@ export const studyCards: StudyCard[] = [
       {
         title: "Preparación y Seguridad del Paciente",
         items: [
-          "**Eco Abdominal**: ayuno de sólidos **6 horas** (mejora la ventana acústica al reducir el gas intestinal).",
+          "**Eco Abdominal**: ayuno de sólidos **mín. 6 h** (mejora la ventana acústica al reducir el gas intestinal).",
           "**Eco Pélvica/Ginecológica transabdominal**: **vejiga llena** (beber 1,5 L desde 1 hora antes y no orinar). Mejora la ventana acústica pélvica.",
           "**Eco Transvaginal (TVS)**: vejiga vacía. Explicar el procedimiento a la paciente. Uso de preservativo en el transductor intracavitario.",
           "**Eco Tiroides, Partes Blandas, Doppler vascular**: no requieren preparación especial.",
@@ -281,7 +281,7 @@ export const studyCards: StudyCard[] = [
         title: "Preparación y Seguridad Obligatoria",
         items: [
           "**CREATININA SÉRICA OBLIGATORIA** antes de contraste iodado IV o gadolinio: vigente (idealmente <7 días, o <30 días en pacientes sin enfermedad renal conocida). TFG <30 mL/min contraindica contraste estándar.",
-          "**Ayuno de 4–6 horas** antes de la administración IV para reducir el riesgo en caso de reacción anafilactoide con vómitos y broncoespasmo.",
+          "**Ayuno mín. 4 h y máx. 6 h** antes de la administración IV para reducir el riesgo en caso de reacción anafilactoide con vómitos y broncoespasmo.",
           "**Metformina**: suspender 48 h antes y 48 h después del contraste iodado IV en pacientes con riesgo renal (discutir con médico si urgencia).",
           "**Alergias previas a contraste**: documentar siempre. Alergia leve previa: premedicar con prednisona 50 mg vo 13 h, 7 h y 1 h antes + difenhidramina 50 mg 1 h antes. Alergia severa previa: evaluar alternativas.",
           "Informar al paciente sobre sensaciones normales durante la inyección: **calor corporal generalizado, sabor metálico y urgencia urinaria transitoria**.",
@@ -333,7 +333,7 @@ export const studyCards: StudyCard[] = [
           "**Holter ECG**: no aplicar cremas ni aceites en el tórax el día anterior (adhesión de electrodos). Registrar actividades y síntomas en el diario de Holter provisto.",
           "**Holter MAPA**: manguito en brazo no dominante. Mantener brazo relajado y extendido durante cada medición. Continuar actividades habituales.",
           "**Ergometría**: no comer ni beber (excepto agua) 2–3 h antes. Ropa cómoda y zapatillas. Consultar si debe suspender betabloqueadores o digoxina (según indicación del cardiólogo). ECG basal previo.",
-          "**AngioTAC coronario**: ayuno 4 h, creatinina vigente (para contraste), **frecuencia cardíaca <65 lpm** (puede requerir betabloqueador oral previo — Metoprolol 50–100 mg). Evitar café/estimulantes 12 h antes.",
+          "**AngioTAC coronario**: ayuno mín. 4 h, creatinina vigente (para contraste), **frecuencia cardíaca <65 lpm** (puede requerir betabloqueador oral previo — Metoprolol 50–100 mg). Evitar café/estimulantes 12 h antes.",
         ],
       },
       {
@@ -350,7 +350,7 @@ export const studyCards: StudyCard[] = [
         items: [
           "**Ergometría**: contraindicada en IAM reciente (<2 días), angina inestable no controlada, arritmias severas no controladas, IC descompensada, estenosis aórtica severa sintomática.",
           "**AngioTAC coronario**: IR severa (TFG <30 con contraste), alergia a contraste no manejada, fibrilación auricular (impide sincronización ECG), FC no controlable <65 lpm.",
-          "**Ecocardiografía transtorácica**: sin contraindicaciones. La **transesofágica (TEE)** requiere ayuno 6 h, sedación y es contraindicada en esofagopatías severas.",
+          "**Ecocardiografía transtorácica**: sin contraindicaciones. La **transesofágica (TEE)** requiere ayuno mín. 6 h, sedación y es contraindicada en esofagopatías severas.",
         ],
       },
     ],
@@ -424,7 +424,7 @@ export const studyCards: StudyCard[] = [
       {
         title: "Preparación Pre-analítica",
         items: [
-          "**Ayuno estricto de 8–12 horas** (solo agua permitida). Fundamental para resultados válidos. Ayuno <8 h invalida el examen para fines diagnósticos.",
+          "**Ayuno estricto mín. 8 h y máx. 12 h**. Fundamental para resultados válidos. Ayuno <8 h invalida el examen para fines diagnósticos.",
           "No realizar **ejercicio físico intenso** la noche anterior ni la mañana del examen.",
           "Registrar medicamentos hiperglicemiantes (corticoides, diuréticos tiazídicos, antipsicóticos) e hipoglicemiantes (insulina, metformina, sulfonilureas).",
           "Estrés agudo, infecciones activas y hospitalización pueden **elevar la glucosa** de forma fisiológica y transitoria.",
@@ -565,7 +565,7 @@ export const studyCards: StudyCard[] = [
       {
         title: "Preparación Pre-analítica",
         items: [
-          "**Ayuno de 9–12 horas** obligatorio para medición de **triglicéridos** (y cálculo de LDL por fórmula de Friedewald). El LDL directo y el colesterol total pueden medirse sin ayuno.",
+          "**Ayuno mín. 9 h y máx. 12 h** obligatorio para medición de **triglicéridos** (y cálculo de LDL por fórmula de Friedewald). El LDL directo y el colesterol total pueden medirse sin ayuno.",
           "Suspender **suplementos de omega-3 y fibratos** 72 h antes si el médico lo indica (pueden reducir TG transitoriamente).",
           "Registrar **estatinas, fibratos, ezetimiba**: el objetivo es conocer el perfil basal o monitorear el efecto del tratamiento.",
           "Estrés agudo, infección activa, embarazo y cambios recientes de dieta pueden **alterar significativamente** los valores lipídicos.",
@@ -612,7 +612,7 @@ export const studyCards: StudyCard[] = [
       {
         title: "Preparación Pre-analítica",
         items: [
-          "**No requiere ayuno** para TSH aislada. Sin embargo, si se piden T3, T4 libre o perfil hormonal, algunos laboratorios recomiendan ayuno de 4 h.",
+          "**No requiere ayuno** para TSH aislada. Sin embargo, si se piden T3, T4 libre o perfil hormonal, algunos laboratorios recomiendan ayuno mín. 4 h.",
           "Tomar la muestra **antes de la dosis matutina de levotiroxina** si el paciente está en tratamiento: el pico de T4 post-dosis puede alterar T3/T4 libre.",
           "**Biotina** (vitamina B7) en dosis altas (>5 mg/día, usada en suplementos cosméticos) puede interferir gravemente con inmunoensayos de TSH: suspender **72 h antes**.",
           "Yodo radiactivo, amiodarona, glucocorticoides y dopamina pueden afectar los niveles de TSH.",
@@ -940,7 +940,7 @@ export const studyCards: StudyCard[] = [
       {
         title: "Preparación Pre-analítica",
         items: [
-          "**Ayuno de 8–10 horas** para bilirrubinas y el perfil completo (reduce la lipemia que puede interferir).",
+          "**Ayuno mín. 8 h y máx. 10 h** para bilirrubinas y el perfil completo (reduce la lipemia que puede interferir).",
           "Evitar **consumo de alcohol** 24–72 h antes (eleva GGT y transaminasas).",
           "Registrar todos los **medicamentos y suplementos**: paracetamol (hepatotóxico en altas dosis), estatinas (elevan transaminasas), hierba de San Juan, kava.",
           "**Ejercicio intenso** eleva AST y ALT por daño muscular: evitar 24 h antes.",
@@ -1302,7 +1302,7 @@ export const studyCards: StudyCard[] = [
       {
         title: "Preparación Pre-analítica",
         items: [
-          "**Ayuno de 8 horas** recomendado (aunque no estrictamente necesario para B12 aislada).",
+          "**Ayuno mín. 8 h** recomendado (aunque no estrictamente necesario para B12 aislada).",
           "Registrar **suplementos de B12**: cyanocobalamina oral, hidroxocobalamina IM. Pueden normalizar los niveles plasmáticos incluso con déficit tisular.",
           "**Metformina crónica** (>4 años): puede reducir la absorción de B12 por mecanismo de receptor de calcio ileal — monitorear anualmente en diabéticos.",
         ],

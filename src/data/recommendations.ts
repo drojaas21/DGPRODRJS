@@ -10,12 +10,12 @@ export const categoryRecommendations: Record<ExamCategory, string[]> = {
     "Diabético con metformina: suspender 2 días antes si lleva contraste.",
   ],
   tac: [
-    "Con contraste / AngioTAC: ayuno de sólidos 4 h.",
+    "Con contraste / AngioTAC: ayuno de sólidos mín. 4 h.",
     "Creatinina previa si es mayor de 60 años o con factores de riesgo renal.",
     "Informar alergias a yodo o medios de contraste.",
   ],
   ecografia: [
-    "Abdominal: ayuno de sólidos 6 h.",
+    "Abdominal: ayuno de sólidos mín. 6 h.",
     "Pélvica / vesical: beber 1,5 L desde 1 h antes y no orinar.",
     "Renal: beber 1,5 L desde 1 h antes y no orinar.",
   ],
@@ -30,7 +30,7 @@ export const categoryRecommendations: Record<ExamCategory, string[]> = {
     "Traer mamografías anteriores si las tiene para comparación.",
   ],
   contraste: [
-    "Si acompaña a TAC: ayuno de sólidos 4 h.",
+    "Si acompaña a TAC: ayuno de sólidos mín. 4 h.",
     "Creatinina vigente si es mayor de 60 años.",
     "Informar alergias previas a medios de contraste.",
     "Diabéticos con metformina: suspender según indicación médica.",

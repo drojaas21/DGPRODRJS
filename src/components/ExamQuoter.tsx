@@ -36,7 +36,7 @@ function getPageDescription(exam: Exam, category: ExamCategory): string {
   ) return exam.desc;
 
   if (exam.autoContrast || n.includes("angio")) {
-    return `${exam.desc} · Ayuno de sólidos 4 h.`;
+    return `${exam.desc} · Ayuno de sólidos mín. 4 h.`;
   }
   return exam.desc;
 }

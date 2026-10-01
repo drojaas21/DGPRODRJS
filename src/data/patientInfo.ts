@@ -28,17 +28,17 @@ export const patientInfoMap: Record<string, string> = {
   "Resonancia Magnética Cardíaca":
     "Examen detallado del corazón que evalúa la función cardíaca, el grosor de las paredes, el flujo sanguíneo y la presencia de tejido cicatricial. Considerado el estándar de oro para evaluar miocardiopatías. Dura 45-75 minutos.",
   "Resonancia Magnética de Abdomen":
-    "Visualiza los órganos abdominales: hígado, páncreas, riñones, bazo y retroperitoneo con gran detalle. Indicado cuando la ecografía o el TAC no son suficientes, especialmente para caracterizar lesiones hepáticas. Se requiere ayuno de 6 horas previo al examen. Dura 45-60 minutos.",
+    "Visualiza los órganos abdominales: hígado, páncreas, riñones, bazo y retroperitoneo con gran detalle. Indicado cuando la ecografía o el TAC no son suficientes, especialmente para caracterizar lesiones hepáticas. Se requiere ayuno mínimo de 6 horas previo al examen. Dura 45-60 minutos.",
   "Resonancia Magnética Renal":
-    "Estudio detallado de los riñones y vías urinarias. Permite evaluar masas renales, quistes complejos o alteraciones vasculares renales. Se recomienda ayuno de 6 horas. Dura 30-45 minutos.",
+    "Estudio detallado de los riñones y vías urinarias. Permite evaluar masas renales, quistes complejos o alteraciones vasculares renales. Se recomienda ayuno mínimo de 6 horas. Dura 30-45 minutos.",
   "Resonancia Magnética de Pelvis":
-    "Examina los órganos y estructuras dentro de la pelvis: útero, ovarios, vejiga y recto. Muy útil en ginecología, urología y cirugía colorrectal. Se requiere ayuno de 6 horas. Dura 30-45 minutos.",
+    "Examina los órganos y estructuras dentro de la pelvis: útero, ovarios, vejiga y recto. Muy útil en ginecología, urología y cirugía colorrectal. Se requiere ayuno mínimo de 6 horas. Dura 30-45 minutos.",
   "Defecografía por Resonancia Magnética":
-    "Evalúa el movimiento del piso pélvico y la evacuación mediante imágenes dinámicas. Es útil para estudiar prolapso, incontinencia y trastornos del piso pélvico. Se requiere ayuno de 6 horas. Dura 30-45 minutos.",
+    "Evalúa el movimiento del piso pélvico y la evacuación mediante imágenes dinámicas. Es útil para estudiar prolapso, incontinencia y trastornos del piso pélvico. Se requiere ayuno mínimo de 6 horas. Dura 30-45 minutos.",
   "Resonancia Magnética de Próstata":
     "Estudio detallado de la glándula prostática, indicado para diagnosticar o estadificar cáncer de próstata. Se usa la resonancia multiparamétrica que combina varias secuencias de imagen. Se recomienda enema rectal previo según indicación médica. Dura 45-60 minutos.",
   "Resonancia Magnética de Abdomen y Pelvis":
-    "Evaluación combinada que abarca todos los órganos abdominales y pélvicos en un solo examen. Indicado cuando se necesita una visión completa de la cavidad abdominal y pélvica. Se requiere ayuno de 6 horas. Dura 60-90 minutos.",
+    "Evaluación combinada que abarca todos los órganos abdominales y pélvicos en un solo examen. Indicado cuando se necesita una visión completa de la cavidad abdominal y pélvica. Se requiere ayuno mínimo de 6 horas. Dura 60-90 minutos.",
   "Angiografía por Resonancia Magnética de Encéfalo":
     "Estudio de los vasos sanguíneos cerebrales sin usar contraste en la mayoría de los casos. Evalúa el estado de las arterias del cerebro para detectar aneurismas, estenosis o malformaciones vasculares. Dura 30-45 minutos.",
   "Angiografía por Resonancia Magnética de Cerebro":
@@ -60,7 +60,7 @@ export const patientInfoMap: Record<string, string> = {
   "Resonancia Magnética de Muslo o Cadera (Unilateral)":
     "Examina la articulación coxofemoral (cadera), el fémur, los músculos del muslo y las estructuras periarticulares. Indicado para dolor inguinal o de cadera, sospecha de necrosis avascular de cadera, artropatías o lesiones musculares. Dura 30-45 minutos.",
   "Colangioresonancia Magnética":
-    "Estudio de la vía biliar (conductos que conectan hígado, vesícula y duodeno) y el conducto pancreático sin necesidad de contraste. Permite visualizar cálculos en la vía biliar, estenosis o patología pancreática. Requiere ayuno de 8 a 12 horas. Dura 30-45 minutos.",
+    "Estudio de la vía biliar (conductos que conectan hígado, vesícula y duodeno) y el conducto pancreático sin necesidad de contraste. Permite visualizar cálculos en la vía biliar, estenosis o patología pancreática. Requiere ayuno mínimo de 8 y máximo de 12 horas. Dura 30-45 minutos.",
   "Protocolo PEP (Resonancia Magnética)":
     "Protocolo especial que combina dos estudios de resonancia en una misma sesión. Incluye resonancia de columna total (0405016) y resonancia de extremidades (0405011). Se indica para evaluaciones integrales en enfermedades que afectan múltiples regiones. Dura aproximadamente 90-120 minutos.",
 
@@ -88,19 +88,19 @@ export const patientInfoMap: Record<string, string> = {
   "TAC de Tórax Completo":
     "Tomografía detallada de toda la caja torácica, incluyendo pulmones, pleura, esternón, costillas, clavículas y escápulas. Indicado para nódulos pulmonares, enfermedad pulmonar crónica, trauma torácico o seguimiento oncológico. Dura 10-15 minutos.",
   "TAC de Abdomen":
-    "Tomografía de los órganos abdominales: hígado, vías biliares, páncreas, bazo, suprarrenales y riñones. Indicado para dolor abdominal agudo o crónico, masas abdominales, seguimiento oncológico o evaluación de urgencia. Preparación: ayuno de sólidos 4 h. Dura 15-20 minutos.",
+    "Tomografía de los órganos abdominales: hígado, vías biliares, páncreas, bazo, suprarrenales y riñones. Indicado para dolor abdominal agudo o crónico, masas abdominales, seguimiento oncológico o evaluación de urgencia. Preparación: ayuno de sólidos, mínimo 4 h. Dura 15-20 minutos.",
   "TAC Musculoesquelética":
     "Tomografía enfocada en un segmento de extremidad (muslo, pierna, rodilla, antebrazo, codo, muñeca, mano, hombro, pie o tobillo). Útil para fracturas complejas, tumores óseos o patología articular que requiere evaluación ósea detallada. Dura 10-15 minutos.",
   "TAC de Pelvis":
-    "Tomografía de la pelvis, incluyendo sacro, cóccix, caderas, huesos pélvicos y articulaciones sacroilíacas. Indicado para traumatismos pélvicos, tumores pélvicos, evaluación preoperatoria o patología articular de cadera. Preparación: ayuno de sólidos 4 h; beber 1,5 L desde 1 h antes y no orinar. Dura 10-15 minutos.",
+    "Tomografía de la pelvis, incluyendo sacro, cóccix, caderas, huesos pélvicos y articulaciones sacroilíacas. Indicado para traumatismos pélvicos, tumores pélvicos, evaluación preoperatoria o patología articular de cadera. Preparación: ayuno de sólidos, mínimo 4 h; beber 1,5 L desde 1 h antes y no orinar. Dura 10-15 minutos.",
   "TAC de Abdomen y Pelvis":
-    "Estudio combinado que evalúa simultáneamente abdomen y pelvis, cubriendo todos los órganos desde el diafragma hasta el suelo pélvico. Es uno de los estudios más completos disponibles. Preparación: ayuno de sólidos 4 h; beber 1,5 L desde 1 h antes y no orinar. Dura 15-20 minutos.",
+    "Estudio combinado que evalúa simultáneamente abdomen y pelvis, cubriendo todos los órganos desde el diafragma hasta el suelo pélvico. Es uno de los estudios más completos disponibles. Preparación: ayuno de sólidos, mínimo 4 h; beber 1,5 L desde 1 h antes y no orinar. Dura 15-20 minutos.",
   "TAC de Tórax, Abdomen y Pelvis":
-    "Estudio de cuerpo completo desde el cuello hasta la pelvis. Indicado principalmente en oncología, traumatismo grave o evaluación de enfermedad sistémica. Preparación: ayuno de sólidos 4 h; beber 1,5 L desde 1 h antes y no orinar. Dura 20-30 minutos. Implica una dosis de radiación mayor, solo se indica cuando está médicamente justificado.",
+    "Estudio de cuerpo completo desde el cuello hasta la pelvis. Indicado principalmente en oncología, traumatismo grave o evaluación de enfermedad sistémica. Preparación: ayuno de sólidos, mínimo 4 h; beber 1,5 L desde 1 h antes y no orinar. Dura 20-30 minutos. Implica una dosis de radiación mayor, solo se indica cuando está médicamente justificado.",
   "Pielografía por TAC":
     "Estudio de las vías urinarias (riñones, uréteres, vejiga) sin contraste endovenoso para evaluar obstrucciones y cálculos renales. Preparación: beber 1,5 L desde 1 h antes y no orinar. Dura 20-30 minutos.",
   "Urografía por TAC (UroTAC)":
-    "Evaluación completa del tracto urinario (riñones, uréteres y vejiga) usando tomografía con contraste. Considerado el estudio de elección para hematuria (sangre en la orina). Se realizan imágenes en varias fases para visualizar todo el sistema. Preparación: ayuno de sólidos 4 h; beber 1,5 L desde 1 h antes y no orinar.",
+    "Evaluación completa del tracto urinario (riñones, uréteres y vejiga) usando tomografía con contraste. Considerado el estudio de elección para hematuria (sangre en la orina). Se realizan imágenes en varias fases para visualizar todo el sistema. Preparación: ayuno de sólidos, mínimo 4 h; beber 1,5 L desde 1 h antes y no orinar.",
   "AngioTAC de Encéfalo":
     "Tomografía especial para visualizar los vasos sanguíneos del cerebro, incluyendo el polígono de Willis. Se indica para detectar aneurismas cerebrales, accidente cerebrovascular isquémico agudo o malformaciones vasculares. Requiere contraste endovenoso. Dura 10-15 minutos.",
   "AngioTAC de Tórax":
@@ -118,11 +118,11 @@ export const patientInfoMap: Record<string, string> = {
 
   // ── ECOGRAFÍA ─────────────────────────────────────────────────────────────
   "Ecografía Abdominal":
-    "Examen con ultrasonido (no usa radiación) que evalúa el hígado, vesícula biliar, páncreas, bazo y riñones. Se realiza con un transductor (sonda) sobre el abdomen. Requiere ayuno de sólidos 6 h para que la vesícula biliar esté llena y sea bien evaluada. Dura 15-20 minutos.",
+    "Examen con ultrasonido (no usa radiación) que evalúa el hígado, vesícula biliar, páncreas, bazo y riñones. Se realiza con un transductor (sonda) sobre el abdomen. Requiere ayuno de sólidos mínimo 6 horas para que la vesícula biliar esté llena y sea bien evaluada. Dura 15-20 minutos.",
   "Ecografía Abdominal y Pelviana Femenina":
-    "Evaluación ecográfica completa del abdomen más útero, ovarios y estructuras pélvicas femeninas. Preparación: ayuno de sólidos 6 h; beber 1,5 L desde 1 h antes y no orinar. Dura 20-30 minutos.",
+    "Evaluación ecográfica completa del abdomen más útero, ovarios y estructuras pélvicas femeninas. Preparación: ayuno de sólidos, mínimo 6 h; beber 1,5 L desde 1 h antes y no orinar. Dura 20-30 minutos.",
   "Ecografía Abdominal y Pelviana Masculina":
-    "Evaluación ecográfica del abdomen más vejiga y próstata. Preparación: ayuno de sólidos 6 h; beber 1,5 L desde 1 h antes y no orinar. Dura 20-25 minutos.",
+    "Evaluación ecográfica del abdomen más vejiga y próstata. Preparación: ayuno de sólidos, mínimo 6 h; beber 1,5 L desde 1 h antes y no orinar. Dura 20-25 minutos.",
   "Ecografía Pelviana Femenina":
     "Evalúa el útero, ovarios, trompas y estructuras pélvicas femeninas. Indicada para ciclos menstruales irregulares, dolor pélvico, sospecha de quistes ováricos o seguimiento ginecológico. Preparación: beber 1,5 L desde 1 h antes y no orinar. Dura 15-20 minutos.",
   "Ecografía Mamaria Bilateral (incluye Doppler)":
@@ -136,7 +136,7 @@ export const patientInfoMap: Record<string, string> = {
   "Doppler Carotídeo / Vasos del Cuello":
     "Estudio del flujo sanguíneo en las arterias carótidas y vertebrales del cuello. Indicado para detección de aterosclerosis, soplos carotídeos o evaluación del riesgo de accidente cerebrovascular. Dura 20-30 minutos.",
   "Elastografía Hepática":
-    "Mide la rigidez del hígado mediante ultrasonido para evaluar el grado de fibrosis hepática (daño por hepatitis, alcohol u otras causas), sin necesidad de biopsia. Requiere ayuno de 2-3 horas. Dura 10-15 minutos.",
+    "Mide la rigidez del hígado mediante ultrasonido para evaluar el grado de fibrosis hepática (daño por hepatitis, alcohol u otras causas), sin necesidad de biopsia. Requiere ayuno mínimo de 2 y máximo de 3 horas. Dura 10-15 minutos.",
 
   // ── RADIOGRAFÍA ───────────────────────────────────────────────────────────
   "Radiografía de Partes Blandas / Laringe / Cavum / Rinofaringe":

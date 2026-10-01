@@ -349,7 +349,7 @@
       "part": 165888,
       "fa": 144250,
       "fbcd": 72120,
-      "note": "Ayuno de 8 a 12 horas"
+      "note": "Ayuno mín. 8 h y máx. 12 h"
     },
     {
       "name": "Protocolo PEP (Resonancia Magnética)",
@@ -448,7 +448,7 @@
       "fa": 80960,
       "fbcd": 49820,
       "autoContrast": true,
-      "note": "Ayuno de sólidos 4 h."
+      "note": "Ayuno de sólidos mín. 4 h."
     },
     {
       "name": "TAC Musculoesquelética",
@@ -464,7 +464,7 @@
       "fa": 83030,
       "fbcd": 51090,
       "autoContrast": true,
-      "note": "Ayuno de sólidos 4 h; Beber 1,5 L desde 1 h antes y no orinar."
+      "note": "Ayuno de sólidos mín. 4 h; Beber 1,5 L desde 1 h antes y no orinar."
     },
     {
       "name": "TAC de Abdomen y Pelvis",
@@ -473,7 +473,7 @@
       "fa": 132150,
       "fbcd": 81320,
       "autoContrast": true,
-      "note": "Ayuno de sólidos 4 h; Beber 1,5 L desde 1 h antes y no orinar."
+      "note": "Ayuno de sólidos mín. 4 h; Beber 1,5 L desde 1 h antes y no orinar."
     },
     {
       "name": "TAC de Tórax, Abdomen y Pelvis",
@@ -482,7 +482,7 @@
       "fa": 266620,
       "fbcd": 164070,
       "autoContrast": true,
-      "note": "Ayuno de sólidos 4 h; Beber 1,5 L desde 1 h antes y no orinar."
+      "note": "Ayuno de sólidos mín. 4 h; Beber 1,5 L desde 1 h antes y no orinar."
     },
     {
       "name": "Pielografía por TAC",
@@ -499,7 +499,7 @@
       "fa": 77740,
       "fbcd": 47840,
       "autoContrast": true,
-      "note": "Ayuno de sólidos 4 h; Beber 1,5 L desde 1 h antes y no orinar."
+      "note": "Ayuno de sólidos mín. 4 h; Beber 1,5 L desde 1 h antes y no orinar."
     },
     {
       "name": "AngioTAC de Cuello",
@@ -565,7 +565,7 @@
       "part": 41216,
       "fa": 35840,
       "fbcd": 22050,
-      "note": "Ayuno de sólidos 6 h."
+      "note": "Ayuno de sólidos mín. 6 h."
     },
     {
       "name": "Ecografía Abdominal y Pelviana Femenina",
@@ -573,7 +573,7 @@
       "part": 63146,
       "fa": 54910,
       "fbcd": 33780,
-      "note": "Ayuno de sólidos 6 h; Beber 1,5 L desde 1 h antes y no orinar."
+      "note": "Ayuno de sólidos mín. 6 h; Beber 1,5 L desde 1 h antes y no orinar."
     },
     {
       "name": "Ecografía Abdominal y Pelviana Masculina",
@@ -581,7 +581,7 @@
       "part": 64135,
       "fa": 55770,
       "fbcd": 34310,
-      "note": "Ayuno de sólidos 6 h; Beber 1,5 L desde 1 h antes y no orinar."
+      "note": "Ayuno de sólidos mín. 6 h; Beber 1,5 L desde 1 h antes y no orinar."
     },
     {
       "name": "Ecografía Renal y Vesical Femenina",
@@ -589,7 +589,7 @@
       "part": 50496,
       "fa": 43910,
       "fbcd": 27010,
-      "note": "Ayuno de sólidos 6 h; Beber 1,5 L desde 1 h antes y no orinar."
+      "note": "Ayuno de sólidos mín. 6 h; Beber 1,5 L desde 1 h antes y no orinar."
     },
     {
       "name": "Ecografía Renal y Vesical Masculina",
@@ -597,7 +597,7 @@
       "part": 51485,
       "fa": 44770,
       "fbcd": 27540,
-      "note": "Ayuno de sólidos 6 h; Beber 1,5 L desde 1 h antes y no orinar."
+      "note": "Ayuno de sólidos mín. 6 h; Beber 1,5 L desde 1 h antes y no orinar."
     },
     {
       "name": "Ecografía Pelviana Femenina",
@@ -621,7 +621,7 @@
       "part": 28566,
       "fa": 24840,
       "fbcd": 15280,
-      "note": "6 horas de ayuno total (líquidos y sólidos)"
+      "note": "Ayuno total mín. 6 h (líquidos y sólidos)"
     },
     {
       "name": "Ecografía Mamaria Bilateral (incluye Doppler)",
@@ -665,7 +665,7 @@
       "part": 28715,
       "fa": 24970,
       "fbcd": 15360,
-      "note": "6 horas de ayuno total (líquidos y sólidos)"
+      "note": "Ayuno total mín. 6 h (líquidos y sólidos)"
     },
     {
       "name": "Doppler Vascular Periférico (arterial y venoso, bilateral)",
