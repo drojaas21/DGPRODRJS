@@ -39,6 +39,7 @@ localPort = 24678
 externalPort = 3000
 
 [deployment]
-deploymentTarget = "autoscale"
+deploymentTarget = "static"
 run = ["bun", "run", ".output/server/index.mjs"]
-build = ["bun", "run", "build"]
+build = ["npm", "run", "build"]
+publicDir = "dist"

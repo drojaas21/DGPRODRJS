@@ -88,7 +88,7 @@ export const patientInfoMap: Record<string, string> = {
   "TAC de Tórax Completo":
     "Tomografía detallada de toda la caja torácica, incluyendo pulmones, pleura, esternón, costillas, clavículas y escápulas. Indicado para nódulos pulmonares, enfermedad pulmonar crónica, trauma torácico o seguimiento oncológico. Dura 10-15 minutos.",
   "TAC de Abdomen":
-    "Tomografía de los órganos abdominales: hígado, vías biliares, páncreas, bazo, suprarrenales y riñones. Indicado para dolor abdominal agudo o crónico, masas abdominales, seguimiento oncológico o evaluación de urgencia. Preparación: ayuno de sólidos 4 h; beber 1,5 L desde 1 h antes y no orinar. Dura 15-20 minutos.",
+    "Tomografía de los órganos abdominales: hígado, vías biliares, páncreas, bazo, suprarrenales y riñones. Indicado para dolor abdominal agudo o crónico, masas abdominales, seguimiento oncológico o evaluación de urgencia. Preparación: ayuno de sólidos 4 h. Dura 15-20 minutos.",
   "TAC Musculoesquelética":
     "Tomografía enfocada en un segmento de extremidad (muslo, pierna, rodilla, antebrazo, codo, muñeca, mano, hombro, pie o tobillo). Útil para fracturas complejas, tumores óseos o patología articular que requiere evaluación ósea detallada. Dura 10-15 minutos.",
   "TAC de Pelvis":

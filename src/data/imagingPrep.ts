@@ -55,6 +55,9 @@ export function getImagingPrep(
     if (isPieloTAC(examName)) {
       return { steps: [ARRIVAL, ID_ORDER, WATER_PELVIS] };
     }
+    if (isTACAbdomenOnly(examName)) {
+      return { steps: [ARRIVAL, ID_ORDER, FAST_4H_SOLIDS], postProtocol: POST_CONTRAST };
+    }
     if (n.includes("urograf") || n.includes("urotac")) {
       return {
         steps: [ARRIVAL, ID_ORDER, FAST_4H_SOLIDS, WATER_PELVIS],
@@ -128,6 +131,10 @@ export function isPieloTAC(examName: string): boolean {
   return n.includes("pielograf") && n.includes("tac");
 }
 
+function isTACAbdomenOnly(examName: string): boolean {
+  return norm(examName) === "tac de abdomen";
+}
+
 export function needsCreatinineAlert(category: ExamCategory): boolean {
   return category === "contraste" || category === "tac";
 }
@@ -166,6 +173,9 @@ export function getImagingPrepNote(examName: string, category: ExamCategory, wit
   if (category === "tac") {
     if (isPieloTAC(examName)) {
       return WATER_PELVIS;
+    }
+    if (isTACAbdomenOnly(examName)) {
+      return FAST_4H_SOLIDS;
     }
     if (n.includes("urograf") || n.includes("urotac")) {
       return TAC_FAST_AND_WATER;
