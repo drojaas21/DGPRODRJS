@@ -19,12 +19,13 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-type Tab = "examenes" | "laboratorio";
+type Tab = "examenes" | "laboratorio" | "isapre";
 type Prevision = "particular" | "fa" | "fbcd";
 
 const tabs: { id: Tab; label: string; icon: typeof Scan }[] = [
   { id: "examenes", label: "Imagenología", icon: Scan },
   { id: "laboratorio", label: "Laboratorio", icon: LabIcon },
+  { id: "isapre", label: "C. ISAPRE", icon: ShieldCheck },
 ];
 
 const previsionOpts: { key: Prevision; label: string }[] = [
@@ -141,7 +142,7 @@ function Index() {
             <img src={logo} alt="DiagnoPRO Temuco" className="h-9 w-auto" />
             <div className="hidden border-l border-border pl-3 sm:block">
               <p className="text-sm font-bold leading-tight text-foreground">Cotizador Clínico</p>
-              <p className="text-xs text-muted-foreground">Imagenología · Laboratorio</p>
+              <p className="text-xs text-muted-foreground">Imagenología · Laboratorio · C. ISAPRE</p>
             </div>
           </div>
           <ThemePicker />
@@ -163,6 +164,8 @@ function Index() {
                 <button
                   key={t.id}
                   onClick={() => switchTab(t.id)}
+                  aria-label={t.label}
+                  title={t.label}
                   className={`relative flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all ${
                     active
                       ? "bg-gradient-brand text-primary-foreground shadow-[var(--shadow-lift)]"
@@ -185,6 +188,9 @@ function Index() {
         </div>
 
         {/* ── Content ── */}
+        {tab === "isapre" ? (
+          <section aria-label="C. ISAPRE" className="min-h-[28rem]" />
+        ) : (
         <div className="grid gap-5 md:grid-cols-[minmax(0,1fr)_320px] xl:grid-cols-[minmax(0,1fr)_360px]">
             {/* Left: catalog — minHeight is locked to the tallest panel seen
                 so the column never shrinks when switching tabs */}
@@ -424,6 +430,7 @@ function Index() {
               </div>
             </div>
         </div>
+        )}
       </main>
 
       <footer className="mx-auto w-full max-w-7xl px-4 py-8 text-center text-xs text-muted-foreground sm:px-6">
